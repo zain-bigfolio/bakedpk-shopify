@@ -1,0 +1,335 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "176377956153a06bde": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_1071071_tDiWAK": {
+          "type": "ai_gen_block_1071071",
+          "settings": {
+            "image": "shopify://shop_images/new_branch_mural_updated_1_1.jpg",
+            "link": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_1071071_tDiWAK"
+      ],
+      "name": "Banner Image",
+      "settings": {}
+    },
+    "partners_logo_rpyDPY": {
+      "type": "partners-logo",
+      "blocks": {
+        "logo_ncU8KV": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/Amo_Logo_ORIGINAL_1.png"
+          }
+        },
+        "logo_c4eYNY": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/blend.png"
+          }
+        },
+        "logo_kdYtVA": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/annas_1.png"
+          }
+        },
+        "logo_tYbA9g": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/doughbros_1.png"
+          }
+        },
+        "logo_D3pHLk": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/amns.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_ncU8KV",
+        "logo_c4eYNY",
+        "logo_kdYtVA",
+        "logo_tYbA9g",
+        "logo_D3pHLk"
+      ],
+      "name": "Partners logo",
+      "settings": {
+        "bg_color": "#f8f8f8",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "heading_section_MHkeBd": {
+      "type": "heading-section",
+      "name": "Simple heading",
+      "settings": {
+        "heading_richtext": "<h2>Loved by 200,000+ People</h2>",
+        "heading_color": "#1e1e1e",
+        "font_size_desktop": 48,
+        "font_size_mobile": 20,
+        "text_alignment": "center",
+        "padding_top": 85,
+        "padding_bottom": 52,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "index_product_section_rJj49f": {
+      "type": "index-product-section",
+      "blocks": {
+        "product_card_76jfxd": {
+          "type": "product_card",
+          "settings": {
+            "product": "fajita-sandwich-220g",
+            "override_title": "",
+            "override_reviews": "100",
+            "override_link": ""
+          }
+        },
+        "product_card_zmnqTR": {
+          "type": "product_card",
+          "settings": {
+            "product": "chocolate-peanut-butter",
+            "override_title": "",
+            "override_reviews": "50",
+            "override_link": ""
+          }
+        },
+        "product_card_FPEMRB": {
+          "type": "product_card",
+          "settings": {
+            "product": "chocolate-peanut-butter-1",
+            "override_title": "",
+            "override_reviews": "100",
+            "override_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_76jfxd",
+        "product_card_zmnqTR",
+        "product_card_FPEMRB"
+      ],
+      "name": "Product section",
+      "settings": {
+        "swipe_section": false,
+        "icon_image": "shopify://shop_images/baked-icon.png",
+        "heading": "Hot Selling",
+        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ilo.</p>",
+        "heading_color": "#ff4411",
+        "text_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "index_product_section_F34J6f": {
+      "type": "index-product-section",
+      "blocks": {
+        "product_card_d8Ryp8": {
+          "type": "product_card",
+          "settings": {
+            "product": "chocolate-peanut-butter-1",
+            "override_title": "",
+            "override_reviews": "100",
+            "override_link": ""
+          }
+        },
+        "product_card_UggxkY": {
+          "type": "product_card",
+          "settings": {
+            "product": "chocolate-peanut-butter",
+            "override_title": "",
+            "override_reviews": "50",
+            "override_link": ""
+          }
+        },
+        "product_card_Ap9AAk": {
+          "type": "product_card",
+          "settings": {
+            "product": "fajita-sandwich-220g",
+            "override_title": "",
+            "override_reviews": "100",
+            "override_link": ""
+          }
+        },
+        "product_card_cBK6Xz": {
+          "type": "product_card",
+          "settings": {
+            "product": "chocolate-peanut-butter-1",
+            "override_title": "",
+            "override_reviews": "100",
+            "override_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_d8Ryp8",
+        "product_card_UggxkY",
+        "product_card_Ap9AAk",
+        "product_card_cBK6Xz"
+      ],
+      "name": "Product section",
+      "settings": {
+        "swipe_section": true,
+        "icon_image": "shopify://shop_images/baked-icon.png",
+        "heading": "New Sellers",
+        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ilo.</p>",
+        "heading_color": "#ff4411",
+        "text_alignment": "right",
+        "padding_top": 40,
+        "padding_bottom": 80,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "in_house_brand_DzkjH6": {
+      "type": "in-house-brand",
+      "blocks": {
+        "brand_rq7zVb": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify://shop_images/panthedn.png",
+            "brand_name": "Pantheon Coffee",
+            "brand_link": ""
+          }
+        },
+        "brand_FzNi3c": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify://shop_images/milkcraft.png",
+            "brand_name": "milkcraft",
+            "brand_link": ""
+          }
+        },
+        "brand_QKpkcW": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify://shop_images/blend-licious.png",
+            "brand_name": "Blendlicious",
+            "brand_link": ""
+          }
+        },
+        "brand_qeJ7yY": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify://shop_images/pickled.png",
+            "brand_name": "Pickled",
+            "brand_link": ""
+          }
+        },
+        "brand_ejbP7j": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify://shop_images/dough-bros.png",
+            "brand_name": "DoughBros.",
+            "brand_link": ""
+          }
+        },
+        "brand_bRtXFk": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify://shop_images/frogurt.png",
+            "brand_name": "Frogurt",
+            "brand_link": ""
+          }
+        },
+        "brand_cNUxpP": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify://shop_images/panthedn.png",
+            "brand_name": "Pantheon Coffee",
+            "brand_link": ""
+          }
+        },
+        "brand_Gkgg8K": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify://shop_images/milkcraft.png",
+            "brand_name": "milkcraft",
+            "brand_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "brand_rq7zVb",
+        "brand_FzNi3c",
+        "brand_QKpkcW",
+        "brand_qeJ7yY",
+        "brand_ejbP7j",
+        "brand_bRtXFk",
+        "brand_cNUxpP",
+        "brand_Gkgg8K"
+      ],
+      "name": "In house brand",
+      "settings": {
+        "heading": "Our In-House Brands",
+        "top_content": "<p>Not just curated, we also create. Built from scratch inside Baked.pk so we can promise the same trusted tase in every bite </p>",
+        "padding_top": 60,
+        "padding_bottom": 35,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "upcoming_section_j4HqPM": {
+      "type": "upcoming-section",
+      "blocks": {
+        "popup_box_eGiHKT": {
+          "type": "popup_box",
+          "settings": {
+            "icon": "shopify://shop_images/baked-icon.png",
+            "title": "upcoming brands",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ilo.",
+            "image": "shopify://shop_images/Polaroid.png",
+            "position": "left"
+          }
+        },
+        "popup_box_pP6KXp": {
+          "type": "popup_box",
+          "settings": {
+            "title": "",
+            "text": "",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "popup_box_eGiHKT",
+        "popup_box_pP6KXp"
+      ],
+      "name": "Upcoming PopUps",
+      "settings": {
+        "main_heading": "Upcoming PopUps",
+        "sub_heading": "@POPUP KITCHEN"
+      }
+    }
+  },
+  "order": [
+    "176377956153a06bde",
+    "partners_logo_rpyDPY",
+    "heading_section_MHkeBd",
+    "index_product_section_rJj49f",
+    "index_product_section_F34J6f",
+    "in_house_brand_DzkjH6",
+    "upcoming_section_j4HqPM"
+  ]
+}

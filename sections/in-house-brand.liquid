@@ -1,0 +1,231 @@
+<style>
+  .in-house{
+        padding-top:{{ section.settings.padding_top }}px;
+        padding-bottom:{{ section.settings.padding_bottom }}px;
+        background: linear-gradient(101deg, #FFEDED 8%, #FCFAF5 43%, #F8EAE1 64%, #F9F8EA 87%), #F8EDED;
+        margin: 0 25px;
+        border-radius: 24px;
+        border: 1px solid #E6E6E6;
+        position: relative;
+    }
+    .in-house:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        background: url(https://cdn.shopify.com/s/files/1/0709/4403/0774/files/top-corve.png?v=1763870260);
+        width: 400px;
+        height: 100px;
+        background-repeat: no-repeat;
+        animation: moveLeftRight 2s ease-in-out infinite alternate;
+    }
+    @keyframes moveLeftRight {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(20px); }
+    }
+    .house-wrap-main {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0 auto;
+    }
+    .house-wrap-main .swiper .swiper-button-prev,
+    .house-wrap-main .swiper .swiper-button-next {
+        top: 50%;
+        transform: translateY(-130%);
+    }
+    .heading-section {
+        text-align: center;
+    }
+    .heading-section h2 {
+        font-size: 48px;
+        margin: 0 0 20px 0;
+        line-height: 1.1;
+        font-weight: 900;
+        color: #ef4f2e;
+    }
+    .inner-top-content {
+        font-size: 20px;
+        max-width: 790px;
+        margin: 0 auto 55px;
+        font-weight: 500;
+    }
+    .inner-top-content p {
+        margin: 0;
+    }
+    .brand-section {
+        padding: 0 25px 70px;
+    }
+    .inner-brand img {
+        width: 100%;
+        max-width: 150px;
+        display: block;
+        margin: 0 auto;
+    }
+    .inner-brand {
+        text-align: center;
+    }
+    .inner-brand h3 {
+        font-weight: 700;
+    }
+    .inner-brand a{
+        text-decoration: none;
+    }
+    .swiper-pagination-bullet{
+        background: #1E1E1E4D;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active{
+        background:#1E1E1E;
+        width: 24px;
+        border-radius: 10px;
+    }
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+        bottom: -6px;
+    }
+    @media (max-width:767px){
+        .in-house{
+        padding-top:{{ section.settings.padding_top_mobile }}px;
+        padding-bottom:{{ section.settings.padding_bottom_mobile }}px;
+    }
+    }
+</style>
+<div class="house-wrap-main">
+    <div class="heading-section">
+        <h2>{{ section.settings.heading }}</h2>
+        <div class="inner-top-content">{{ section.settings.top_content }}</div>
+    </div>
+    <div class="swiper brand-section">
+        <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+        {% if block.type == 'brand' %}
+            <div class="swiper-slide">
+        <div class="inner-brand">
+            <a href="{{ block.settings.brand_link }}">
+                {% if block.settings.brand_image != blank %}
+                <img src="{{ block.settings.brand_image | img_url: 'medium' }}" alt="{{ block.settings.brand_name }}" width="" height="">
+                {% endif %}
+                <h3>{{ block.settings.brand_name }}</h3>
+            </a>
+        </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>
+</div>
+{% javascript %}
+document.addEventListener('DOMContentLoaded', function () {
+  const swiper = new Swiper('.brand-section', {
+    loop: true,
+    slidesPerView: 6,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      320: { slidesPerView: 1, spaceBetween: 10 },
+      480: { slidesPerView: 2, spaceBetween: 15 },
+      768: { slidesPerView: 4, spaceBetween: 20 },
+      1024: { slidesPerView: 4, spaceBetween: 20 },
+      1400: { slidesPerView: 6, spaceBetween: 0 },
+    }
+  });
+});
+
+{% endjavascript %}
+{% schema %}
+{
+  "name": "In house brand",
+  "class": "in-house",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our In-House Brands"
+    },
+    {
+      "type": "richtext",
+      "id": "top_content",
+      "label": "Top content",
+      "default": "<p>Not just curated, we also create. Built from scratch inside Baked.pk so we can promise the same trusted tase in every bite </p>"
+    },
+    {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding top(mobile)",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding bottom(mobile)",
+        "default": 20
+      }
+  ],
+  "blocks": [
+    {
+      "type": "brand",
+      "name": "Brand",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "brand_image",
+          "label": "Brand image"
+        },
+        {
+          "type": "text",
+          "id": "brand_name",
+          "label": "Brand name"
+        },
+        {
+          "type": "url",
+          "id": "brand_link",
+          "label": "Brand link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "In house brand"
+    }
+  ]
+}
+{% endschema %}

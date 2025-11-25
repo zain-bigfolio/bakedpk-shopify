@@ -1,0 +1,129 @@
+<section id="section-heading-{{ section.id }}" class="simple-heading-section align-{{ section.settings.text_alignment }}" style="--heading-color: {{ section.settings.heading_color }};">
+    <div class="page-width">
+      <div class="heading-wrapper">
+        <div class="heading-content">
+          {{ section.settings.heading_richtext }}
+        </div>
+      </div>
+    </div>
+  
+    <style>
+      #section-heading-{{ section.id }} .heading-content *{
+        color: var(--heading-color);
+        font-size: {{ section.settings.font_size_mobile }}px;
+        line-height: 1.1;
+        font-weight:900;
+        margin:0;
+      }
+      #section-heading-{{ section.id }}{
+        padding-top:{{section.settings.padding_top_mobile}}px;
+        padding-bottom:{{section.settings.padding_bottom_mobile}}px;
+      }
+      @media (min-width: 750px) {
+        #section-heading-{{ section.id }} {
+            padding-top:{{section.settings.padding_top}}px;
+            padding-bottom:{{section.settings.padding_bottom}}px;
+        }
+        #section-heading-{{ section.id }} .heading-content *{
+          font-size: {{ section.settings.font_size_desktop }}px;
+        }
+      }
+    </style>
+  </section>
+  
+  {% schema %}
+  {
+    "name": "Section heading",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "heading_richtext",
+        "label": "Heading"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading color",
+        "default": "#1E1E1E"
+      },
+      {
+        "type": "range",
+        "id": "font_size_desktop",
+        "label": "Font size (desktop)",
+        "min": 14,
+        "max": 80,
+        "step": 1,
+        "unit": "px",
+        "default": 48
+      },
+      {
+        "type": "range",
+        "id": "font_size_mobile",
+        "label": "Font size (mobile)",
+        "min": 12,
+        "max": 48,
+        "step": 1,
+        "unit": "px",
+        "default": 20
+      },
+      {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text alignment",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "center", "label": "Center" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 52
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding top(mobile)",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding bottom(mobile)",
+        "default": 40
+      }
+    ],
+    "presets": [
+      {
+        "name": "Simple heading",
+        "category": "Text"
+      }
+    ]
+  }
+  {% endschema %}
+  

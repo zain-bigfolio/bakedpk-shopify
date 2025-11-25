@@ -1,0 +1,246 @@
+<style>
+    .upcoming-main-wrap{
+        padding-top:{{ section.settings.padding_top }}px;
+        padding-bottom:{{ section.settings.padding_bottom }}px;
+        border-radius: 24px;
+        border: 1px solid #E6E6E6;
+        background: #FBF5F5;
+        margin: 0 25px;
+      }
+      
+      .upcoming-heading{
+        text-align:center;
+        margin-bottom:30px;
+      }
+      .upcoming-heading h2{
+        font-size:48px;
+        margin:0;
+      }
+      .upcoming-heading h3{
+        margin:5px 0 0;
+        color:#FF4411;
+        font-weight:800;
+        font-size:22px;
+      }
+      
+      .upcoming-main-inner{
+        display:flex;
+        gap:30px;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        padding: 0 90px;
+      }
+      .upcoming-left,
+      .upcoming-right{
+        flex:1 1 45%;
+      }
+      .upcoming-left .popup-box{
+        display:flex;
+    }
+    .upcoming-left .box-text{
+        width: 50%;
+        box-shadow: 0px 8.83px 8.83px 0px #1E1E1E1F;
+        background: #fff;
+        padding: 35px 25px;
+    }
+      .upcoming-box{
+        background:#fff;
+        padding:24px;
+        width:280px;
+        border-radius:4px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      }
+      
+      .upcoming-box .icon{
+        font-size:28px;
+        margin-bottom:10px;
+      }
+      
+      .upcoming-box .title{
+        color:#ff6a2a;
+        margin:0 0 12px;
+        font-size:20px;
+      }
+      
+      .upcoming-box .text{
+        margin:0;
+        color:#666;
+        line-height:1.5;
+        font-size:14px;
+      }
+      
+    .box-image img{
+        width:100%
+    }
+      .polaroid{
+        background:#fffef5;
+        padding:12px;
+        border:6px solid #f6f1e6;
+        box-shadow:0 12px 20px rgba(0,0,0,0.15);
+        transform:rotate(-6deg);
+        width:320px;
+        position:relative;
+      }
+      .polaroid img{
+        width:100%;
+        display:block;
+      }
+      .polaroid-right{
+        transform:rotate(6deg);
+      }
+      
+      /* pin */
+      .pin{
+        position:absolute;
+        top:-12px;
+        right:18px;
+        width:28px;
+        height:28px;
+        background:radial-gradient(circle at 30% 30%, #ff5858, #c82828);
+        border-radius:50%;
+        box-shadow:0 6px 12px rgba(0,0,0,0.25);
+      }
+      
+      @media (max-width:880px){
+        .upcoming-main-inner{
+          flex-direction:column;
+          align-items:center;
+        }
+        .upcoming-left,
+        .upcoming-right{
+          flex-direction:column;
+        }
+        .upcoming-box{
+          width:100%;
+          max-width:360px;
+        }
+        .polaroid{
+          width:100%;
+          max-width:420px;
+        }
+      }
+      
+</style>
+<section class="upcoming-main-wrap">
+    <div class="upcoming-heading">
+      <h2>{{ section.settings.main_heading }}</h2>
+      <h3>{{ section.settings.sub_heading }}</h3>
+    </div>
+  
+    <div class="upcoming-main-inner">
+  
+        <div class="upcoming-left">
+            {% for block in section.blocks %}
+              {% if block.settings.position == 'left' %}
+                <div class="popup-box left">
+                    <div class="box-text">
+                        <div class="icon"> <img src="{{ block.settings.icon | img_url: '100x' }}"></div>
+                        <h3>{{ block.settings.title }}</h3>
+                        <p>{{ block.settings.text }}</p>
+                    </div>
+                    <div class="box-image">
+                        {% if block.settings.image != blank %}
+                            <img src="{{ block.settings.image | img_url: '1000x' }}">
+                        {% endif %}
+                    </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          
+          <div class="upcoming-right">
+            {% for block in section.blocks %}
+              {% if block.settings.position == 'right' %}
+                <div class="popup-box right">
+                    <div class="box-text">
+                        <div class="icon"> <img src="{{ block.settings.icon | img_url: '100x' }}"></div>
+                        <h3>{{ block.settings.title }}</h3>
+                        <p>{{ block.settings.text }}</p>
+                    </div>
+                    <div class="box-image">
+                        {% if block.settings.image != blank %}
+                            <img src="{{ block.settings.image | img_url: '1000x' }}">
+                        {% endif %}
+                    </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          
+    </div>
+  </section>
+  
+  {% schema %}
+  {
+    "name": "Upcoming PopUps",
+    "settings": [
+      {
+        "type": "text",
+        "id": "main_heading",
+        "label": "Main Heading",
+        "default": "Upcoming PopUps"
+      },
+      {
+        "type": "text",
+        "id": "sub_heading",
+        "label": "Sub Heading",
+        "default": "@POPUP KITCHEN"
+      }
+    ],
+  
+    "blocks": [
+      {
+        "type": "popup_box",
+        "name": "Popup Box",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Box Image"
+          },
+          {
+            "type": "select",
+            "id": "position",
+            "label": "Position",
+            "options": [
+              { "value": "left", "label": "Left" },
+              { "value": "right", "label": "Right" }
+            ],
+            "default": "left"
+          }
+        ]
+      }
+    ],
+  
+    "presets": [
+      {
+        "name": "Upcoming PopUps",
+        "blocks": [
+          {
+            "type": "popup_box"
+          },
+          {
+            "type": "popup_box"
+          }
+        ]
+      }
+    ]
+  }
+  
+  {% endschema %}
+  
