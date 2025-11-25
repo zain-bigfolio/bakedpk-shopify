@@ -1,0 +1,338 @@
+{{ 'section-faq.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'faq-accordion.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="faq-section color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width relative"> 
+    {%- if section.settings.float_right_image != blank -%}
+      <div class="float-icon-right media--transparent medium-hide small-hide">
+        <div class="ratio media" style="--ratio-percent: {{ 1 | divided_by: section.settings.float_right_image.aspect_ratio | times: 100 }}%;">
+          {{ section.settings.float_right_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: section.settings.float_right_image.alt }}
+        </div>
+      </div>
+    {%- endif -%}
+    {%- if section.settings.float_left_image != blank -%}
+      <div class="float-icon-left media--transparent medium-hide small-hide">
+        <div class="ratio media" style="--ratio-percent: {{ 1 | divided_by: section.settings.float_left_image.aspect_ratio | times: 100 }}%;">
+          {{ section.settings.float_left_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: section.settings.float_left_image.alt }}
+        </div>
+      </div>
+    {%- endif -%}
+    {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper--faq title-wrapper--self-padded-mobile title-wrapper--no-top-margin" style="--max-width: {{ section.settings.heading_max_width }}rem;">
+        <h2 class="title inline-richtext f-primary lt-0 center {{ section.settings.heading_size }}">
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    {%- endunless -%} 
+
+    {%- if section.blocks.size > 0 -%}
+      <faq-accordion class="faq__wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="faq__list faq__list--columns-{{ section.settings.columns_desktop }}">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'faq_item' -%}
+                <div
+                  class="faq__item{% if section.settings.open_first_item and forloop.first %} is-active{% endif %}"
+                  {{ block.shopify_attributes }}
+                  data-faq-item
+                >
+                  <div class="faq__item-wrapper">
+                    {%- if section.settings.show_index -%}
+                      <div class="faq__item-index-wrapper">
+                        <span class="faq__item-index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+                        <span class="faq__item-icon medium-hide large-up-hide">{% render 'icon-pack', icon: 'plus' %}</span>
+                      </div>
+                    {%- endif -%}
+                    <div>
+                      <button
+                        class="faq__item-header"
+                        type="button"
+                        aria-expanded="{% if section.settings.open_first_item and forloop.first %}true{% else %}false{% endif %}"
+                        data-faq-trigger
+                      >
+                        <h2 class="faq__item-title h3 b-700 lt-0">
+                          {{ block.settings.question }}
+                        </h2>
+                        <span class="faq__item-icon">
+                          {% render 'icon-pack', icon: 'plus' %}
+                        </span>
+                      </button>
+                      <div class="faq__item-body" data-faq-body>
+                        <div class="faq__item-content rte {{ section.settings.answer_size }}">
+                          {{ block.settings.answer }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      </faq-accordion>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="faq__footer center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        <a
+          class="button button--{{ section.settings.button_style }}"
+          {% if section.settings.button_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.button_link }}"
+          {% endif %}
+        >
+          {{ section.settings.button_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+     {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "t:sections.multicolumn.settings.title.default",
+      "label": "t:sections.multicolumn.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "range",
+      "id": "heading_max_width",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "rem",
+      "label": "Heading Max Width",
+      "default": 50
+    },
+    {
+      "type": "select",
+      "id": "answer_size",
+      "label": "Answer Text Size",
+      "options": [
+        {
+          "label": "f-14",
+          "value": "f-14"
+        },
+        {
+          "label": "f-16",
+          "value": "f-16"
+        },
+        {
+          "label": "f-18",
+          "value": "f-18"
+        }
+      ],
+      "default": "f-16"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Columns on Desktop",
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "show_index",
+      "label": "Show Item Index",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_item",
+      "label": "Open First Item by Default",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button Style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "header",
+      "content": "Floating Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "float_left_image",
+      "label": "Float Left Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "float_right_image",
+      "label": "Float Right Image"
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is your question?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Your answer goes here. You can use rich text formatting.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We offer a 30-day return policy on all products. Items must be unused and in original packaging.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Standard shipping typically takes 5-7 business days. Express shipping is available for 2-3 business days.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>Yes, we ship to over 100 countries worldwide. Shipping costs and delivery times vary by location.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How can I track my order?",
+            "answer": "<p>Once your order ships, you'll receive a tracking number via email. You can use this to track your package.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

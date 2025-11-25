@@ -490,3 +490,9 @@
     color: currentColor;
   }
 }
+
+
+@media screen and (max-width: 750px) {
+  .banner__content-mobile--bottom{align-items: flex-end;}
+  .banner__content-mobile--top{align-items: flex-start;}
+}
