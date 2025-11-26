@@ -99,7 +99,7 @@
       "name": "t:sections.multicolumn.presets.name_primary",
       "settings": {
         "section_style": "prime",
-        "position_y_mobile": -50,
+        "position_y_mobile": -88,
         "position_y_desktop": -84,
         "title": "",
         "heading_size": "h1",
