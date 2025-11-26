@@ -237,7 +237,7 @@
 /* PRIMARY STYLE STARTS HERE */
 .multicolumn--prime .multicolumn-card__image-wrapper {
   margin: 0rem;
-  padding: 1.6rem 1.6rem 0 1.6rem;
+  padding: 1.4rem 1.4rem 0 1.4rem;
   border-radius: 20px;
 }
 
@@ -261,6 +261,8 @@
   letter-spacing: calc(var(--font-size) * (-2 / 100));
   max-width: var(--max-width);
   line-height: 135%;
+  font-size: calc(var(--font-heading-scale) * 2.6rem);
+  font-weight: 600;
 }
 
 .multicolumn--prime .multicolumn-list .multicolumn-card__info .rte {
@@ -293,4 +295,8 @@
 @media screen and (max-width: 749px) {
   .multicolumn--prime.multicolumn.background-primary .multicolumn-card{border: 1px solid #1E1E1E;}
   .multicolumn--prime.multicolumn.background-primary .multicolumn-list { --grid-mobile-vertical-spacing: 20px; }
+}
+
+.multicolumn--prime{
+  --page-width: 138.5rem;
 }
