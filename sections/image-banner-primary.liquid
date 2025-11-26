@@ -148,6 +148,10 @@
             <div class="banner__text rte {{ block.settings.text_style }} {{ block.settings.font_size }}" style="--max-width: {{ block.settings.max_width }}rem;" {{ block.shopify_attributes }}>
               <p>{{ block.settings.text }}</p>
             </div>
+          {%- when 'image_title' -%}
+            <div class="banner__image-title ratio media media--transparent" style="--ratio-percent: {{ 1 |  divided_by: block.settings.image_title.aspect_ratio | times: 100 }}%;" {{ block.shopify_attributes }}>
+              {{ block.settings.image_title | image_url: width: 1500 | image_tag: width: block.settings.image_title.width, height: block.settings.image_title.height, class: 'banner__image-title-image', loading: 'eager' }}
+            </div>
           {%- when 'buttons' -%}
             <div class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}" {{ block.shopify_attributes }}>
               {%- if block.settings.button_label_1 != blank -%}
@@ -531,6 +535,18 @@
           "id": "button_style_secondary_2",
           "default": false,
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
+        }
+      ]
+    },
+    {
+      "type": "image_title",
+      "name": "Image Title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_title",
+          "label": "Image Title"
         }
       ]
     }
