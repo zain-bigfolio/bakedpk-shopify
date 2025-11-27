@@ -1,5 +1,5 @@
 .notice-board__header {
-  margin-bottom: 5.5rem;
+  margin-bottom: 6.5rem;
   padding-top: 5rem;
 }
 
@@ -19,6 +19,44 @@
 
 .notice-board__item-wrapper {
   position: relative;
+  opacity: 0;
+  transform: translateY(-100px) rotate(var(--initial-rotation, 0deg));
+}
+
+.notice-board__item-wrapper.animate {
+  animation: pinDrop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.notice-board__item-wrapper:nth-child(odd) {
+  --initial-rotation: -12deg;
+}
+
+.notice-board__item-wrapper:nth-child(even) {
+  --initial-rotation: 10deg;
+}
+
+.notice-board__item-wrapper.animate {
+  animation-delay: calc(var(--item-index, 0) * 0.2s);
+}
+
+@keyframes pinDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) rotate(var(--initial-rotation, 0deg));
+  }
+
+  60% {
+    transform: translateY(10px) rotate(calc(var(--initial-rotation, 0deg) * 0.3));
+  }
+
+  80% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
 }
 
 
@@ -59,6 +97,27 @@
   max-width: 8.5rem;
   width: 100%;
   z-index: 2;
+  transform-origin: center bottom;
+}
+
+.notice-board__item-wrapper:hover .notice-board__pin {
+  animation: pinWiggle 0.5s ease-in-out;
+}
+
+@keyframes pinWiggle {
+
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(-50%) rotate(-8deg);
+  }
+
+  75% {
+    transform: translateX(-50%) rotate(8deg);
+  }
 }
 
 .notice-board__image {
@@ -109,6 +168,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid rgba(230, 230, 230, 1);
+  padding-bottom: 17.5rem;
+  border-radius: 24px;
+  border: 1px solid #E6E6E6;
 }
 
 .notice-board__grid {
@@ -117,12 +179,6 @@
 
 .notice-board__container {
   padding: 0 2.5rem;
-}
-
-.notice-board__inner {
-  padding-bottom: 17.5rem;
-  border-radius: 24px;
-  border: 1px solid #E6E6E6;
 }
 
 @media screen and (min-width: 750px) {
@@ -136,5 +192,113 @@
 
   .notice-board__header h2 {
     font-size: calc(var(--font-heading-scale) * 4.1rem);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .notice-board__container {
+    /* padding-top: 3.5rem; */
+  }
+
+  .notice-board__header {
+    padding-top: 3.5rem;
+  }
+
+  .notice-board__header p {
+    --font-size: 1.8rem;
+  }
+
+  .notice-board__card-left {
+    padding: 1rem;
+  }
+
+  .notice-board__card-left {
+    /* min-height: 26.2rem; */
+  }
+
+  .notice-board__description {
+    --font-size: 1.3rem;
+    --letter-spacing: calc(var(--font-size) * (-2 / 100));
+    margin-top: 5rem;
+  }
+
+  .notice-board__heading {
+    font-size: 1.8rem;
+    margin-top: 1.8rem;
+  }
+
+  .notice-board__icon {
+    max-width: 3rem;
+  }
+
+  .notice-board__card-right {
+    max-width: 16.5rem;
+  }
+
+  .notice-board__grid {
+    padding: 12px;
+  }
+
+  .notice-board__grid>div:nth-child(odd) .notice-board__card-right {
+    left: -1rem;
+    z-index: 1;
+    top: -0.2rem;
+    transform: rotate(-2deg);
+  }
+
+  .notice-board__grid>div:nth-child(even) .notice-board__card-right {
+    right: -1rem;
+    z-index: 1;
+    transform: rotate(2deg);
+  }
+
+
+  .notice-board__grid>div:nth-child(even) .notice-board__heading {
+    text-align: right;
+  }
+
+  .notice-board__grid>div:nth-child(even) .notice-board__icon {
+    margin-left: auto;
+  }
+
+  .notice-board__pin {
+    max-width: 5rem;
+    z-index: 3;
+  }
+
+  .notice-board__card-left {
+    z-index: 0;
+  }
+
+  .notice-board__grid {
+    row-gap: 5.5rem;
+  }
+
+  .notice-board__inner {
+    padding-bottom: 5.9rem;
+  }
+
+  .notice-board__grid>div:nth-child(even) .notice-board__card {
+    grid-template-columns: 44.52% 57.03%;
+  }
+
+  .notice-board__grid>div:nth-child(odd) .notice-board__pin {
+    left: calc(56% - 1.6rem);
+    top: -1rem;
+  }
+
+  .notice-board__grid>div:nth-child(even) .notice-board__pin {
+    left: calc(44% - 1.6rem);
+    top: -1rem;
+  }
+
+  .notice-board__grid>div:nth-child(odd) .notice-board__card {
+    grid-template-columns: 57.03% 44.52%;
+  }
+}
+
+@media screen and (max-width: 1280px) and (min-width: 749px) {
+  .notice-board__grid {
+    --grid-desktop-horizontal-spacing: 5rem;
   }
 }

@@ -1,5 +1,5 @@
 {{ 'notice-board.css' | asset_url | stylesheet_tag }}
-
+<script defer="defer" src="{{ 'notice-board.js' | asset_url }}"></script>
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
