@@ -46,6 +46,68 @@
         "show_text_below": false
       }
     },
+    "notice_board_RrTHkj": {
+      "type": "notice-board",
+      "blocks": {
+        "notice_kVjtMQ": {
+          "type": "notice",
+          "settings": {
+            "icon": "shopify://shop_images/44.svg",
+            "heading": "PICKLED.",
+            "description": "<p>Get ready to have a pick-ilary experience this Thursday in DHA Phase 5, Lahore.</p>",
+            "image": "shopify://shop_images/Rectangle_160_5.png",
+            "rotation": 5
+          }
+        },
+        "notice_6XzEbn": {
+          "type": "notice",
+          "settings": {
+            "icon": "shopify://shop_images/44.svg",
+            "heading": "Rina’s kitchenette",
+            "description": "<p>Get ready to have a pick-ilary experience this Thursday in DHA Phase 5, Lahore.</p>",
+            "image": "shopify://shop_images/Rectangle_160_1.png",
+            "rotation": 5
+          }
+        },
+        "notice_QEMghU": {
+          "type": "notice",
+          "settings": {
+            "icon": "shopify://shop_images/44.svg",
+            "heading": "Pantry -polo lounge",
+            "description": "<p>Get ready to have a pick-ilary experience this Thursday in DHA Phase 5, Lahore.</p>",
+            "image": "shopify://shop_images/Rectangle_160_6.png",
+            "rotation": 5
+          }
+        },
+        "notice_YQqTxw": {
+          "type": "notice",
+          "settings": {
+            "icon": "shopify://shop_images/44.svg",
+            "heading": "Arcadian cafe",
+            "description": "<p>Arcadian Cafe is finally coming to Baked - Phase 6, this weekend!</p>",
+            "image": "shopify://shop_images/Rectangle_160_4_95cb2012-0334-44c4-8775-d4931a0e2c7c.png",
+            "rotation": 5
+          }
+        }
+      },
+      "block_order": [
+        "notice_kVjtMQ",
+        "notice_6XzEbn",
+        "notice_QEMghU",
+        "notice_YQqTxw"
+      ],
+      "name": "Notice Board",
+      "settings": {
+        "background_image": "shopify://shop_images/Section.png",
+        "pin": "shopify://shop_images/clipart1148203_4.png",
+        "color_scheme": "scheme-1",
+        "title": "Upcoming PopUps",
+        "heading_size": "h1",
+        "subtitle": "@Popup Kitchen",
+        "padding_top": 48,
+        "padding_bottom": 20
+      }
+    },
     "highlights_iAQa63": {
       "type": "highlights",
       "blocks": {
@@ -103,7 +165,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "enable_desktop_slider": true,
-        "padding_top": 36,
+        "padding_top": 20,
         "padding_bottom": 36
       }
     },
@@ -163,6 +225,7 @@
   "order": [
     "main",
     "image_banner_primary_LkL7ib",
+    "notice_board_RrTHkj",
     "highlights_iAQa63",
     "image_with_text_prime_wnMebt"
   ]
