@@ -1,0 +1,222 @@
+{{ 'store-locater.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} isolate gradient">
+  <div class="section-{{ section.id }}-padding store-locater-section">
+    <div class="page-width">
+      <div class="store-locater-section-wrapper">
+        {%- if section.settings.title != blank -%}
+          <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin center">
+            <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+              {{ section.settings.title }}
+            </h2>
+          </div>
+        {%- endif -%}
+        
+        <div class="store-locater">
+          <div class="store-locater__list">
+            {% for block in section.blocks %}
+              <div class="store-locater__item" {{ block.shopify_attributes }}>
+                <div class="store-locater__info">
+                  <div class="store-locater__icon">{% render 'icon-pack', icon: 'map' %}</div>
+                  <div class="store-locater__details">
+                    {%- if block.settings.store_name != blank -%}
+                      <h3 class="store-locater__name f-primary b-700 f-18">{{ block.settings.store_name }}</h3>
+                    {%- endif -%}
+                    
+                    {%- if block.settings.address != blank -%}
+                      <p class="store-locater__address b-500 f-16">{{ block.settings.address }}</p>
+                    {%- endif -%}
+                    
+                    <div class="store-locater__meta">
+                      {%- if block.settings.hours != blank -%}
+                        <div class="store-locater__hours b-500 f-14">
+                          {% render 'icon-pack', icon: 'clock' %}
+                          <span>{{ block.settings.hours }}</span>
+                        </div>
+                      {%- endif -%}
+                      
+                      {%- if block.settings.phone != blank -%}
+                        <div class="store-locater__phone b-500 f-14">
+                          {% render 'icon-pack', icon: 'phone' %}
+                          <span>{{ block.settings.phone }}</span>
+                        </div>
+                      {%- endif -%}
+                    </div>
+                    
+                    {%- if block.settings.map_url != blank -%}
+                      <a href="{{ block.settings.map_url }}" class="store-locater__button button button--primary" target="_blank" rel="noopener">
+                        See Location
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1L6.5 6L1.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </a>
+                    {%- endif -%}
+                  </div>
+                </div>
+                
+                <div class="store-locater__map">
+                  {%- if block.settings.map_image != blank -%}
+                    <div class="store-locater__map-image">
+                      <div class="media ratio media--transparent" style="--ratio-percent: {{ 1 |  divided_by:  block.settings.map_image.aspect_ratio | times: 100 }}%;">
+                        {{ block.settings.map_image | image_url: width: 2040 | image_tag: loading: 'lazy', width: block.settings.map_image.width, height: block.settings.map_image.height }}
+                      </div>
+                      {%- if block.settings.map_url != blank -%}
+                        <a href="{{ block.settings.map_url }}" class="store-locater__map-overlay" target="_blank" rel="noopener" aria-label="Open map for {{ block.settings.store_name }}"></a>
+                      {%- endif -%}
+                    </div>
+                  {%- elsif block.settings.map_url != blank -%}
+                    <div class="store-locater__map-placeholder">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C15.1634 4 8 11.1634 8 20C8 32 24 44 24 44C24 44 40 32 40 20C40 11.1634 32.8366 4 24 4ZM24 26C20.6863 26 18 23.3137 18 20C18 16.6863 20.6863 14 24 14C27.3137 14 30 16.6863 30 20C30 23.3137 27.3137 26 24 26Z" fill="currentColor"/></svg>
+                      <p>Map Preview</p>
+                    </div>
+                  {%- else -%}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Store Locator",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "Our Locations"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "store",
+      "name": "Store Location",
+      "settings": [
+        {
+          "type": "text",
+          "id": "store_name",
+          "label": "Store Name",
+          "default": "Baked DHA Phase 6"
+        },
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "Address",
+          "default": "10 A, Sector A DHA Phase 6, Lahore"
+        },
+        {
+          "type": "text",
+          "id": "hours",
+          "label": "Opening Hours",
+          "default": "11:00 AM to 11:00 PM",
+          "info": "e.g., 11:00 AM to 11:00 PM"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone Number",
+          "default": "+92 XXXXXX",
+          "info": "e.g., +92 300 1234567"
+        },
+        {
+          "type": "url",
+          "id": "map_url",
+          "label": "Google Maps URL",
+          "info": "Link to Google Maps location"
+        },
+        {
+          "type": "image_picker",
+          "id": "map_image",
+          "label": "Map Screenshot",
+          "info": "Upload a screenshot of the map location"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Locator",
+      "blocks": [
+        {
+          "type": "store"
+        },
+        {
+          "type": "store"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

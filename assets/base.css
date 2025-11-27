@@ -3732,8 +3732,10 @@ details-disclosure > details {
 .f-21 { --font-size: 2.1rem; }
 .f-22 { --font-size: 2.2rem; }
 .lt-0{letter-spacing: 0px;}
-.b-600{font-weight: 600;}
-.b-700{font-weight: 700;}
+.b-500{font-weight: 500 !important;}
+.b-600{font-weight: 600 !important;}
+.b-700{font-weight: 700 !important;}
+.b-800{font-weight: 800 !important;}
 .f-primary{font-family: var(--font-head-primary-family); font-style: var(--font-head-primary-style); font-weight: var(--font-head-primary-weight);}
 .button--ele {position: relative;max-width: calc(100% - 2rem);margin-left: auto;margin-right: auto;transition: transform 0.2s ease-in-out;}
 .button--ele:hover {transform: scale(1.01);}
