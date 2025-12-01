@@ -46,6 +46,8 @@
         "show_line_separator": true,
         "color_scheme": "scheme-2",
         "menu_color_scheme": "scheme-1",
+        "button_label": "ORDER NOW",
+        "button_link": "#",
         "enable_country_selector": true,
         "enable_language_selector": true,
         "enable_customer_avatar": true,

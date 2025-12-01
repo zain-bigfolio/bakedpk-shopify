@@ -111,6 +111,7 @@
           "settings": {
             "collection": "hot-selling",
             "products_to_show": 14,
+            "enable_two_rows": true,
             "show_text_card": true,
             "card_heading": "Hot  Selling",
             "card_subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ilo.",
@@ -123,6 +124,7 @@
           "settings": {
             "collection": "new-sellers",
             "products_to_show": 4,
+            "enable_two_rows": true,
             "show_text_card": true,
             "card_heading": "Featured Collection",
             "card_subheading": "Discover our latest products",
@@ -162,7 +164,7 @@
         "padding_bottom_mobile": 36
       }
     },
-        "notice_board_6EQ8QK": {
+    "notice_board_6EQ8QK": {
       "type": "notice-board",
       "blocks": {
         "notice_AGLAkA": {
@@ -246,11 +248,99 @@
         "section_image_3": "shopify://shop_images/44_1.svg",
         "heading": "Our Impact",
         "heading_size": "h2",
-        "color_scheme": "scheme-8d489392-17b7-4a33-a7af-2d33a97e79d3",
+        "color_scheme": "scheme-5",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
+    "featured_blog_prime_zajya6": {
+      "type": "featured-blog-prime",
+      "blocks": {
+        "article_pair_EdE8qB": {
+          "type": "article_pair",
+          "settings": {
+            "image_1": "shopify://shop_images/image_3d75ab87-e80f-4578-b8a1-5f9e0ffb644c.png",
+            "title_1": "Expanding the Baked Experience: in DHA Phase 5 Now!",
+            "excerpt_1": "",
+            "date_1": "",
+            "link_1": "#",
+            "button_label_1": "Read Now",
+            "position_1": "bottom-left",
+            "max_width_1": 23,
+            "image_2": "shopify://shop_images/image_1_98ab27f1-f161-460d-aae2-93334ab33b6b.png",
+            "title_2": "Expanding the Baked Experience: in DHA Phase 5 Now!",
+            "excerpt_2": "",
+            "date_2": "",
+            "link_2": "#",
+            "button_label_2": "Read Now",
+            "position_2": "middle-center",
+            "max_width_2": 41
+          }
+        },
+        "article_pair_F3NAJF": {
+          "type": "article_pair",
+          "settings": {
+            "image_1": "shopify://shop_images/image_3d75ab87-e80f-4578-b8a1-5f9e0ffb644c.png",
+            "title_1": "Expanding the Baked Experience: in DHA Phase 5 Now!",
+            "excerpt_1": "",
+            "date_1": "",
+            "link_1": "#",
+            "button_label_1": "Read Now",
+            "position_1": "bottom-left",
+            "max_width_1": 23,
+            "image_2": "shopify://shop_images/image_2_7db58726-fd79-4faa-b3e0-4e9cfab74d08.png",
+            "title_2": "Expanding the Baked Experience: in DHA Phase 5 Now!",
+            "excerpt_2": "",
+            "date_2": "",
+            "link_2": "#",
+            "button_label_2": "Read More",
+            "position_2": "middle-center",
+            "max_width_2": 38
+          }
+        },
+        "article_pair_k8BYHx": {
+          "type": "article_pair",
+          "settings": {
+            "image_1": "shopify://shop_images/image_3d75ab87-e80f-4578-b8a1-5f9e0ffb644c.png",
+            "title_1": "Expanding the Baked Experience: in DHA Phase 5 Now!",
+            "excerpt_1": "",
+            "date_1": "",
+            "link_1": "#",
+            "button_label_1": "Read Now",
+            "position_1": "bottom-left",
+            "max_width_1": 23,
+            "image_2": "shopify://shop_images/image_1_98ab27f1-f161-460d-aae2-93334ab33b6b.png",
+            "title_2": "Expanding the Baked Experience: in DHA Phase 5 Now!",
+            "excerpt_2": "",
+            "date_2": "",
+            "link_2": "#",
+            "button_label_2": "Read Now",
+            "position_2": "middle-center",
+            "max_width_2": 38
+          }
+        }
+      },
+      "block_order": [
+        "article_pair_EdE8qB",
+        "article_pair_F3NAJF",
+        "article_pair_k8BYHx"
+      ],
+      "name": "Featured Blog Prime",
+      "settings": {
+        "heading": "<strong>Blogs & Events</strong>",
+        "heading_size": "h1",
+        "color_scheme": "scheme-ccecb7f1-fda4-404b-a46b-8d3b39a2fbeb",
+        "color_scheme_card": "scheme-3",
+        "padding_top": 55,
+        "padding_bottom": 36,
+        "padding_top_mobile": 34,
+        "padding_bottom_mobile": 27,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 30
+      }
+    }
   },
   "order": [
     "image_banner_primary_G6WVf7",
@@ -258,5 +348,6 @@
     "featured_collection_prime_JqBFhD",
     "notice_board_6EQ8QK",
     "statistics_CykmQT",
+    "featured_blog_prime_zajya6"
   ]
 }

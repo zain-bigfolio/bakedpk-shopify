@@ -21,7 +21,7 @@
     "spacing_sections": 0,
     "spacing_grid_horizontal": 16,
     "spacing_grid_vertical": 16,
-    "animations_reveal_on_scroll": true,
+    "animations_reveal_on_scroll": false,
     "animations_hover_elements": "none",
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
@@ -110,16 +110,18 @@
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "",
     "brand_description": "<p></p>",
-    "brand_image_width": 100,
-    "social_facebook_link": "",
-    "social_instagram_link": "",
+    "brand_image": "shopify://shop_images/4f2cb7084ebbfdf9faeb0c8db4b8a526b476dc00.png",
+    "brand_image_width": 120,
+    "social_facebook_link": "https://www.facebook.com/bakedinlahore/",
+    "social_instagram_link": "https://www.instagram.com/baked_lahore/?hl=en",
     "social_youtube_link": "",
     "social_tiktok_link": "",
-    "social_twitter_link": "",
+    "social_twitter_link": "https://x.com/",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
+    "social_linkedin_link": "linkedin.com",
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
@@ -172,8 +174,8 @@
           "background": "#242424",
           "background_gradient": "",
           "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#242424",
+          "button": "#ef4f2e",
+          "button_label": "#ffffff",
           "secondary_button_label": "#ffffff",
           "shadow": "#242424"
         }
@@ -191,12 +193,23 @@
       },
       "scheme-5": {
         "settings": {
-          "background": "#334fb4",
+          "background": "#ffffff",
+          "background_gradient": "linear-gradient(101.23deg, #FFEDED 8%, #FCFAF5 43%, #F8EAE1 64%, #F9F8EA 87%)",
+          "text": "#1e1e1e",
+          "button": "#ef4f2e",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#ef4f2e",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-ccecb7f1-fda4-404b-a46b-8d3b39a2fbeb": {
+        "settings": {
+          "background": "#f4f2ec",
           "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#334fb4",
-          "secondary_button_label": "#ffffff",
+          "text": "#ef4f2e",
+          "button": "#ef4f2e",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#ef4f2e",
           "shadow": "#121212"
         }
       }
