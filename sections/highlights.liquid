@@ -1,0 +1,325 @@
+{{ 'highlights-section.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'slider-dots.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'text-slider.js' | asset_url }}" defer="defer"></script>
+{%- liquid
+  assign blocks_to_display = section.blocks.size
+
+  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+  assign show_mobile_slider = false
+  if section.settings.swipe_on_mobile and blocks_to_display > columns_mobile_int
+    assign show_mobile_slider = true
+  endif
+
+  assign show_desktop_slider = false
+  if section.settings.enable_desktop_slider and blocks_to_display > section.settings.columns_desktop
+    assign show_desktop_slider = true
+  endif
+  
+  assign actual_blocks_count = blocks_to_display
+-%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="highlight-section section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="highlight-container color-{{ section.settings.color_scheme }} gradient relative">
+      {% if section.settings.section_image != blank %} <div class="highlight-float__image"><div class="media ratio media--transparent" style="--ratio-percent: {{ 1 | divided_by: section.settings.section_image.aspect_ratio | times: 100 }}%;"> {{ section.settings.section_image | image_url: width: 1500 | image_tag: width: section.settings.section_image.width, height: section.settings.section_image.height, loading: 'lazy' }}</div></div>{% endif %}
+      <div class="highlight-head center">
+        {%- if section.settings.title != blank -%}
+          <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+      </div>
+      <div class="highlight-wrapper">
+        <slider-component class="slider-component-no-space slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" data-slides-per-view-mobile="1" data-slides-per-view-desktop="{{ section.settings.columns_desktop }}">
+          <text-slider class="highlight-text-slider">
+            {%- for block in section.blocks -%}
+              {%- if block.settings.text != blank -%}
+                <p class="f-21 b-600 highlight-wrapper-text text-slider__item rte{% if forloop.first %} active{% else %} hidden{% endif %}">
+                  {{ block.settings.text }}
+                </p>
+              {%- endif -%}
+            {%- endfor -%}
+          </text-slider>
+          <ul id="Slider-{{ section.id }}" data-id="{{ section.id }}" class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}" role="list" aria-label="{{ 'general.slider.name' | t }}">
+            {%- for block in section.blocks -%}
+              <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item highlight-animate-item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ forloop.index }};" {% endif %}>
+                <div class="highlights-grid highlights-grid__st-{{ forloop.index0 }}">
+                  {% for i in (1..3) %}
+                    {% capture image_id %}image_{{ forloop.index0 }}{% endcapture %}
+                      {% assign image = block.settings[image_id] %}
+                      {% if image != blank %}
+                        <div class="highlights-item">
+                          <div class="media ratio media--transparent" style="--ratio-percent: {{ 1 |  divided_by: image.aspect_ratio |  times: 100 }}%;">
+                            {{ image | image_url: width: 1500 | image_tag: width: image.width, height: image.height, class: 'highlights-image', loading: 'lazy' }}
+                          </div>
+                        </div>
+                      {% endif %}
+                  {% endfor %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+          {%- if show_mobile_slider or show_desktop_slider -%}
+            <div class="slider-buttons slider-buttons--cs">
+              <div class="slider-counter caption hidden">
+                <span class="slider-counter--current">1</span>
+                <span aria-hidden="true"> / </span>
+                <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+                <span class="slider-counter--total">{{ blocks_to_display }}</span>
+              </div> 
+              <slider-dots class="block">
+                <div class="slider-dots__container">
+                  {% for i in (1..actual_blocks_count) %}
+                    <div class="slider-bar {% if forloop.first %} active{% endif %}"> </div>
+                  {% endfor %}
+                </div>
+              </slider-dots>
+              <div class="slider-buttons--cs-wrap">
+                <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}" aria-controls="Slider-{{ section.id }}">
+                  <span class="svg-wrapper"> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="27" viewBox="0 0 15 27" fill="none"><path d="M14.3272 0.512734C15.0105 1.19603 15.0106 2.30384 14.3274 2.98723L5.32209 11.9953C4.61526 12.7023 4.6153 13.8484 5.32218 14.5554L14.3281 23.5627C15.0118 24.2465 15.0115 25.3551 14.3276 26.0385C13.6439 26.7217 12.536 26.7215 11.8525 26.0381L0.645398 14.8309C-0.213711 13.9718 -0.21371 12.5789 0.645399 11.7198L11.8525 0.512733C12.5359 -0.170633 13.6438 -0.170632 14.3272 0.512734Z" fill="currentColor"/></svg></span>
+                </button>
+                <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}" aria-controls="Slider-{{ section.id }}">
+                  <span class="svg-wrapper"><svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.512656 0.512734C-0.170636 1.19603 -0.17072 2.30384 0.512468 2.98723L9.51776 11.9953C10.2246 12.7023 10.2245 13.8484 9.51766 14.5554L0.511734 23.5627C-0.17193 24.2465 -0.171693 25.3551 0.512265 26.0385C1.19592 26.7217 2.30389 26.7215 2.9873 26.0381L14.1944 14.8309C15.0536 13.9718 15.0536 12.5789 14.1944 11.7198L2.98734 0.512733C2.30398 -0.170633 1.19602 -0.170632 0.512656 0.512734Z" fill="currentColor"/></svg></span>
+                </button>
+              </div>
+            </div>
+          {%- endif -%}
+        </slider-component>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  class HighlightAnimator extends HTMLElement {
+    constructor() {
+      super();
+      this.items = [];
+      this.observer = null;
+    }
+
+    connectedCallback() {
+      this.items = Array.from(document.querySelectorAll('.highlight-animate-item'));
+      this.initObserver();
+    }
+
+    initObserver() {
+      const options = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      this.observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting && !entry.target.classList.contains('highlight-animated')) {
+            const itemIndex = this.items.indexOf(entry.target);
+            entry.target.style.setProperty('--item-delay', itemIndex);
+            entry.target.classList.add('highlight-animated');
+            
+            // Animate individual images within the grid
+            const images = entry.target.querySelectorAll('.highlights-item');
+            images.forEach((img, idx) => {
+              img.style.setProperty('--image-delay', idx);
+            });
+          }
+        });
+      }, options);
+
+      this.items.forEach(item => this.observer.observe(item));
+    }
+
+    disconnectedCallback() {
+      if (this.observer) {
+        this.observer.disconnect();
+      }
+    }
+  }
+
+  customElements.define('highlight-animator', HighlightAnimator);
+</script>
+
+<highlight-animator></highlight-animator>
+
+{% schema %}
+{
+  "name": "Highlights",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section Floating Image"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },    
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "t:sections.featured-collection.settings.title.label",
+      "default": "Highlights"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.featured-collection.settings.columns_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.featured-collection.settings.full_width.label",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-collection.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.featured-collection.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.featured-collection.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.featured-collection.settings.columns_mobile.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": true,
+      "label": "t:sections.featured-collection.settings.swipe_on_mobile.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_desktop_slider",
+      "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "Highlight",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Pantry by Polo Lounge - 28th Feb, 2025"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_0",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 3"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Highlights",
+      "blocks": [
+        {
+          "type": "highlight"
+        },
+        {
+          "type": "highlight"
+        },
+        {
+          "type": "highlight"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

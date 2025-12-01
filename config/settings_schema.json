@@ -143,6 +143,26 @@
         "unit": "%",
         "label": "t:settings_schema.typography.settings.body_scale.label",
         "default": 100
+      },
+      {
+        "type": "header",
+        "content": "Primary Font"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_primary_font",
+        "default": "assistant_n4",
+        "label": "Primary font"
+      },
+      {
+        "type": "header",
+        "content": "Secondary Font"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_secondary_font",
+        "default": "assistant_n4",
+        "label": "Secondary font"
       }
     ]
   },
@@ -1356,6 +1376,11 @@
         "id": "social_vimeo_link",
         "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "Linkedin"
       }
     ]
   },

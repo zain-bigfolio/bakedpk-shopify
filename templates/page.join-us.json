@@ -1,0 +1,184 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_primary_xxx7r6": {
+      "type": "image-banner-primary",
+      "blocks": {
+        "heading_abPQFQ": {
+          "type": "heading", 
+          "settings": {
+            "heading": "<strong>Join Us</strong>",
+            "heading_size": "hxl",
+            "max_width": 35
+          }
+        }
+      },
+      "block_order": [
+        "heading_abPQFQ" 
+      ],
+      "name": "t:sections.image-banner.name_primary",
+      "settings": {
+        "image_mobile": "shopify://shop_images/bakedpk-Join_us_banner_mobile_webp.webp",
+        "image": "shopify://shop_images/bakedpk-Join_us_banner_desktop.webp",
+        "image_overlay_opacity": 70,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "multicolumn_primary_Kbfgcp": {
+      "type": "multicolumn-primary",
+      "blocks": {
+        "column_UTAyNP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1.webp",
+            "title": "Vendor Sign Up",
+            "heading_max_width": 50,
+            "text": "<p>Delivering to your doorstep! Order for now, or schedule ahead for convenience!</p>",
+            "text_max_width": 50,
+            "text_size": "f-18",
+            "link_label": "Register Now",
+            "link": "#"
+          }
+        },
+        "column_MrzEze": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Sign_Up_for_PopUp_Kitchen.webp",
+            "title": "Sign Up for PopUp Kitchen",
+            "heading_max_width": 21,
+            "text": "<p>Order and pick-up at a location most convenient for you!</p>",
+            "text_max_width": 50,
+            "text_size": "f-18",
+            "link_label": "Register Now",
+            "link": "#"
+          }
+        },
+        "column_raawME": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1_1.png",
+            "title": "PopUp at Baked",
+            "heading_max_width": 50,
+            "text": "<p>Delivering to your doorstep! Order for now, or schedule ahead for convenience!</p>",
+            "text_max_width": 35,
+            "text_size": "f-18",
+            "link_label": "Register Now",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "column_UTAyNP",
+        "column_MrzEze",
+        "column_raawME"
+      ],
+      "name": "t:sections.multicolumn.presets.name_primary",
+      "settings": {
+        "section_style": "prime",
+        "position_y_mobile": -88,
+        "position_y_desktop": -84,
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "faq_section_yM9N3p": {
+      "type": "faq-section",
+      "blocks": {
+        "faq_item_RG6p8L": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What kind of baked goods do you offer?",
+            "answer": "<p>As a baking based restaurant, we work with you to develop solutions to address your brand needs. That includes various aspects of brand planning and strategy, marketing and design.</p>"
+          }
+        },
+        "faq_item_7Ximrm": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What kind of baked goods do you offer?",
+            "answer": "<p>As a baking based restaurant, we work with you to develop solutions to address your brand needs. That includes various aspects of brand planning and strategy, marketing and design.</p>"
+          }
+        },
+        "faq_item_hHTaJz": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I sign up as a Vendor",
+            "answer": "<p>Maximize Your Sales Potential by Registering as a Vendor Now.</p>"
+          }
+        },
+        "faq_item_3EHPjK": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does BAKED provide catering services?",
+            "answer": "<p>Elevate Your Event with our Delectable Baked Treats.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_RG6p8L",
+        "faq_item_7Ximrm",
+        "faq_item_hHTaJz",
+        "faq_item_3EHPjK"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "title": "Find Out All You Need To Know",
+        "heading_size": "h0",
+        "heading_max_width": 50,
+        "answer_size": "f-16",
+        "columns_desktop": 1,
+        "show_index": true,
+        "open_first_item": false,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "float_left_image": "shopify://shop_images/Vector.svg",
+        "float_right_image": "shopify://shop_images/Group.svg",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_primary_xxx7r6",
+    "multicolumn_primary_Kbfgcp",
+    "faq_section_yM9N3p"
+  ]
+}

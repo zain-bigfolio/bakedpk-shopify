@@ -1,0 +1,84 @@
+{%- liquid
+  assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+  assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+  assign body_font_bold_lite = settings.type_body_font | font_modify: 'weight', '300'
+  assign body_font_bold_default = settings.type_body_font | font_modify: 'weight', '400'
+  assign body_font_bold_normal = settings.type_body_font | font_modify: 'weight', '500'
+  assign body_font_bold_medium = settings.type_body_font | font_modify: 'weight', '600'
+  assign body_font_bold_hard = settings.type_body_font | font_modify: 'weight', '700'
+  assign body_font_bold_super_hard = settings.type_body_font | font_modify: 'weight', '800'
+  assign body_font_bold_ultra_hard = settings.type_body_font | font_modify: 'weight', '900'
+
+  assign type_header_font = settings.type_header_font | font_modify: 'weight', 'bold'
+  assign type_header_font = settings.type_header_font | font_modify: 'style', 'italic'
+  assign header_font_bold_lite = settings.type_header_font | font_modify: 'weight', '300'
+  assign header_font_bold_normal = settings.type_header_font | font_modify: 'weight', '500'
+  assign header_font_bold_medium = settings.type_header_font | font_modify: 'weight', '600'
+  assign header_font_bold_hard = settings.type_header_font | font_modify: 'weight', '700'
+  assign header_font_bold_super_hard = settings.type_header_font | font_modify: 'weight', '800'
+  assign header_font_bold_ultra_lite = settings.type_header_font | font_modify: 'weight', '900'
+
+  assign primary_font_bold = settings.type_primary_font | font_modify: 'weight', 'bold'
+  assign primary_font_italic = settings.type_primary_font | font_modify: 'style', 'italic'
+  assign primary_font_bold_lite = settings.type_primary_font | font_modify: 'weight', '300'
+  assign primary_font_bold_normal = settings.type_primary_font | font_modify: 'weight', '500'
+  assign primary_font_bold_medium = settings.type_primary_font | font_modify: 'weight', '600'
+  assign primary_font_bold_hard = settings.type_primary_font | font_modify: 'weight', '700'
+  assign primary_font_bold_super_hard = settings.type_primary_font | font_modify: 'weight', '800'
+  assign primary_font_bold_ultra_hard = settings.type_primary_font | font_modify: 'weight', '900'
+
+  assign secondary_font_bold = settings.type_secondary_font | font_modify: 'weight', 'bold'
+  assign secondary_font_italic = settings.type_secondary_font | font_modify: 'style', 'italic'
+  assign secondary_font_bold_lite = settings.type_secondary_font | font_modify: 'weight', '300'
+  assign secondary_font_bold_normal = settings.type_secondary_font | font_modify: 'weight', '500'
+  assign secondary_font_bold_medium = settings.type_secondary_font | font_modify: 'weight', '600'
+  assign secondary_font_bold_hard = settings.type_secondary_font | font_modify: 'weight', '700'
+  assign secondary_font_bold_super_hard = settings.type_secondary_font | font_modify: 'weight', '800'
+  assign secondary_font_bold_ultra_hard = settings.type_secondary_font | font_modify: 'weight', '900'
+-%}
+
+{%- style -%}
+  {{ settings.type_body_font | font_face: font_display: 'swap' }}
+  {{ body_font_bold | font_face: font_display: 'swap' }}
+  {{ body_font_italic | font_face: font_display: 'swap' }}
+  {{ settings.type_header_font | font_face: font_display: 'swap' }}
+
+  {{ body_font_bold_lite | font_face: font_display: 'swap' }}
+  {{ body_font_bold_default | font_face: font_display: 'swap' }}
+  {{ body_font_bold_normal | font_face: font_display: 'swap' }}
+  {{ body_font_bold_medium | font_face: font_display: 'swap' }}
+  {{ body_font_bold_hard | font_face: font_display: 'swap' }}
+  {{ body_font_bold_super_hard | font_face: font_display: 'swap' }}
+  {{ body_font_bold_ultra_hard | font_face: font_display: 'swap' }}
+{{ settings.type_header_font | font_face: font_display: 'swap' }}
+{{ type_header_font | font_face: font_display: 'swap' }}
+{{ type_header_font | font_face: font_display: 'swap' }}
+{{ settings.type_header_font | font_face: font_display: 'swap' }}
+
+{{ header_font_bold_lite | font_face: font_display: 'swap' }}
+{{ header_font_bold_normal | font_face: font_display: 'swap' }}
+{{ header_font_bold_medium | font_face: font_display: 'swap' }}
+{{ header_font_bold_hard | font_face: font_display: 'swap' }}
+{{ header_font_bold_super_hard | font_face: font_display: 'swap' }}
+{{ header_font_bold_ultra_lite | font_face: font_display: 'swap' }}
+
+{{ settings.type_primary_font | font_face: font_display: 'swap' }}
+{{ primary_font_bold | font_face: font_display: 'swap' }}
+{{ primary_font_italic | font_face: font_display: 'swap' }}
+{{ primary_font_bold_lite | font_face: font_display: 'swap' }}
+{{ primary_font_bold_normal | font_face: font_display: 'swap' }}
+{{ primary_font_bold_medium | font_face: font_display: 'swap' }}
+{{ primary_font_bold_hard | font_face: font_display: 'swap' }}
+{{ primary_font_bold_super_hard | font_face: font_display: 'swap' }}
+{{ primary_font_bold_ultra_hard | font_face: font_display: 'swap' }}
+
+{{ settings.type_secondary_font | font_face: font_display: 'swap' }}
+{{ secondary_font_bold | font_face: font_display: 'swap' }}
+{{ secondary_font_italic | font_face: font_display: 'swap' }}
+{{ secondary_font_bold_lite | font_face: font_display: 'swap' }}
+{{ secondary_font_bold_normal | font_face: font_display: 'swap' }}
+{{ secondary_font_bold_medium | font_face: font_display: 'swap' }}
+{{ secondary_font_bold_hard | font_face: font_display: 'swap' }}
+{{ secondary_font_bold_super_hard | font_face: font_display: 'swap' }}
+{{ secondary_font_bold_ultra_hard | font_face: font_display: 'swap' }}
+{%- endstyle -%}

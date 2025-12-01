@@ -1,0 +1,540 @@
+{{'featured-blog-prime.css' | asset_url | stylesheet_tag}}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  .section-{{ section.id }}-margin {
+    padding-top: {{ section.settings.margin_top_mobile }}px;
+    padding-bottom: {{ section.settings.margin_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .section-{{ section.id }}-margin {
+      padding-top: {{ section.settings.margin_top }}px;
+      padding-bottom: {{ section.settings.margin_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<featured-blog-prime class="section-{{ section.id }}-margin">
+  <div class="ft-cols section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} isolate gradient">
+    <div class="page-width">
+      {%- unless section.settings.heading == blank -%}
+        <div class="title-wrapper-with-link center title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
+          <h2 id="SectionHeading-{{ section.id }}" class="blog__title b-900 inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %}>
+            {{ section.settings.heading }}
+          </h2>
+        </div>
+      {%- endunless -%}
+      
+      <div class="ft-cols-list">
+        {%- for block in section.blocks -%}
+          <div class="ft-cols__group" {{ block.shopify_attributes }}>
+            {%- if block.settings.image_1 != blank or block.settings.title_1 != blank or block.settings.excerpt_1 != blank -%}
+              <div class="ft-cols__item">
+                <div class="cr-cols color-{{ section.settings.color_scheme_card }} gradient" style="--ratio-percent: {{ 1 |  divided_by: block.settings.image_1.aspect_ratio | times: 100 }}%;" data-aos="fade-{{ block.settings.aos_animation_1 }}">
+                  <div class="cr-cols-wrapper">
+                    {%- if block.settings.image_1 != blank -%}
+                      <div class="cr-cols__media media">
+                        {{ block.settings.image_1 | image_url: width: 1200 | image_tag: loading: 'lazy', width: block.settings.image_1.width, height: block.settings.image_1.height, sizes: '(min-width: 990px) 400px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)', widths: '165, 360, 535, 750, 1070, 1500' }}
+                      </div>
+                    {%- else -%}
+                      <div class="cr-cols__media media">
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                      </div>
+                    {%- endif -%}
+                    
+                    <div class="cr-cols__content cr-cols__content--{{ block.settings.position_1 }}">
+                      <div class="cr-col__content-inner" style="--max-width: {{ block.settings.max_width_1 }}rem;">
+                        {%- if block.settings.title_1 != blank -%}
+                          <h3 class="cr-cols__title b-700 h2">{{ block.settings.title_1 }}</h3>
+                        {%- endif -%}
+                        
+                        {%- if block.settings.excerpt_1 != blank -%}
+                          <div class="cr-cols__excerpt rte">{{ block.settings.excerpt_1 }}</div>
+                        {%- endif -%}
+                        
+                        {%- if block.settings.date_1 != blank -%}
+                          <div class="cr-cols__meta">
+                            <time>{{ block.settings.date_1 }}</time>
+                          </div>
+                        {%- endif -%}
+                        
+                        {%- if block.settings.link_1 != blank and block.settings.button_label_1 != blank -%}
+                          <a href="{{ block.settings.link_1 }}" class="cr-cols__link b-700 button button--primary gap-m">
+                            {{ block.settings.button_label_1 }}
+                            {%  render 'icon-pack', icon: 'round-caret' %}
+                          </a>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+            
+            {%- if block.settings.image_2 != blank or block.settings.title_2 != blank or block.settings.excerpt_2 != blank -%}
+              <div class="ft-cols__item">
+                <div class="cr-cols color-{{ section.settings.color_scheme_card }} gradient" style="--ratio-percent: {{ 1 |  divided_by: block.settings.image_2.aspect_ratio | times: 100 }}%;" data-aos="fade-{{ block.settings.aos_animation_2}}">
+                  <div class="cr-cols-wrapper">
+                    {%- if block.settings.image_2 != blank -%}
+                      <div class="cr-cols__media media">
+                        {{
+                          block.settings.image_2
+                          | image_url: width: 1200
+                          | image_tag:
+                            loading: 'lazy',
+                            width: block.settings.image_2.width,
+                            height: block.settings.image_2.height,
+                            sizes: '(min-width: 990px) 400px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)',
+                            widths: '165, 360, 535, 750, 1070, 1500'
+                        }}
+                      </div>
+                    {%- else -%}
+                      <div class="cr-cols__media media">
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                      </div>
+                    {%- endif -%}
+                    
+                    <div class="cr-cols__content cr-cols__content--{{ block.settings.position_2 }}">
+                      <div class="cr-col__content-inner" style="--max-width: {{ block.settings.max_width_2 }}rem;">
+                        {%- if block.settings.title_2 != blank -%}
+                          <h3 class="cr-cols__title b-700 h2">
+                            {{ block.settings.title_2 }}
+                          </h3>
+                        {%- endif -%}
+                        
+                        {%- if block.settings.excerpt_2 != blank -%}
+                          <div class="cr-cols__excerpt rte">
+                            {{ block.settings.excerpt_2 }}
+                          </div>
+                        {%- endif -%}
+                        
+                        {%- if block.settings.date_2 != blank -%}
+                          <div class="cr-cols__meta">
+                            <time>{{ block.settings.date_2 }}</time>
+                          </div>
+                        {%- endif -%}
+                        
+                        {%- if block.settings.link_2 != blank and block.settings.button_label_2 != blank -%}
+                          <a href="{{ block.settings.link_2 }}" class="cr-cols__link b-700 button button--primary gap-m">
+                            {{ block.settings.button_label_2 }}
+                            {% render 'icon-pack', icon: 'round-caret' %}
+                          </a>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</featured-blog-prime>
+
+{% schema %}
+{
+  "name": "Featured Blog Prime",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Blog",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme_card",
+      "label": "Card Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 27
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 27
+    },
+    {
+      "type": "header",
+      "content": "Desktop Margin"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Mobile Margin"
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article_pair",
+      "name": "Article Pair",
+      "settings": [
+        {
+          "type": "header",
+          "content": "First Article"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title_1",
+          "label": "Title",
+          "default": "Article Title"
+        },
+        {
+          "type": "richtext",
+          "id": "excerpt_1",
+          "label": "Excerpt",
+          "default": "<p>Article excerpt goes here</p>"
+        },
+        {
+          "type": "text",
+          "id": "date_1",
+          "label": "Date",
+          "default": "January 1, 2024"
+        },
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "label": "Button Label",
+          "default": "Read More"
+        },
+        {
+          "type": "select",
+          "id": "position_1",
+          "label": "Content Position",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "Top Left"
+            },
+            {
+              "value": "top-center",
+              "label": "Top Center"
+            },
+            {
+              "value": "top-right",
+              "label": "Top Right"
+            },
+            {
+              "value": "middle-left",
+              "label": "Middle Left"
+            },
+            {
+              "value": "middle-center",
+              "label": "Middle Center"
+            },
+            {
+              "value": "middle-right",
+              "label": "Middle Right"
+            },
+            {
+              "value": "bottom-left",
+              "label": "Bottom Left"
+            },
+            {
+              "value": "bottom-center",
+              "label": "Bottom Center"
+            },
+            {
+              "value": "bottom-right",
+              "label": "Bottom Right"
+            }
+          ],
+          "default": "bottom-left"
+        },
+        {
+          "type": "range",
+          "id": "max_width_1",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "rem",
+          "label": "Content Max Width",
+          "default": 50
+        },
+        {
+          "type": "select",
+          "id": "aos_animation_1",
+          "label": "Animation Direction",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "header",
+          "content": "Second Article"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title_2",
+          "label": "Title",
+          "default": "Article Title"
+        },
+        {
+          "type": "richtext",
+          "id": "excerpt_2",
+          "label": "Excerpt",
+          "default": "<p>Article excerpt goes here</p>"
+        },
+        {
+          "type": "text",
+          "id": "date_2",
+          "label": "Date",
+          "default": "January 1, 2024"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "label": "Button Label",
+          "default": "Read More"
+        },
+        {
+          "type": "select",
+          "id": "position_2",
+          "label": "Content Position",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "Top Left"
+            },
+            {
+              "value": "top-center",
+              "label": "Top Center"
+            },
+            {
+              "value": "top-right",
+              "label": "Top Right"
+            },
+            {
+              "value": "middle-left",
+              "label": "Middle Left"
+            },
+            {
+              "value": "middle-center",
+              "label": "Middle Center"
+            },
+            {
+              "value": "middle-right",
+              "label": "Middle Right"
+            },
+            {
+              "value": "bottom-left",
+              "label": "Bottom Left"
+            },
+            {
+              "value": "bottom-center",
+              "label": "Bottom Center"
+            },
+            {
+              "value": "bottom-right",
+              "label": "Bottom Right"
+            }
+          ],
+          "default": "bottom-left"
+        },
+        {
+          "type": "range",
+          "id": "max_width_2",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "rem",
+          "label": "Content Max Width",
+          "default": 50
+        },
+        {
+          "type": "select",
+          "id": "aos_animation_2",
+          "label": "Animation Direction",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Blog Prime",
+      "blocks": [
+        {
+          "type": "article_pair"
+        },
+        {
+          "type": "article_pair"
+        },
+        {
+          "type": "article_pair"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+

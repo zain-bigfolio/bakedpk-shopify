@@ -1,0 +1,10 @@
+<div class="text-card">
+  {% if top_content != blank %}<div class="text-card-top"></div>{% endif %}
+  <div class="text-card-body">
+    {%- if icon != blank -%}<div class="text-card__icon"><div class="nmedia--transparent media ratio" style="--ratio-percent: {{ 1 |  divided_by: icon.aspect_ratio | times: 100 }}%;">{{  icon | image_url: width: 150 | image_tag: loading: 'lazy', width: icon.width, height: icon.height }}</div></div>{%- endif -%}
+    {% if heading != blank %}<div class="text-card__heading {{ heading_class }}">{{ heading }}</div>{% endif %}
+  </div>
+  {% if text_content != blank %}
+    <div class="text-card-footer rte">{{ text_content }}</div>
+  {% endif %}
+</div>

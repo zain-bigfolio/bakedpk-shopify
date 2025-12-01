@@ -404,3 +404,6 @@ quick-add-bulk .quantity__input {
 .quantity__input-disabled {
   pointer-events: none;
 }
+
+
+.quick-add__submit.f-14{--letter-spacing: calc(var(--font-size) * (-4 / 100));}

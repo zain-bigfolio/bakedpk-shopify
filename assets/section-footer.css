@@ -119,6 +119,7 @@
     display: block;
     margin-top: 0;
   }
+  .footer-block.flex{display: flex;}
 }
 
 .footer-block:empty {
@@ -506,3 +507,10 @@
     }
   }
 }
+
+
+.footer-block__details-content .footer__list-social{justify-content: flex-start;padding: 0rem;}
+.footer-block__details-content .footer__list-social li{border: 1px solid #1E1E1E;border-radius: 8px;}
+.footer-block__details-content .footer__list-social li a{padding: 0.8rem;color: rgba(var(--color-foreground), 1);border-radius: 7px;}
+.footer-block__details-content .footer__list-social li a:hover{background: black;color: white;}
+.footer__list-social{gap: 1rem;}

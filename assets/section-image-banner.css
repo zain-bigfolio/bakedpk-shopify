@@ -490,3 +490,23 @@
     color: currentColor;
   }
 }
+
+
+.banner__box .banner__text.rte,
+.banner__box .banner__heading{ max-width: var(--max-width); }
+.banner--content-align-right .banner__heading,
+.banner--content-align-right .banner__text.rte{ margin-left: auto; margin-right: 0; }
+.banner--content-align-center .banner__heading,
+.banner--content-align-center .banner__text.rte{ margin-right: auto; margin-left: auto; }
+
+@media screen and (max-width: 750px) {
+  .banner--content-align-mobile-right .banner__heading,
+  .banner--content-align-mobile-right .banner__text.rte{ margin-right: 0; margin-left: auto; }
+  .banner--content-align-mobile-center .banner__heading,
+  .banner--content-align-mobile-center .banner__text.rte{ margin-right: auto; margin-left: auto; }
+  .banner__content-mobile--bottom{align-items: flex-end;}
+  .banner__content-mobile--top{align-items: flex-start;}
+}
+
+.banner__media video{ object-fit: cover; pointer-events: all;}
+.banner__media-contains video{ object-fit: contain; }

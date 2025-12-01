@@ -1,0 +1,226 @@
+{{ 'notice-board.css' | asset_url | stylesheet_tag }}
+<script defer="defer" src="{{ 'notice-board.js' | asset_url }}"></script>
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="notice-board section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="notice-board__container page-width" style="--background-image: url('{{ section.settings.background_image | img_url: 'master' }}');">
+    <div class="notice-board__inner" style="--padding-bottom: {{ section.settings.padding_bottom_inner }}rem;">
+      {%- if section.settings.title != blank -%}
+        <div class="notice-board__header center">
+          <h2 class="notice-board__title {{ section.settings.heading_size }}">{{ section.settings.title }}</h2>
+          {% if section.settings.subtitle != blank %}<p class="f-19 b-800">{{ section.settings.subtitle }}</p>{% endif %}
+        </div>
+      {%- endif -%}
+  
+      <div class="notice-board__grid grid grid--1-col grid--1-col-tablet grid--2-col-desktop">
+        {%- for block in section.blocks -%}
+          <div class="notice-board__item-wrapper grid__item" {{ block.shopify_attributes }}>
+            <div class="notice-board__item relative">
+              {% comment %} PIN {% endcomment %}
+              {% if section.settings.pin != blank %}<div class="notice-board__pin media ratio media--transparent" style="--ratio-percent: {{ 1 |  divided_by: section.settings.pin.aspect_ratio | times: 100 }}%;">{{  section.settings.pin | image_url: width: 600 | image_tag: loading: 'lazy', width: block.settings.icon.width, height: block.settings.icon.height }}</div>{% endif %}
+              <div class="notice-board__card" style="--card-rotation: {{ block.settings.rotation }}deg;">
+                <div class="notice-board__card-left relative">
+                  {%- if block.settings.icon != blank -%}
+                    <div class="notice-board__icon media--transparent media ratio" style="--ratio-percent: {{ 1 |  divided_by: block.settings.icon.aspect_ratio | times: 100 }}%;">
+                      {{  block.settings.icon | image_url: width: 150 | image_tag: loading: 'lazy', width: block.settings.icon.width, height: block.settings.icon.height }}
+                    </div>
+                  {%- endif -%}
+  
+                  {%- if block.settings.heading != blank -%}
+                    <h3 class="notice-board__heading h2 uppercase b-900">
+                      {{ block.settings.heading }}
+                    </h3>
+                  {%- endif -%}
+  
+                  {%- if block.settings.description != blank -%}
+                    <div class="notice-board__description f-14 rte">
+                      {{ block.settings.description }}
+                    </div>
+                  {%- endif -%}
+                </div>
+  
+                <div class="notice-board__card-right">
+                  {%- if block.settings.image != blank -%}
+                    <div class="notice-board__image media ratio" style="--ratio-percent: {{ 1 |  divided_by: block.settings.image.aspect_ratio | times: 100 }}%;">
+                      {{  block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', width: block.settings.image.width, height: block.settings.image.height }}
+                    </div>
+                  {%- else -%}
+                    <div class="notice-board__image">
+                      {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Notice Board",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "pin",
+      "label": "Pin"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Latest Updates"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "@Popup Kitchen"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_inner",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "rem",
+      "label": "padding bottom inside notice board (rem)",
+      "default": 17
+    }
+  ],
+  "blocks": [
+    {
+      "type": "notice",
+      "name": "Notice Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "PICKLED."
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Get ready to have a pick-ilary experience this Thursday in DHA Phase 5, Lahore.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "range",
+          "id": "rotation",
+          "min": -10,
+          "max": 10,
+          "step": 1,
+          "unit": "deg",
+          "label": "Card Rotation",
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Notice Board",
+      "blocks": [
+        {
+          "type": "notice"
+        },
+        {
+          "type": "notice"
+        },
+        {
+          "type": "notice"
+        },
+        {
+          "type": "notice"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

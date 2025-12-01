@@ -1,0 +1,193 @@
+{{ 'statistics.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'stat-counter.js' | asset_url }}" defer="defer"></script>
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="stats--section" data-aos="fade-up">
+  <div class="section-{{ section.id }}-padding">
+     <div class="page-width color-{{ section.settings.color_scheme }} isolate gradient relative">
+      {% if section.settings.section_image != blank %} <div class="stats-float__top-right"><div class="media ratio media--transparent" style="--ratio-percent: {{ 1 | divided_by: section.settings.section_image.aspect_ratio | times: 100 }}%;"> {{ section.settings.section_image | image_url: width: 1500 | image_tag: width: section.settings.section_image.width, height: section.settings.section_image.height, loading: 'lazy' }}</div></div>{% endif %}
+      <div class="stats-wrapper">
+        <div class="stats-grid">
+          <div class="stats-grid__item">
+            <h2 class="{{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+          </div>
+          <div class="stats-grid__item">
+            <stat-counter class="grid grid--3-col-desktop grid--1-col-tablet">
+              {% for block in section.blocks  %}
+              <div class="grid__item stats-item__content" {{ block.shopify_attributes }}>
+                <h3 class="stats-number" data-number="{{ block.settings.number }}" data-text="{{ block.settings.number_text }}">0{{ block.settings.number_text }}</h3>
+                <div class="stats-icon-text">
+                  {% if block.settings.icon %}{{ block.settings.icon | image_url: width: 150 | image_tag: loading: 'lazy', width: block.settings.icon.width, height: block.settings.icon.height }}{% endif %}
+                  <p class="f-16 b-500">{{ block.settings.text }}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </stat-counter>
+          </div>
+        </div>
+      </div>
+      {% if section.settings.section_image_1 != blank %} <div class="stats-float__bottom-left"><div class="media ratio media--transparent" style="--ratio-percent: {{ 1 | divided_by: section.settings.section_image_1.aspect_ratio | times: 100 }}%;"> {{ section.settings.section_image_1 | image_url: width: 1500 | image_tag: width: section.settings.section_image_1.width, height: section.settings.section_image_1.height, loading: 'lazy' }}</div></div>{% endif %}
+      {% if section.settings.section_image_3 != blank %} <div class="stats-float__bottom-bottom"><div class="media ratio media--transparent" style="--ratio-percent: {{ 1 | divided_by: section.settings.section_image_3.aspect_ratio | times: 100 }}%;"> {{ section.settings.section_image_3 | image_url: width: 1500 | image_tag: width: section.settings.section_image_3.width, height: section.settings.section_image_3.height, loading: 'lazy' }}</div></div>{% endif %}
+     </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Statistics",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section Floating Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image_1",
+      "label": "Section Floating Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image_3",
+      "label": "Section Floating Image 3"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Impact"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "statistic",
+      "name": "Statistic",
+      "settings": [
+        {
+          "type": "number",
+          "id": "number",
+          "label": "Number",
+          "default": 100
+        },
+        {
+          "type": "text",
+          "id": "number_text",
+          "label": "Number Text/Suffix",
+          "default": "+",
+          "info": "Text to display after the number (e.g., +, K, M, %)"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Description",
+          "default": "Happy Customers"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Statistics",
+      "blocks": [
+        {
+          "type": "statistic",
+          "settings": {
+            "number": 500,
+            "number_text": "+",
+            "text": "Happy Customers"
+          }
+        },
+        {
+          "type": "statistic",
+          "settings": {
+            "number": 50,
+            "number_text": "+",
+            "text": "Products"
+          }
+        },
+        {
+          "type": "statistic",
+          "settings": {
+            "number": 100,
+            "number_text": "%",
+            "text": "Quality"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

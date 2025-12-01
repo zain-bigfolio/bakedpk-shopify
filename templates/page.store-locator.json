@@ -1,0 +1,130 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ * 
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_primary_gHbWQr": {
+      "type": "image-banner-primary",
+      "blocks": {
+        "heading_pXXgNU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Store Locator",
+            "heading_size": "hxl",
+            "max_width": 35
+          }
+        },
+        "text_p4MahB": {
+          "type": "text",
+          "settings": {
+            "text": "Find Locations of all our branches",
+            "text_style": "body",
+            "font_size": "f-16",
+            "max_width": 54
+          }
+        }
+      }, 
+      "block_order": [
+        "heading_pXXgNU",
+        "text_p4MahB"
+      ],
+      "name": "t:sections.image-banner.name_primary",
+      "settings": {
+        "image_mobile": "shopify://shop_images/bakedpk-Join_us_banner_mobile_webp.webp",
+        "image": "shopify://shop_images/bakedpk-Join_us_banner_desktop.webp",
+        "image_overlay_opacity": 70,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "store_locater_6wgxfJ": {
+      "type": "store-locater",
+      "blocks": {
+        "store_ecEmtx": {
+          "type": "store",
+          "settings": {
+            "store_name": "Baked DHA Phase 6",
+            "address": "10 A, Sector A DHA Phase 6, Lahore",
+            "hours": "11:00 AM to 11:00 PM",
+            "phone": "+92 XXXXXX",
+            "map_url": "#",
+            "map_image": "shopify://shop_images/Rectangle_45347.png"
+          }
+        },
+        "store_CCEW3r": {
+          "type": "store",
+          "settings": {
+            "store_name": "Baked DHA Phase 6",
+            "address": "10 A, Sector A DHA Phase 6, Lahore",
+            "hours": "11:00 AM to 11:00 PM",
+            "phone": "+92 XXXXXX",
+            "map_url": "#",
+            "map_image": "shopify://shop_images/Rectangle_45347.png"
+          }
+        },
+        "store_VRGFDK": {
+          "type": "store",
+          "settings": {
+            "store_name": "Baked DHA Phase 6",
+            "address": "10 A, Sector A DHA Phase 6, Lahore",
+            "hours": "11:00 AM to 11:00 PM",
+            "phone": "+92 XXXXXX",
+            "map_url": "#",
+            "map_image": "shopify://shop_images/Rectangle_45347.png"
+          }
+        },
+        "store_p4JtUU": {
+          "type": "store",
+          "settings": {
+            "store_name": "Baked DHA Phase 6",
+            "address": "10 A, Sector A DHA Phase 6, Lahore",
+            "hours": "11:00 AM to 11:00 PM",
+            "phone": "+92 XXXXXX",
+            "map_url": "#",
+            "map_image": "shopify://shop_images/Rectangle_45347.png"
+          }
+        }
+      },
+      "block_order": [
+        "store_ecEmtx",
+        "store_CCEW3r",
+        "store_VRGFDK",
+        "store_p4JtUU"
+      ],
+      "name": "Store Locator",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_primary_gHbWQr",
+    "store_locater_6wgxfJ"
+  ]
+}

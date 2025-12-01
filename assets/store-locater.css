@@ -1,0 +1,87 @@
+.store-locater__item {
+  display: grid;
+  grid-template-columns: 32.65% 65.64%;
+  gap: 1.6rem;
+}
+
+.store-locater-section-wrapper {
+  max-width: 103rem;
+  margin: 0 auto;
+}
+
+.store-locater__info {
+  border: 1px solid #1E1E1E1F;
+  padding: 2rem 2.6rem;
+  border-radius: 2.4rem;
+  background: rgba(30, 30, 30, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.store-locater__map {
+  border-radius: 24px;
+  border: 1px solid rgba(230, 230, 230, 1);
+}
+
+.store-locater__list>div:not(:last-child) {
+  margin-bottom: 4.8rem;
+}
+
+.store-locater__details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.store-locater__name {
+  margin-bottom: 0rem;
+  margin-top: 2.5rem;
+}
+
+.store-locater__button {
+  margin-top: auto;
+}
+
+.store-locater__address {
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 128%;
+  color: rgba(30, 30, 30, 0.8);
+}
+
+.store-locater__phone,
+.store-locater__hours {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.store-locater__hours svg,
+.store-locater__phone svg {
+  height: 1.7rem;
+  width: fit-content;
+}
+
+.store-locater__icon {
+  max-width: 2.4rem;
+  display: flex;
+}
+
+.store-locater__address {
+  max-width: 21rem;
+}
+
+.store-locater__button {
+  --font-size: 1.2rem;
+  font-size: var(--font-size);
+  --letter-spacing: calc(var(--font-size) * (-1 / 100));
+  letter-spacing: var(--letter-spacing);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+}
