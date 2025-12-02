@@ -222,8 +222,8 @@
   .stats-grid__item>h2 {
     font-size: 3.2rem;
     text-align: center;
-    letter-spacing: calc(3.2rem * (-3 / 100));
-    line-height: 135%;
+    letter-spacing: calc(3.2rem * (0 / 100));
+    /* line-height: 135%; */
     margin-bottom: 2.5rem;
   }
 
@@ -284,6 +284,7 @@
 .stats--section {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+  overflow: hidden;
 }
 
 

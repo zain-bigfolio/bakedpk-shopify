@@ -61,14 +61,14 @@
             endif
           -%}
           <div
-            class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class="footer__blocks-wrapper grid grid--1-col grid--1-col grid--1-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
             {% endif %}
           >
             {%- assign link_list_blocks = section.blocks | where: "type", "link_list" -%}
             {%- if link_list_blocks.size > 0 -%}
-              <div class="footer-block grid__item footer-block--navigation-wrapper grid--4-col-desktop grid--1-col-tablet-down grid flex">
+              <div class="footer-block grid__item footer-block--navigation-wrapper grid--4-col-desktop grid--2-col-tablet-down grid flex">
                 {%- for block in link_list_blocks -%}
                   <div
                     class="footer-block--menu grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -79,7 +79,7 @@
                     {% endif %}
                   >
                     {%- if block.settings.heading != blank -%}
-                      <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
+                      <h2 class="footer-block__heading inline-richtext b-600">{{- block.settings.heading -}}</h2>
                     {%- endif -%}
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-block__details-content list-unstyled">
@@ -87,7 +87,7 @@
                           <li>
                             <a
                               href="{{ link.url }}"
-                              class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                              class="link link--text list-menu__item f-14 list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
                             >
                               {{ link.title | escape }}
                             </a>
@@ -103,7 +103,7 @@
             {%- for block in section.blocks -%}
               {%- unless block.type == 'link_list' -%}
                 <div
-                  class="footer-block grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  class="footer-block {{ block.type }} grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {{ block.shopify_attributes }}
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
@@ -111,7 +111,7 @@
                   {% endif %}
                 >
                   {%- if block.settings.heading != blank -%}
-                    <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
+                    <h2 class="footer-block__heading inline-richtext b-700">{{- block.settings.heading -}}</h2>
                   {%- endif -%}
 
                   {%- case block.type -%}
@@ -125,22 +125,9 @@
                     {%- when 'brand_information' -%}
                       <div class="footer-block__brand-info">
                         {%- if settings.brand_image != blank -%}
-                          {%- assign brand_image_height = settings.brand_image_width
-                            | divided_by: settings.brand_image.aspect_ratio
-                          -%}
-                          <div
-                            class="footer-block__image-wrapper"
-                            style="max-width: min(100%, {{ settings.brand_image_width }}px);"
-                          >
-                            {{
-                              settings.brand_image
-                              | image_url: width: 1100
-                              | image_tag:
-                                loading: 'lazy',
-                                widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
-                                height: brand_image_height,
-                                width: settings.brand_image_width
-                            }}
+                          {%- assign brand_image_height = settings.brand_image_width | divided_by: settings.brand_image.aspect_ratio -%}
+                          <div class="footer-block__image-wrapper" style="max-width: min(100%, {{ settings.brand_image_width }}px);">
+                            {{ settings.brand_image | image_url: width: 1100 | image_tag: loading: 'lazy', widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100', height: brand_image_height, width: settings.brand_image_width}}
                           </div>
                         {%- endif -%}
                         {%- if settings.brand_headline != blank -%}
@@ -152,6 +139,38 @@
                         {%- if block.settings.show_social and has_social_icons -%}
                           {%- render 'social-icons', class: 'footer__list-social' -%}
                         {%- endif -%}
+                        <div class="footer-ft__icons">
+                          {%- if block.settings.icon_1 != blank or block.settings.text_1 != blank -%}
+                            <div class="footer-ft__icon-item">
+                              {%- if block.settings.icon_1 != blank -%}
+                                <img src="{{ block.settings.icon_1 | image_url: width: 24 }}" alt="{{ block.settings.text_1 }}" width="24" height="24" loading="lazy">
+                              {%- endif -%}
+                              {%- if block.settings.text_1 != blank -%}
+                                <span class="f-14">{{ block.settings.text_1 }}</span>
+                              {%- endif -%}
+                            </div>
+                          {%- endif -%}
+                          {%- if block.settings.icon_2 != blank or block.settings.text_2 != blank -%}
+                            <div class="footer-ft__icon-item">
+                              {%- if block.settings.icon_2 != blank -%}
+                                <img src="{{ block.settings.icon_2 | image_url: width: 24 }}" alt="{{ block.settings.text_2 }}" width="24" height="24" loading="lazy">
+                              {%- endif -%}
+                              {%- if block.settings.text_2 != blank -%}
+                                <span class="f-14">{{ block.settings.text_2 }}</span>
+                              {%- endif -%}
+                            </div>
+                          {%- endif -%}
+                          {%- if block.settings.icon_3 != blank or block.settings.text_3 != blank -%}
+                            <div class="footer-ft__icon-item">
+                              {%- if block.settings.icon_3 != blank -%}
+                                <img src="{{ block.settings.icon_3 | image_url: width: 24 }}" alt="{{ block.settings.text_3 }}" width="24" height="24" loading="lazy">
+                              {%- endif -%}
+                              {%- if block.settings.text_3 != blank -%}
+                                <span class="f-14">{{ block.settings.text_3 }}</span>
+                              {%- endif -%}
+                            </div>
+                          {%- endif -%}
+                        </div>
                       </div>
                     {%- when 'image' -%}
                       <div class="footer-block__details-content footer-block-image {{ block.settings.alignment }}">
@@ -190,7 +209,7 @@
           {%- if section.settings.newsletter_enable -%}
             <div class="footer-block__newsletter">
               {%- if section.settings.newsletter_heading != blank -%}
-                <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
+                <h2 class="footer-block__heading inline-richtext b-700">{{ section.settings.newsletter_heading }}</h2>
               {%- endif -%}
               {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                 <input type="hidden" name="contact[tags]" value="newsletter">
@@ -324,15 +343,15 @@
         <small class="copyright__content"
           >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
         </small>
-        <small class="copyright__content">{{ powered_by_link }}</small>
+        <small class="copyright__content"><a target="_blank" rel="nofollow" href="https://bigfolio.co/">Developed by Bigfolio</a></small>
+        {% comment %} <small class="copyright__content">{{ powered_by_link }}</small>
+        <small class="copyright__content">Developed by Bigfolio</small> {% endcomment %}
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">
             {%- for policy in shop.policies -%}
               {%- if policy != blank -%}
                 <li>
-                  <small class="copyright__content"
-                    ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
-                  >
+                  <small class="copyright__content"><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small>
                 </li>
               {%- endif -%}
             {%- endfor -%}
@@ -382,6 +401,50 @@
           "default": true,
           "label": "t:sections.footer.blocks.brand_information.settings.show_social.label",
           "info": "t:sections.footer.blocks.brand_information.settings.show_social.info"
+        },
+        {
+          "type": "header",
+          "content": "Icon 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text",
+          "default": "+92 XXXXXX"
+        },
+        {
+          "type": "header",
+          "content": "Icon 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text",
+          "default": "baked@gmail.com"
+        },
+        {
+          "type": "header",
+          "content": "Icon 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text"
         }
       ]
     },

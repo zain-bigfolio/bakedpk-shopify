@@ -100,29 +100,6 @@
 }
 
 
-.slider-bar {
-  background-color: rgba(208, 208, 208, 1);
-  width: 8px;
-  height: 8px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: width .3s ease-in-out;
-}
-
-.slider-dots__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.slider-bar.active {
-  background-color: rgba(62, 51, 46, 1);
-  width: 24px;
-  border-radius: 4px;
-}
-
 .highlight-wrapper-text {
   color: rgba(30, 30, 30, 0.8);
   text-align: center;

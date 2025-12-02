@@ -177,7 +177,7 @@
 }
 
 .notice-board__container {
-  padding: 0 2.5rem;
+  padding: 0 2rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -298,3 +298,4 @@
     --grid-desktop-horizontal-spacing: 5rem;
   }
 }
+.notice-board {overflow: hidden;}

@@ -1,0 +1,27 @@
+/* Responsive aspect ratio for adapt height */
+.image-with-text__media--adapt {
+  padding-bottom: var(--desktop-ratio-percent);
+}
+
+.iwt-slider{border-radius: 24px;}
+.iwt-slider-list .image-with-text__media img{object-fit: contain;object-position: right;}
+.iwt-slider .slider-buttons--prime .slider-buttons--cs-wrap{transform: translate(-50%, -50%);max-width: calc(100% - 3rem);z-index: 2;}
+.iwt-slider .iwt-slider-item{margin-left: 0rem;--desktop-margin-left-first-item: 0px;scroll-margin-left: 0px;width: calc((100% - var(--grid-desktop-horizontal-spacing))) !important;max-width: calc((100% - var(--grid-desktop-horizontal-spacing))) !important;}
+  .iwt-slider .image-with-text__heading + .image-with-text__text--caption{margin-top: 1rem;font-size: calc(var(--font-heading-scale) * 2.5rem);}
+.iwt-slider .image-with-text__text--caption{max-width: 51rem;}
+@media screen and (min-width: 750px) {
+   .iwt-slider .slider--desktop:after{margin-left: -5rem !important;}
+}
+.iwt-slider .image-with-text__media{min-height: auto;}
+
+@media screen and (max-width: 749px) {
+  .iwt-slider .image-with-text__text-item{height: fit-content;}
+   .iwt-slider .image-with-text__media--adapt {padding-bottom: var(--mobile-ratio-percent);}
+   .iwt-slider .image-with-text__content{padding-left: 1rem;padding-right: 1rem;}
+  .iwt-section{margin-left: 1rem;margin-right: 1rem;}
+  .iwt-slider .slider-buttons--prime .slider-buttons--cs-wrap{width: calc(100% + 3.4rem) !important;max-width: calc(100% + 3.4rem) !important;}
+  .iwt-slider .slider-buttons--prime .slider-buttons--cs-wrap> button:last-child{background: #FFFFFF;border-color: #EF4F2E;border-width: 3px;color: #EF4F2E;}
+  .iwt-slider .slider-buttons--prime .slider-buttons--cs-wrap> button:first-child{background: #EF4F2E;border-color: white;border-width: 3px;color: white;}
+  .iwt-slider .slider-buttons--prime .slider-buttons--cs-wrap button:hover{background: #EF4F2E;border-color: white;border-width: 3px;color: white;}
+  .iwt-slider .slider--desktop:after{margin-left: -1.4rem !important;}
+}

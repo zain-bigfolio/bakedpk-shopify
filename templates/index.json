@@ -103,6 +103,154 @@
         "padding_bottom_mobile": 13
       }
     },
+    "multicolumn_logo_yTLbic": {
+      "type": "multicolumn-logo",
+      "blocks": {
+        "column_dBArxe": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1321317492.png",
+            "title": "<strong>Pantheon Coffee</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_RRkdnP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/milkcraft.png",
+            "title": "<strong>milkcraft</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_KyfFwa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/blend-licious.png",
+            "title": "<strong>Blendlicious</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_BHdMnX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pickled.png",
+            "title": "<strong>Pickled</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Qi8Xd7": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/doughbros.png",
+            "title": "<strong>DoughBros.</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_UHHDB7": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/frogurt.png",
+            "title": "<strong>Frogurt</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_xq9e8x": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1321317492.png",
+            "title": "<strong>Pantheon Coffee</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VdF9Rj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/milkcraft.png",
+            "title": "<strong>milkcraft</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_FAHAr4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/blend-licious.png",
+            "title": "<strong>Blendlicious</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rQyrbn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pickled.png",
+            "title": "<strong>Pickled</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_pCmn7b": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/doughbros.png",
+            "title": "<strong>DoughBros.</strong>",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_dBArxe",
+        "column_RRkdnP",
+        "column_KyfFwa",
+        "column_BHdMnX",
+        "column_Qi8Xd7",
+        "column_UHHDB7",
+        "column_xq9e8x",
+        "column_VdF9Rj",
+        "column_FAHAr4",
+        "column_rQyrbn",
+        "column_pCmn7b"
+      ],
+      "name": "Multi-column with Logo",
+      "settings": {
+        "section_image": "shopify://shop_images/Vector_360_b7388bff-9997-4ab2-b305-a684c07eaa2c.svg",
+        "title": "<strong>Our In-House Brands</strong>",
+        "heading_size": "h1",
+        "description": "Not just curated, we also create. Built from scratch inside Baked.pk so we can promise the same trusted tase in every bite",
+        "image_width": "half",
+        "image_ratio": "circle",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-5",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "enable_desktop_slider": true,
+        "padding_top": 56,
+        "padding_bottom": 40
+      }
+    },
     "featured_collection_prime_JqBFhD": {
       "type": "featured-collection-prime",
       "blocks": {
@@ -137,6 +285,7 @@
         "collection_slider_qUnRRm",
         "collection_slider_6yaGU7"
       ],
+      "disabled": true,
       "name": "Featured collection prime",
       "settings": {
         "title": "<strong>Loved by 200,000+ People</strong>",
@@ -250,6 +399,123 @@
         "heading_size": "h2",
         "color_scheme": "scheme-5",
         "padding_top": 36,
+        "padding_bottom": 100
+      }
+    },
+    "image_with_text_slider_NzaWed": {
+      "type": "image-with-text-slider",
+      "blocks": {
+        "slide_JfYaTq": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480341_1.png",
+            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "image_behavior": "none",
+            "caption": "2025.",
+            "caption_size": "large",
+            "heading": "<strong>Our Journey</strong>",
+            "heading_size": "h0",
+            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text_style": "body",
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "desktop_content_position": "middle",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
+          }
+        },
+        "slide_CkEfYK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480341_1.png",
+            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "image_behavior": "none",
+            "caption": "2025.",
+            "caption_size": "large",
+            "heading": "<strong>Our Journey</strong>",
+            "heading_size": "h0",
+            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text_style": "body",
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "desktop_content_position": "middle",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
+          }
+        },
+        "slide_FUJCxT": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480341_1.png",
+            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "image_behavior": "none",
+            "caption": "2025.",
+            "caption_size": "large",
+            "heading": "<strong>Our Journey</strong>",
+            "heading_size": "h0",
+            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text_style": "body",
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "desktop_content_position": "middle",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
+          }
+        },
+        "slide_JY6icd": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480341_1.png",
+            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "image_behavior": "none",
+            "caption": "2025.",
+            "caption_size": "large",
+            "heading": "<strong>Our Journey</strong>",
+            "heading_size": "h0",
+            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text_style": "body",
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "desktop_content_position": "middle",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
+          }
+        }
+      },
+      "block_order": [
+        "slide_JfYaTq",
+        "slide_CkEfYK",
+        "slide_FUJCxT",
+        "slide_JY6icd"
+      ],
+      "name": "Image with text slider",
+      "settings": {
+        "section_color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a",
+        "columns_desktop": 1,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "enable_desktop_slider": true,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
@@ -267,6 +533,7 @@
             "button_label_1": "Read Now",
             "position_1": "bottom-left",
             "max_width_1": 23,
+            "aos_animation_1": "left",
             "image_2": "shopify://shop_images/image_1_98ab27f1-f161-460d-aae2-93334ab33b6b.png",
             "title_2": "Expanding the Baked Experience: in DHA Phase 5 Now!",
             "excerpt_2": "",
@@ -274,7 +541,8 @@
             "link_2": "#",
             "button_label_2": "Read Now",
             "position_2": "middle-center",
-            "max_width_2": 41
+            "max_width_2": 41,
+            "aos_animation_2": "right"
           }
         },
         "article_pair_F3NAJF": {
@@ -288,6 +556,7 @@
             "button_label_1": "Read Now",
             "position_1": "bottom-left",
             "max_width_1": 23,
+            "aos_animation_1": "left",
             "image_2": "shopify://shop_images/image_2_7db58726-fd79-4faa-b3e0-4e9cfab74d08.png",
             "title_2": "Expanding the Baked Experience: in DHA Phase 5 Now!",
             "excerpt_2": "",
@@ -295,7 +564,8 @@
             "link_2": "#",
             "button_label_2": "Read More",
             "position_2": "middle-center",
-            "max_width_2": 38
+            "max_width_2": 38,
+            "aos_animation_2": "right"
           }
         },
         "article_pair_k8BYHx": {
@@ -309,6 +579,7 @@
             "button_label_1": "Read Now",
             "position_1": "bottom-left",
             "max_width_1": 23,
+            "aos_animation_1": "left",
             "image_2": "shopify://shop_images/image_1_98ab27f1-f161-460d-aae2-93334ab33b6b.png",
             "title_2": "Expanding the Baked Experience: in DHA Phase 5 Now!",
             "excerpt_2": "",
@@ -316,7 +587,8 @@
             "link_2": "#",
             "button_label_2": "Read Now",
             "position_2": "middle-center",
-            "max_width_2": 38
+            "max_width_2": 38,
+            "aos_animation_2": "right"
           }
         }
       },
@@ -335,9 +607,9 @@
         "padding_bottom": 36,
         "padding_top_mobile": 34,
         "padding_bottom_mobile": 27,
-        "margin_top": 30,
+        "margin_top": 50,
         "margin_bottom": 30,
-        "margin_top_mobile": 30,
+        "margin_top_mobile": 50,
         "margin_bottom_mobile": 30
       }
     }
@@ -345,9 +617,11 @@
   "order": [
     "image_banner_primary_G6WVf7",
     "marquee_text_b9BMYK",
+    "multicolumn_logo_yTLbic",
     "featured_collection_prime_JqBFhD",
     "notice_board_6EQ8QK",
     "statistics_CykmQT",
+    "image_with_text_slider_NzaWed",
     "featured_blog_prime_zajya6"
   ]
 }
