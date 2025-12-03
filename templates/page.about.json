@@ -21,19 +21,20 @@
       "type": "image-banner-primary",
       "blocks": {
         "heading_abPQFQ": {
-          "type": "heading", 
+          "type": "heading",
           "settings": {
-            "heading": "<strong>Join Us</strong>",
+            "heading": "<strong>About Us</strong>",
             "heading_size": "hxl",
             "max_width": 35
           }
         }
       },
       "block_order": [
-        "heading_abPQFQ" 
+        "heading_abPQFQ"
       ],
       "name": "t:sections.image-banner.name_primary",
       "settings": {
+        "enable_sticky": false,
         "image_mobile": "shopify://shop_images/bakedpk-Join_us_banner_mobile_webp.webp",
         "image": "shopify://shop_images/bakedpk-Join_us_banner_desktop.webp",
         "image_overlay_opacity": 70,
@@ -47,10 +48,275 @@
         "mobile_content_alignment": "center",
         "show_text_below": false
       }
+    },
+    "image_with_text_slider_79Ckdw": {
+      "type": "image-with-text-slider",
+      "blocks": {
+        "slide_hCKgNn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480341_1.png",
+            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "image_behavior": "none",
+            "caption": "2025.",
+            "caption_size": "large",
+            "heading": "<strong>Our Journey</strong>",
+            "heading_size": "h0",
+            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text_style": "body",
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "desktop_content_position": "middle",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
+          }
+        },
+        "slide_tBDGn3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480341_1.png",
+            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "image_behavior": "none",
+            "caption": "2025.",
+            "caption_size": "large",
+            "heading": "<strong>Our Journey</strong>",
+            "heading_size": "h0",
+            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text_style": "body",
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "desktop_content_position": "middle",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
+          }
+        },
+        "slide_mkey9V": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480341_1.png",
+            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "image_behavior": "none",
+            "caption": "2025.",
+            "caption_size": "large",
+            "heading": "<strong>Our Journey</strong>",
+            "heading_size": "h0",
+            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text_style": "body",
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "desktop_content_position": "middle",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
+          }
+        },
+        "slide_mFCUkV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480341_1.png",
+            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "image_behavior": "none",
+            "caption": "2025.",
+            "caption_size": "large",
+            "heading": "<strong>Our Journey</strong>",
+            "heading_size": "h0",
+            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text_style": "body",
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "desktop_content_position": "middle",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
+          }
+        }
+      },
+      "block_order": [
+        "slide_hCKgNn",
+        "slide_tBDGn3",
+        "slide_mkey9V",
+        "slide_mFCUkV"
+      ],
+      "name": "Image with text slider",
+      "settings": {
+        "section_color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a",
+        "columns_desktop": 1,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "enable_desktop_slider": true,
+        "padding_top_desktop": 36,
+        "padding_bottom_desktop": 36,
+        "margin_top_desktop": 25,
+        "margin_bottom_desktop": 0,
+        "padding_top_mobile": 27,
+        "padding_bottom_mobile": 27,
+        "margin_top_mobile": 20,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "rich_text_AytRf8": {
+      "type": "rich-text",
+      "blocks": {
+        "image_RgMn86": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Vector_1d10057e-e3f2-495a-aa60-3202b73a788a.svg",
+            "max_width": 4
+          }
+        },
+        "heading_Y6yVwx": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>A marketplace for home chefs and quality brands to showcase artisan food.</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_hBn7Mm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might essential lovely queen tempor eiusmod irure look.</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. Qui  international first-class nulla ut. Punctual adipisicing, essential lovely queen tempor eiusmod irure. Exclusive izakaya charming Scandinavian impeccable aute quality of life soft power.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_RgMn86",
+        "heading_Y6yVwx",
+        "text_hBn7Mm"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 76,
+        "padding_bottom": 0
+      }
+    },
+    "highlights_KbpwW9": {
+      "type": "highlights",
+      "blocks": {
+        "highlight_xKNRDW": {
+          "type": "highlight",
+          "settings": {
+            "text": "",
+            "image_0": "shopify://shop_images/Image.png",
+            "image_1": "shopify://shop_images/Image_b07c9102-3a0e-4e9b-8fe6-d5e109f9fff1.png",
+            "image_2": "shopify://shop_images/Value_Block.png"
+          }
+        },
+        "highlight_PP4ydr": {
+          "type": "highlight",
+          "settings": {
+            "text": "",
+            "image_0": "shopify://shop_images/Image_08213f0c-a14e-498c-94bd-a638424389af.png",
+            "image_1": "shopify://shop_images/Image-1.png",
+            "image_2": "shopify://shop_images/Image_c852be9e-a059-4499-8785-165e57ca17dc.png"
+          }
+        }
+      },
+      "block_order": [
+        "highlight_xKNRDW",
+        "highlight_PP4ydr"
+      ],
+      "name": "Highlights",
+      "settings": {
+        "section_style": "default",
+        "color_scheme": "scheme-aeb1cab6-c7cf-49da-887f-771d30715fab",
+        "title": "",
+        "heading_size": "h1",
+        "columns_desktop": 2,
+        "full_width": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "enable_desktop_slider": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "meet_the_team_dk6dzG": {
+      "type": "meet-the-team",
+      "blocks": {
+        "team_member_xiWXAB": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480342.png",
+            "name": "Shehryar Munawar",
+            "position": "Chief Executive Officer"
+          }
+        },
+        "team_member_4N9MeE": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480343.png",
+            "name": "Ahmad Ali",
+            "position": "Chief Operating Officer"
+          }
+        },
+        "team_member_t9yM3w": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480344.png",
+            "name": "Zakir Faiz",
+            "position": "Chief Financial Officer"
+          }
+        },
+        "team_member_jqP77z": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707480345_127c7e10-f797-410a-bfcb-c51229830328.png",
+            "name": "Muhammad Junaid",
+            "position": "Project Analyst"
+          }
+        }
+      },
+      "block_order": [
+        "team_member_xiWXAB",
+        "team_member_4N9MeE",
+        "team_member_t9yM3w",
+        "team_member_jqP77z"
+      ],
+      "name": "Meet the Team",
+      "settings": {
+        "section_image": "shopify://shop_images/45_0d38f148-396c-4af3-862d-bc613259ef36.svg",
+        "title": "<strong>Meet the Team</strong>",
+        "heading_size": "h1",
+        "description": "",
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "enable_desktop_slider": false,
+        "image_grayscale": true,
+        "color_scheme": "scheme-2b822908-2248-4250-b082-70e1855b16f9",
+        "padding_top": 60,
+        "padding_bottom": 96
+      }
     }
   },
   "order": [
     "main",
     "image_banner_primary_xxx7r6",
+    "image_with_text_slider_79Ckdw",
+    "rich_text_AytRf8",
+    "highlights_KbpwW9",
+    "meet_the_team_dk6dzG"
   ]
 }

@@ -15,7 +15,7 @@
       "settings": {
         "enable_sticky": true,
         "image_mobile": "shopify://shop_images/Untitled_design_1.png",
-        "image": "shopify://shop_images/new_branch_mural_updated_1_1.png",
+        "image": "shopify://shop_images/new_branch_mural_updated_1_1_4a4d72cc-a335-4332-afe7-4acb471593d1.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
@@ -101,6 +101,63 @@
         "padding_top_mobile": 13,
         "padding_bottom": 27,
         "padding_bottom_mobile": 13
+      }
+    },
+    "dual_product_slider_cnCAVP": {
+      "type": "dual-product-slider",
+      "blocks": {
+        "collection_block_ADmX6B": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "hot-selling",
+            "products_to_show": 6,
+            "layout": "info_left",
+            "icon": "shopify://shop_images/baked-icon.png",
+            "title": "Hot Selling",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>",
+            "card_color_scheme": "scheme-89ad6fe6-38f6-4022-bce2-2cb87301c259"
+          }
+        },
+        "collection_block_LHQkHP": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "new-sellers",
+            "products_to_show": 6,
+            "layout": "info_right",
+            "icon": "shopify://shop_images/baked-icon.png",
+            "title": "New Sellers",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>",
+            "card_color_scheme": "scheme-89ad6fe6-38f6-4022-bce2-2cb87301c259"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_ADmX6B",
+        "collection_block_LHQkHP"
+      ],
+      "name": "Dual Product Slider",
+      "settings": {
+        "title": "Ever growing community <strong>50652+</strong> croissants baked",
+        "heading_size": "h1",
+        "typing_speed": 30,
+        "typing_delay": 100,
+        "color_scheme": "",
+        "columns_desktop": 3,
+        "enable_desktop_slider": true,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "margin_top_desktop": 20,
+        "margin_bottom_desktop": 25,
+        "margin_top_mobile": 16,
+        "margin_bottom_mobile": 16
       }
     },
     "multicolumn_logo_yTLbic": {
@@ -515,8 +572,14 @@
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "enable_desktop_slider": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top_desktop": 36,
+        "padding_bottom_desktop": 36,
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "padding_top_mobile": 27,
+        "padding_bottom_mobile": 27,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
       }
     },
     "featured_blog_prime_zajya6": {
@@ -617,6 +680,7 @@
   "order": [
     "image_banner_primary_G6WVf7",
     "marquee_text_b9BMYK",
+    "dual_product_slider_cnCAVP",
     "multicolumn_logo_yTLbic",
     "featured_collection_prime_JqBFhD",
     "notice_board_6EQ8QK",
