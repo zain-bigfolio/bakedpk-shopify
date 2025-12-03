@@ -80,7 +80,7 @@
 
 
 .highlight-wrapper>slider-component>ul {
-  max-width: 108rem;
+  max-width: 128.8rem;
   margin: 0 auto;
   --desktop-margin-left-first-item: 0rem;
   scroll-padding-left: 0rem !important;
@@ -126,6 +126,7 @@
   color: white !important;
   border-radius: 50%;
   border: 1px solid #1E1E1E;
+  pointer-events: all;
 }
 
 .slider-buttons--cs button.slider-button--next {
@@ -257,4 +258,8 @@
   .highlight-wrapper .slider-component-full-width .slider--desktop:after {
     margin-left: calc(-1 * (var(--grid-mobile-horizontal-spacing) + 1.4rem)) !important;
   }
+
+  .highlight-wrapper ul li:first-child .highlights-grid .highlights-item:first-child{order: 1;}
 }
+
+.highlight-section--default .highlight-container{border: none;padding-top: 5rem;}

@@ -4,6 +4,7 @@
 }
 
 .iwt-slider{border-radius: 24px;}
+.iwt-slider-list{pointer-events: none;}
 .iwt-slider-list .image-with-text__media img{object-fit: contain;object-position: right;}
 .iwt-slider .slider-buttons--prime .slider-buttons--cs-wrap{transform: translate(-50%, -50%);max-width: calc(100% - 3rem);z-index: 2;}
 .iwt-slider .iwt-slider-item{margin-left: 0rem;--desktop-margin-left-first-item: 0px;scroll-margin-left: 0px;width: calc((100% - var(--grid-desktop-horizontal-spacing))) !important;max-width: calc((100% - var(--grid-desktop-horizontal-spacing))) !important;}

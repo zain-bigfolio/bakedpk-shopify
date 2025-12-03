@@ -14,12 +14,18 @@
   }
 {%- endstyle -%}
 
-<div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
+<div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}" data-aos="fade-up" data-aos-duration="800"> 
   <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
     <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
       <div class="rich-text__blocks {{ section.settings.content_alignment }}">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
+            {%- when 'image' -%}
+              <div class="rich-text__image" style="--max-width: {{ block.settings.max_width }}rem;">
+                <div class="media ratio media--transparent" style="--ratio-percent: {{ 1 |  divided_by: block.settings.image.aspect_ratio | times: 100 }}%;">
+                  <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
+                </div>
+              </div>
             {%- when 'heading' -%}
               <h2
                 class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -281,6 +287,28 @@
           "id": "text",
           "default": "t:sections.rich-text.blocks.text.settings.text.default",
           "label": "t:sections.rich-text.blocks.text.settings.text.label"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "rem",
+          "label": "Maximum width",
+          "default": 50
         }
       ]
     },

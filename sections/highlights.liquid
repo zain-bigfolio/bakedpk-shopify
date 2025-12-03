@@ -32,7 +32,7 @@
   }
 {%- endstyle -%}
 
-<div class="highlight-section section-{{ section.id }}-padding">
+<div class="highlight-section section-{{ section.id }}-padding highlight-section--{{ section.settings.section_style }}">
   <div class="page-width">
     <div class="highlight-container color-{{ section.settings.color_scheme }} gradient relative">
       {% if section.settings.section_image != blank %} <div class="highlight-float__image"><div class="media ratio media--transparent" style="--ratio-percent: {{ 1 | divided_by: section.settings.section_image.aspect_ratio | times: 100 }}%;"> {{ section.settings.section_image | image_url: width: 1500 | image_tag: width: section.settings.section_image.width, height: section.settings.section_image.height, loading: 'lazy' }}</div></div>{% endif %}
@@ -163,6 +163,22 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "select",
+      "id": "section_style",
+      "label": "Section Style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "boxed",
+          "label": "Boxed"
+        }
+      ],
+      "default": "boxed"
+    },
     {
       "type": "image_picker",
       "id": "section_image",

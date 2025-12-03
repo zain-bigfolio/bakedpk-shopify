@@ -84,3 +84,7 @@
 .rich-text__blocks.right .rich-text__buttons {
   justify-content: flex-end;
 }
+
+.rich-text__image{max-width: var(--max-width);margin-left: auto;margin-right: auto;margin-bottom: 1rem;}
+.rich-text__heading.h2 strong{font-weight: 700;}
+.rich-text__text{font-weight: 400;letter-spacing: calc(1.6rem * (-2 / 100));font-size: 1.6rem;}

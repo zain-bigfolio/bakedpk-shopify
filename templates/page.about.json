@@ -1,0 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_primary_xxx7r6": {
+      "type": "image-banner-primary",
+      "blocks": {
+        "heading_abPQFQ": {
+          "type": "heading", 
+          "settings": {
+            "heading": "<strong>Join Us</strong>",
+            "heading_size": "hxl",
+            "max_width": 35
+          }
+        }
+      },
+      "block_order": [
+        "heading_abPQFQ" 
+      ],
+      "name": "t:sections.image-banner.name_primary",
+      "settings": {
+        "image_mobile": "shopify://shop_images/bakedpk-Join_us_banner_mobile_webp.webp",
+        "image": "shopify://shop_images/bakedpk-Join_us_banner_desktop.webp",
+        "image_overlay_opacity": 70,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_primary_xxx7r6",
+  ]
+}

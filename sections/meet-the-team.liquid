@@ -1,0 +1,377 @@
+{{ 'section-team.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    margin-top: {{ section.settings.margin_top_mobile }}px;
+    margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      margin-top: {{ section.settings.margin_top_desktop }}px;
+      margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+  assign show_mobile_slider = false
+  if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+    assign show_mobile_slider = true
+  endif
+
+  assign show_desktop_slider = false
+  if section.settings.enable_desktop_slider and section.blocks.size > section.settings.columns_desktop
+    assign show_desktop_slider = true
+  endif
+-%}
+
+<div class="team-section relative section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
+  <div class="page-width relative">
+    <div class="team-section__inner-wrapper">
+      {%- if section.settings.title != blank or section.settings.description != blank -%}
+        <div class="team-header{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}" data-aos="fade-up" data-aos-duration="800">
+          {%- if section.settings.title != blank -%}
+            <h2 class="team-header__title {{ section.settings.heading_size }}">
+              {{ section.settings.title }}
+              <svg width="185" height="21" viewBox="0 0 185 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.00391 18C39.6408 4.25532 134.199 -5.01008 183.004 12.9093" stroke="#EF4F2E" stroke-width="6"/></svg>
+            </h2>
+          {%- endif -%}
+          {%- if section.settings.description != blank -%}
+            <div class="team-header__description rte">
+              {{ section.settings.description }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+  
+      {%- if section.blocks.size > 0 -%}
+        <slider-component class="slider-mobile-gutter{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}">
+          <ul
+            id="Slider-{{ section.id }}"
+            class="grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
+            role="list"
+          >
+            {%- for block in section.blocks -%}
+              <li
+                id="Slide-{{ section.id }}-{{ forloop.index }}"
+                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
+                {{ block.shopify_attributes }}
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="{{ forloop.index | times: 100 }}"
+              >
+              <div class="team-card">
+                <div class="team-card__text">
+                  {%- if block.settings.name != blank -%}
+                    <h3 class="team-card__name f-18">{{ block.settings.name }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.position != blank -%}
+                    <p class="team-card__position f-12">{{ block.settings.position }}</p>
+                  {%- endif -%}
+                </div>
+    
+                <div class="team-card__image{% if section.settings.image_grayscale %} team-card__image--grayscale{% endif %}">
+                  <div class="media ratio media--transparent" style="--ratio-percent: {{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%;">
+                    {%- if block.settings.image != blank -%}
+                      {%- assign image_height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round: 0 -%}
+                      <img srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}{%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}{%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}{%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}{{ block.settings.image | image_url }} {{ block.settings.image.width }}w" src="{{ block.settings.image | image_url: width: 533 }}" alt="{{ block.settings.name | escape }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ image_height }}">
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+          {%- if show_mobile_slider or show_desktop_slider -%}
+            <div class="slider-buttons hidden">
+              <button
+                type="button"
+                class="slider-button slider-button--prev"
+                name="previous"
+                aria-label="{{ 'general.slider.previous_slide' | t }}"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="svg-wrapper">
+                  {{- 'icon-caret.svg' | inline_asset_content -}}
+                </span>
+              </button>
+              <div class="slider-counter caption">
+                <span class="slider-counter--current">1</span>
+                <span aria-hidden="true"> / </span>
+                <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+                <span class="slider-counter--total">{{ section.blocks.size }}</span>
+              </div>
+              <button
+                type="button"
+                class="slider-button slider-button--next"
+                name="next"
+                aria-label="{{ 'general.slider.next_slide' | t }}"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="svg-wrapper">
+                  {{- 'icon-caret.svg' | inline_asset_content -}}
+                </span>
+              </button>
+            </div>
+          {%- endif -%}
+        </slider-component>
+      {%- endif -%}
+    </div>
+  </div>
+  {% if section.settings.section_image != blank %} <div class="team-float__image"><div class="media ratio media--transparent" style="--ratio-percent: {{ 1 | divided_by: section.settings.section_image.aspect_ratio | times: 100 }}%;"> {{ section.settings.section_image | image_url: width: 1500 | image_tag: width: section.settings.section_image.width, height: section.settings.section_image.height, loading: 'lazy' }}</div></div>{% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Meet the Team",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section Floating Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "Meet the Team"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Slider Settings"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 4,
+      "label": "Number of columns on desktop"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        }
+      ],
+      "default": "1",
+      "label": "Number of columns on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": true,
+      "label": "Enable swipe on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_desktop_slider",
+      "label": "Enable desktop slider",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_grayscale",
+      "default": true,
+      "label": "Show images in grayscale (color on hover)"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Desktop Margin"
+    },
+    {
+      "type": "range",
+      "id": "margin_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin top (Desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin bottom (Desktop)",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Mobile Margin"
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin top (Mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin bottom (Mobile)",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "team_member",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Team Member"
+        },
+        {
+          "type": "text",
+          "id": "position",
+          "label": "Position",
+          "default": "Position Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Meet the Team",
+      "blocks": [
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Shehryar Munawar",
+            "position": "Chief Executive Officer"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Ahmad Ali",
+            "position": "Chief Operating Officer"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Zakir Faiz",
+            "position": "Chief Financial Officer"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Muhammad Junaid",
+            "position": "Project Analyst"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
