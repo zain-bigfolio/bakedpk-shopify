@@ -510,3 +510,4 @@
 
 .banner__media video{ object-fit: cover; pointer-events: all;}
 .banner__media-contains video{ object-fit: contain; }
+.banner__heading.inline-richtext.hxl{}
