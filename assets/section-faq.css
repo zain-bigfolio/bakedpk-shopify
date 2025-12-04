@@ -1,5 +1,5 @@
 .faq-section .page-width {
-  --page-width: 138.5rem;
+  --page-width: 146.7rem;
 }
 
 .faq__item-body {
@@ -147,8 +147,9 @@
 }
 
 .faq__item-content {
-  max-width: 82rem;
+  max-width: 99.2rem;
   color: rgba(var(--color-foreground), 0.6);
+  font-weight: 400;
 }
 
 @media screen and (min-width: 749px) {
@@ -183,7 +184,13 @@
 
   .faq__item .faq__item-header .faq__item-icon {
     transition: none !important;
-    flex: 1 0 4.2rem;
+    flex: 1 0 3.2rem;
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .faq__item-header {
+    gap: 1.8rem;
   }
 
   .faq__item.is-active .faq__item-wrapper {
@@ -216,10 +223,30 @@
   .faq__item-index-wrapper {
     width: 100%;
   }
-  .title-wrapper--faq h2{font-size: calc(var(--font-heading-scale) * 4rem);margin-bottom: 3.2rem;}
-  .faq__item-title{width: 100% !important;}
-  .faq-section{padding: 0 2rem;}
-  .faq__item{padding: 2.4rem 1.6rem 2.4rem 2.2rem;}
-  .faq__item-index{font-size: 4.8rem;}
-  .faq__list>div:not(:last-child){margin-bottom: 2rem;}
+
+  .title-wrapper--faq h2 {
+    font-size: calc(var(--font-heading-scale) * 4rem);
+    margin-bottom: 3.2rem;
+  }
+
+  .faq__item-title {
+    line-height: 120%;
+    width: 100% !important;
+  }
+
+  .faq-section {
+    padding: 0 2rem;
+  }
+
+  .faq__item {
+    padding: 2.4rem 1.6rem 2.4rem 2.2rem;
+  }
+
+  .faq__item-index {
+    font-size: 4.8rem;
+  }
+
+  .faq__list>div:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 }
