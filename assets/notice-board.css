@@ -13,7 +13,7 @@
   text-transform: uppercase;
   color: #FF4411;
   font-weight: 800;
-  margin: 0.8rem 0 0 0;
+  margin: 0.9rem 0 0 0;
 }
 
 .notice-board__item-wrapper {
@@ -189,13 +189,14 @@
     margin-top: -8.5rem;
   }
 
+  .notice-board__heading {
+    --font-size: calc(var(--font-heading-scale) * 2.8rem);
+    max-width: 23rem;
+  }
+
 }
 
 @media screen and (max-width: 750px) {
-  .notice-board__container {
-    /* padding-top: 3.5rem; */
-  }
-
   .notice-board__header {
     padding-top: 3.5rem;
   }
@@ -298,4 +299,7 @@
     --grid-desktop-horizontal-spacing: 5rem;
   }
 }
-.notice-board {overflow: hidden;}
+
+.notice-board {
+  overflow: hidden;
+}

@@ -107,7 +107,7 @@
 
 
 .highlight-head h2.h1 {
-  font-size: calc(var(--font-heading-scale) * 2.4rem);
+  font-size: calc(var(--font-heading-scale) * 2.8rem);
   margin-top: 0rem;
 }
 
@@ -118,6 +118,9 @@
   border: 1px solid #E6E6E6;
 }
 
+.highlight-section--boxed .highlight-container {
+  background-color: rgba(251, 245, 245, 1);
+}
 
 .slider-buttons--cs button {
   width: 4.8rem;
@@ -232,7 +235,7 @@
   }
 
   .highlight-wrapper-text {
-    --font-size: 1.5rem;
+    --font-size: 1.6rem;
     max-width: 20rem;
     margin-left: auto;
     margin-right: auto;
@@ -259,7 +262,17 @@
     margin-left: calc(-1 * (var(--grid-mobile-horizontal-spacing) + 1.4rem)) !important;
   }
 
-  .highlight-wrapper ul li:first-child .highlights-grid .highlights-item:first-child{order: 1;}
+  .highlight-wrapper ul li:first-child .highlights-grid .highlights-item:first-child {
+    order: 1;
+  }
+
+  .highlight-wrapper .slider-buttons--cs{padding: 3rem 0rem 2.4rem 0rem;}
+  .highlight-wrapper .slider-buttons--cs-wrap{position: relative;position: relative;top: unset;left: unset;width: fit-content;transform: unset;display: flex;justify-content: center;pointer-events: none;margin-top: 0;}
+  .highlight-wrapper .slider--desktop.grid--2-col-desktop .grid__item{width: 100% !important}
+  .highlight-wrapper {padding-left: 1.7rem;padding-right: 1.7rem;}
 }
 
-.highlight-section--default .highlight-container{border: none;padding-top: 5rem;}
+.highlight-section--default .highlight-container {
+  border: none;
+  padding-top: 5rem;
+}

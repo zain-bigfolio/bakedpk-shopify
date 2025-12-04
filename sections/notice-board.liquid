@@ -2,8 +2,8 @@
 <script defer="defer" src="{{ 'notice-board.js' | asset_url }}"></script>
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
   }
 
   @media screen and (min-width: 750px) {
@@ -45,7 +45,7 @@
                   {%- endif -%}
   
                   {%- if block.settings.description != blank -%}
-                    <div class="notice-board__description f-14 rte">
+                    <div class="notice-board__description f-15 rte">
                       {{ block.settings.description }}
                     </div>
                   {%- endif -%}
@@ -151,6 +151,30 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top (Mobile)",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom (Mobile)",
+      "default": 45
     },
     {
       "type": "range",
