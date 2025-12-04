@@ -84,6 +84,7 @@
           if section.settings.enable_desktop_slider and products_to_display > section.settings.columns_desktop
             assign show_desktop_slider = true
           endif
+          
         -%}
 
         <div class="dps-block" {{ block.shopify_attributes }}>
@@ -91,13 +92,17 @@
             <div class="dps-item dps-item__card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ forloop.index | times: 200 }}">
               <div class="dps-card gradient color-{{ block.settings.card_color_scheme }}">
                 <div class="dps-card__head">
-                  <div class="dps-card__dots"></div>
-                  {%- if block.settings.icon != blank -%}
-                    <div class="dps-card__icon">
-                      <div class="media media--transparent ratio" style="--ratio-percent: {{ 1 | divided_by: block.settings.icon.aspect_ratio | times: 100 }}%;">
-                        {{ block.settings.icon | image_url: width: 150 | image_tag: loading: 'lazy', width: block.settings.icon.width, height: block.settings.icon.height }}
+                  <div class="dps-card__dots">
+                    <slider-dots-cs class="block">
+                      <div class="slider-dots__container">
+                        {% for i in (1..products_to_display) %}
+                          <div class="slider-bar {% if forloop.first %} active{% endif %}"> </div>
+                        {% endfor %}
                       </div>
-                    </div>
+                    </slider-dots-cs>
+                  </div>
+                  {%- if block.settings.icon != blank -%}
+                    <div class="dps-card__icon"> <div class="media media--transparent ratio" style="--ratio-percent: {{ 1 | divided_by: block.settings.icon.aspect_ratio | times: 100 }}%;"> {{ block.settings.icon | image_url: width: 150 | image_tag: loading: 'lazy', width: block.settings.icon.width, height: block.settings.icon.height }}</div></div>
                   {%- endif -%}
                 </div>
                 {%- if block.settings.title != blank -%}
@@ -111,7 +116,7 @@
             
             <div class="dps-item dps-item__products" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ forloop.index | times: 200 | plus: 100 }}">
               {%- if block_collection != blank and block_collection.products.size > 0 -%}
-                <slider-component class="slider-mobile-gutter{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}">
+                <slider-component class="slider-mobile-gutter{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}" data-slides-per-view-mobile="1" data-slides-per-view-desktop="{{ section.settings.columns_desktop }}">
                   <ul
                     id="Slider-{{ section.id }}-{{ block.id }}"
                     data-id="{{ section.id }}-{{ block.id }}"
