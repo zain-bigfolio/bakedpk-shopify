@@ -161,7 +161,7 @@
         "title": "Find Out All You Need To Know",
         "heading_size": "h0",
         "heading_max_width": 50,
-        "answer_size": "f-18",
+        "answer_size": "f-20",
         "columns_desktop": 1,
         "show_index": true,
         "open_first_item": false,
@@ -173,7 +173,7 @@
         "color_scheme": "",
         "padding_top": 36,
         "padding_top_mobile": 0,
-        "padding_bottom_mobile": 36,
+        "padding_bottom_mobile": 68,
         "padding_bottom": 100
       }
     }
