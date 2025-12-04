@@ -50,6 +50,9 @@
               <li class="iwt-slider-item grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}" id="Slide-{{ section.id }}-{{ forloop.index }}" {{ block.shopify_attributes }}>
                 <div class="iwt-grid image-with-text__grid grid grid--gapless grid--1-col-tablet-down grid--2-col-desktop{% if block.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
                   <div class="image-with-text__media-item image-with-text__media-item--{{ block.settings.desktop_image_width }} image-with-text__media-item--{{ block.settings.desktop_content_position }} grid__item">
+                    {%- if block.settings.heading != blank -%}
+                      <h2 class="image-with-text__heading image-with-text__heading--top center inline-richtext large-up-hide {{ block.settings.heading_size }}">{{ block.settings.heading }}</h2>
+                    {%- endif -%}
                     {%- liquid
                       assign ratio_mobile = block.settings.mobile_image.aspect_ratio | default: block.settings.image.aspect_ratio
                       if block.settings.image_behavior == 'ambient' or block.settings.image_behavior == 'zoom-in'
@@ -92,7 +95,7 @@
                   <div class="image-with-text__text-item grid__item">
                     <div class="image-with-text__content image-with-text__content--{{ block.settings.desktop_content_position }} image-with-text__content--desktop-{{ block.settings.desktop_content_alignment }} image-with-text__content--mobile-{{ block.settings.mobile_content_alignment }} image-with-text__content--{{ block.settings.height }} content-container gradient color-{{ block.settings.color_scheme }}">
                       {%- if block.settings.heading != blank -%}
-                        <h2 class="image-with-text__heading inline-richtext {{ block.settings.heading_size }}">{{ block.settings.heading }}</h2>
+                        <h2 class="image-with-text__heading small-hide medium-hide inline-richtext {{ block.settings.heading_size }}">{{ block.settings.heading }}</h2>
                       {%- endif -%}
                       {%- if block.settings.caption != blank -%}
                         <p class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.caption_size }}">{{ block.settings.caption | escape }}</p>

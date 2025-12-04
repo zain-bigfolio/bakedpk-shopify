@@ -36,8 +36,14 @@
 }
 
 @media screen and (min-width: 990px) {
-  .rich-text__blocks {
+  .rich-text__heading {
     max-width: 78rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rich-text__blocks {
+    max-width: 90.9rem;
   }
 }
 
@@ -45,16 +51,16 @@
   overflow-wrap: break-word;
 }
 
-.rich-text__blocks > * {
+.rich-text__blocks>* {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.rich-text__blocks > * + * {
+.rich-text__blocks>*+* {
   margin-top: 2rem;
 }
 
-.rich-text__blocks > * + a {
+.rich-text__blocks>*+a {
   margin-top: 3rem;
 }
 
@@ -68,12 +74,12 @@
   word-break: break-word;
 }
 
-.rich-text__buttons--multiple > * {
+.rich-text__buttons--multiple>* {
   flex-grow: 1;
   min-width: 22rem;
 }
 
-.rich-text__buttons + .rich-text__buttons {
+.rich-text__buttons+.rich-text__buttons {
   margin-top: 1rem;
 }
 
@@ -85,6 +91,72 @@
   justify-content: flex-end;
 }
 
-.rich-text__image{max-width: var(--max-width);margin-left: auto;margin-right: auto;margin-bottom: 1rem;}
-.rich-text__heading.h2 strong{font-weight: 700;}
-.rich-text__text{font-weight: 400;letter-spacing: calc(1.6rem * (-2 / 100));font-size: 1.6rem;}
+.rich-text__image {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.rich-text__heading.h2 strong {
+  font-weight: 700;
+}
+
+.rich-text__text {
+  font-weight: 400;
+  letter-spacing: calc(2rem * (-2 / 100));
+}
+
+.float-rte-icon-right {
+  position: absolute;
+  top: 4.2rem;
+  right: 4.2rem;
+  max-width: 11.6rem;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  animation: float-up-down 3s ease-in-out infinite;
+}
+
+@keyframes float-up-down {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.rich-text__heading.h2 {
+  color: #1E1E1E;
+}
+
+.rich-text__text {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 990px) {
+  .rich-text__heading.h2 {
+    --font-size: calc(var(--font-heading-scale) * 2.4rem);
+    line-height: calc(var(--font-size) * 1.35);
+    max-width: 378px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rich-text__wrapper {
+    width: 100%;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
+
+  .rich-text__text {
+    max-width: 382px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3.2rem;
+  }
+}
