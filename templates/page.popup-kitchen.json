@@ -65,7 +65,7 @@
           "settings": {
             "icon": "shopify://shop_images/44.svg",
             "heading": "Rina’s kitchenette",
-            "description": "<p>Get ready to have a pick-ilary experience this Thursday in DHA Phase 5, Lahore.</p>",
+            "description": "<p>Rina’s Kitchenette is finally coming to Baked - Phase 6, this weekend!</p>",
             "image": "shopify://shop_images/Rectangle_160_1.png",
             "rotation": 5
           }
@@ -74,7 +74,7 @@
           "type": "notice",
           "settings": {
             "icon": "shopify://shop_images/44.svg",
-            "heading": "Pantry -polo lounge",
+            "heading": "Pantry - polo lounge",
             "description": "<p>Get ready to have a pick-ilary experience this Thursday in DHA Phase 5, Lahore.</p>",
             "image": "shopify://shop_images/Rectangle_160_6.png",
             "rotation": 5
@@ -106,7 +106,9 @@
         "heading_size": "h1",
         "subtitle": "@Popup Kitchen",
         "padding_top": 48,
-        "padding_bottom": 20,
+        "padding_bottom": 32,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 32,
         "padding_bottom_inner": 17
       }
     },
@@ -158,6 +160,7 @@
       ],
       "name": "Highlights",
       "settings": {
+        "section_style": "boxed",
         "section_image": "shopify://shop_images/Vector_360.svg",
         "color_scheme": "scheme-aeb1cab6-c7cf-49da-887f-771d30715fab",
         "title": "<strong>Highlights</strong>",
@@ -167,8 +170,12 @@
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "enable_desktop_slider": true,
-        "padding_top": 20,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 32,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
       }
     },
     "image_with_text_prime_wnMebt": {
@@ -219,8 +226,10 @@
         "mobile_content_alignment": "center",
         "section_color_scheme": "scheme-1",
         "color_scheme": "scheme-aeb1cab6-c7cf-49da-887f-771d30715fab",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 84,
+        "padding_bottom": 80,
+        "padding_top_mobile": 97,
+        "padding_bottom_mobile": 100
       }
     }
   },
