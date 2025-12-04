@@ -56,7 +56,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Frame_1707480341_1.png",
-            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "mobile_image": "shopify://shop_images/Frame_1707480348.png",
             "height": "adapt",
             "desktop_image_width": "medium",
             "layout": "text_first",
@@ -80,55 +80,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Frame_1707480341_1.png",
-            "mobile_image": "shopify://shop_images/Group_1000008120.png",
-            "height": "adapt",
-            "desktop_image_width": "medium",
-            "layout": "text_first",
-            "image_behavior": "none",
-            "caption": "2025.",
-            "caption_size": "large",
-            "heading": "<strong>Our Journey</strong>",
-            "heading_size": "h0",
-            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
-            "text_style": "body",
-            "button_label": "",
-            "button_link": "",
-            "button_style_secondary": false,
-            "desktop_content_position": "middle",
-            "desktop_content_alignment": "left",
-            "mobile_content_alignment": "left",
-            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
-          }
-        },
-        "slide_mkey9V": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Frame_1707480341_1.png",
-            "mobile_image": "shopify://shop_images/Group_1000008120.png",
-            "height": "adapt",
-            "desktop_image_width": "medium",
-            "layout": "text_first",
-            "image_behavior": "none",
-            "caption": "2025.",
-            "caption_size": "large",
-            "heading": "<strong>Our Journey</strong>",
-            "heading_size": "h0",
-            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
-            "text_style": "body",
-            "button_label": "",
-            "button_link": "",
-            "button_style_secondary": false,
-            "desktop_content_position": "middle",
-            "desktop_content_alignment": "left",
-            "mobile_content_alignment": "left",
-            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
-          }
-        },
-        "slide_mFCUkV": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Frame_1707480341_1.png",
-            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "mobile_image": "shopify://shop_images/Frame_1707480348_62c404ea-0259-44c4-bcab-854619711551.png",
             "height": "adapt",
             "desktop_image_width": "medium",
             "layout": "text_first",
@@ -151,9 +103,7 @@
       },
       "block_order": [
         "slide_hCKgNn",
-        "slide_tBDGn3",
-        "slide_mkey9V",
-        "slide_mFCUkV"
+        "slide_tBDGn3"
       ],
       "name": "Image with text slider",
       "settings": {
@@ -168,7 +118,7 @@
         "margin_bottom_desktop": 0,
         "padding_top_mobile": 27,
         "padding_bottom_mobile": 27,
-        "margin_top_mobile": 20,
+        "margin_top_mobile": 62,
         "margin_bottom_mobile": 0
       }
     },
@@ -203,6 +153,7 @@
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
+        "float_right_image": "shopify://shop_images/Vector_1.svg",
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "",
@@ -307,7 +258,11 @@
         "image_grayscale": true,
         "color_scheme": "scheme-2b822908-2248-4250-b082-70e1855b16f9",
         "padding_top": 60,
-        "padding_bottom": 96
+        "padding_bottom": 96,
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
       }
     }
   },
