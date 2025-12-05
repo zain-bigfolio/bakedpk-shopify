@@ -22,6 +22,7 @@
       "blocks": {
         "heading_abPQFQ": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "<strong>About Us</strong>",
             "heading_size": "hxl",
@@ -35,9 +36,9 @@
       "name": "t:sections.image-banner.name_primary",
       "settings": {
         "enable_sticky": false,
-        "image_mobile": "shopify://shop_images/bakedpk-Join_us_banner_mobile_webp.webp",
-        "image": "shopify://shop_images/bakedpk-Join_us_banner_desktop.webp",
-        "image_overlay_opacity": 70,
+        "image_mobile": "shopify://shop_images/IMG_6671.png",
+        "image": "shopify://shop_images/IMG_6631.png",
+        "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
@@ -55,17 +56,17 @@
         "slide_hCKgNn": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707480341_1.png",
-            "mobile_image": "shopify://shop_images/Frame_1707480348.png",
+            "image": "shopify://shop_images/Group_1321314529.png",
+            "mobile_image": "shopify://shop_images/Group_1321314522.png",
             "height": "adapt",
             "desktop_image_width": "medium",
             "layout": "text_first",
             "image_behavior": "none",
-            "caption": "2025.",
+            "caption": "2019.",
             "caption_size": "large",
             "heading": "<strong>Our Journey</strong>",
             "heading_size": "h0",
-            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text": "<p>Baked started with a simple belief: that good food deserves a good space, one where home chefs, small businesses, and artisan makers could shine. In 2019, that belief took shape in Cantt, where we opened our very first branch. A little bigger than your average bakery nook, Cantt became our cozy headquarters filled with warmth, wooden shelves, and the very first brands that trusted us with their magic.</p>",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
@@ -79,8 +80,56 @@
         "slide_tBDGn3": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707480341_1.png",
-            "mobile_image": "shopify://shop_images/Frame_1707480348_62c404ea-0259-44c4-bcab-854619711551.png",
+            "image": "shopify://shop_images/Group_1321314529_1_79e7f1f6-3d92-4e30-9886-187c2e110345.png",
+            "mobile_image": "shopify://shop_images/Group_1321314523.png",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "image_behavior": "none",
+            "caption": "2020.",
+            "caption_size": "large",
+            "heading": "<strong>Our Journey</strong>",
+            "heading_size": "h0",
+            "text": "<p>Encouraged by the love we received, we expanded in 2020 to DHA Phase 6. This second space was tiny, but mighty, a curated corner. It became a neighborhood favorite, especially for grab-and-go sweet cravings and quick dessert fixes.</p>",
+            "text_style": "body",
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "desktop_content_position": "middle",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
+          }
+        },
+        "slide_gLqW4K": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Group_1321314529_2.png",
+            "mobile_image": "shopify://shop_images/Group_1321314524.png",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "layout": "text_first",
+            "image_behavior": "none",
+            "caption": "2023.",
+            "caption_size": "large",
+            "heading": "<strong>Our Journey</strong>",
+            "heading_size": "h0",
+            "text": "<p>In 2023, we opened a small yet charming branch in DHA Z block Tucked away, but quickly adored. Though modest in size, it allowed us to reach a whole new community and proved that even the tiniest spaces can deliver bold, unforgettable flavour.</p>",
+            "text_style": "body",
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "desktop_content_position": "middle",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
+          }
+        },
+        "slide_nXmn8Q": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Group_1321314529_3.png",
+            "mobile_image": "shopify://shop_images/Group_1321314525.png",
             "height": "adapt",
             "desktop_image_width": "medium",
             "layout": "text_first",
@@ -89,7 +138,7 @@
             "caption_size": "large",
             "heading": "<strong>Our Journey</strong>",
             "heading_size": "h0",
-            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text": "<p>Then came 2025, and with it, a whole new chapter: our Gulberg flagship. Designed to be more than just a shop, Gulberg is our most immersive space yet: open, inviting, and built for discovery. With larger displays, live demos, and a rotating cast of featured vendors, it’s a true hub for food lovers and local makers alike.</p>",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
@@ -103,7 +152,9 @@
       },
       "block_order": [
         "slide_hCKgNn",
-        "slide_tBDGn3"
+        "slide_tBDGn3",
+        "slide_gLqW4K",
+        "slide_nXmn8Q"
       ],
       "name": "Image with text slider",
       "settings": {
@@ -142,7 +193,7 @@
         "text_hBn7Mm": {
           "type": "text",
           "settings": {
-            "text": "<p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might essential lovely queen tempor eiusmod irure look.</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. Qui  international first-class nulla ut. Punctual adipisicing, essential lovely queen tempor eiusmod irure. Exclusive izakaya charming Scandinavian impeccable aute quality of life soft power.</p>"
+            "text": "<p>Baked is a curated marketplace built on the simple belief that great desserts deserve great company. Operating as a platform that brings together some of the most creative home bakers and small-scale vendors under one roof, Baked is reimagining how sweet and savoury treats are discovered, shared, and enjoyed.</p><p>What began as a humble shop in cantt has now grown into four thriving branches bursting with personality. We offer an ever-evolving selection of delights sourced from passionate vendors across the city.</p><p>Baked is a marketplace that empowers independent creators to showcase their craft and reach food lovers through a centralized, trusted platform. Every order supports a local business, every bite tells a story.</p><p>Whether customers are looking to satisfy a sudden craving, send a thoughtful gift, or plan a celebratory spread, Baked makes the process seamless—combining quality, variety, and a sprinkle of joy in every box.</p><p>At its core, Baked exists to connect people: with flavor, with makers, and with moments worth celebrating.</p>"
           }
         }
       },
@@ -200,7 +251,11 @@
         "swipe_on_mobile": false,
         "enable_desktop_slider": false,
         "padding_top": 0,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
       }
     },
     "meet_the_team_dk6dzG": {

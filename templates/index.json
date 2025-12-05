@@ -100,7 +100,11 @@
         "padding_top": 27,
         "padding_top_mobile": 13,
         "padding_bottom": 27,
-        "padding_bottom_mobile": 13
+        "padding_bottom_mobile": 13,
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "margin_top_mobile": 14,
+        "margin_bottom_mobile": 0
       }
     },
     "dual_product_slider_cnCAVP": {
@@ -152,11 +156,11 @@
         "quick_add": "standard",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 36,
         "margin_top_desktop": 20,
         "margin_bottom_desktop": 25,
-        "margin_top_mobile": 16,
+        "margin_top_mobile": 32,
         "margin_bottom_mobile": 16
       }
     },
@@ -389,7 +393,7 @@
             "icon": "shopify://shop_images/44.svg",
             "heading": "happening atbaked: y-Block",
             "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ilo.</p>",
-            "image": "shopify://shop_images/Rectangle_160_1.png",
+            "image": "shopify://shop_images/Rectangle_160_1_ac094e8a-bf15-4312-af2a-b0a2acbab0e9.png",
             "rotation": 5
           }
         }
@@ -406,8 +410,10 @@
         "title": "Upcoming PopUps",
         "heading_size": "h1",
         "subtitle": "@Popup Kitchen",
-        "padding_top": 48,
+        "padding_top": 28,
         "padding_bottom": 20,
+        "padding_top_mobile": 45,
+        "padding_bottom_mobile": 45,
         "padding_bottom_inner": 10
       }
     },

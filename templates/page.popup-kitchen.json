@@ -22,6 +22,7 @@
       "blocks": {
         "image_title_phqGnb": {
           "type": "image_title",
+          "disabled": true,
           "settings": {
             "image_title": "shopify://shop_images/IMG_4711_1_1.png"
           }
@@ -33,9 +34,9 @@
       "name": "t:sections.image-banner.name_primary",
       "settings": {
         "enable_sticky": false,
-        "image_mobile": "shopify://shop_images/bakedpk-Join_us_banner_mobile_webp.webp",
-        "image": "shopify://shop_images/bakedpk-Join_us_banner_desktop.webp",
-        "image_overlay_opacity": 70,
+        "image_mobile": "shopify://shop_images/IMG_6670.png",
+        "image": "shopify://shop_images/Shopify_Site_Web.png",
+        "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
