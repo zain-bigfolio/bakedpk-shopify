@@ -1,0 +1,71 @@
+<div class="modal-form-title">
+  <h2 class="h2 b-900">Vendor Sign Up</h2>
+</div>
+{%- form 'contact', id: 'VendorSignUpForm', class: 'modal-contact-form isolate' -%}
+  <input type="hidden" name="contact[form_type]" value="Vendor Sign Up">
+  
+  {%- if form.posted_successfully? -%}
+    <script>window.location.href = '/account';</script>
+  {%- elsif form.errors -%}
+    <div class="form__message">
+      <h2 class="form-status caption-large text-body" role="alert">
+        {{- 'icon-error.svg' | inline_asset_content -}}
+        {{ 'templates.contact.form.error_heading' | t }}
+      </h2>
+    </div>
+  {%- endif -%}
+
+  <div class="contact__fields">
+    <div class="field-group">
+      <div class="field">
+        <input class="field__input" type="text" id="vendor-first-name" name="contact[First Name]" placeholder="First Name" required>
+        <label class="field__label" for="vendor-first-name">First Name <span aria-hidden="true">*</span></label>
+      </div>
+      <div class="field">
+        <input class="field__input" type="text" id="vendor-last-name" name="contact[Last Name]" placeholder="Last Name" required>
+        <label class="field__label" for="vendor-last-name">Last Name <span aria-hidden="true">*</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <input class="field__input" type="text" id="vendor-business-name" name="contact[Business Name / Brand Name]" placeholder="Business Name / Brand Name" required>
+      <label class="field__label" for="vendor-business-name">Business Name / Brand Name <span aria-hidden="true">*</span></label>
+    </div>
+
+    <div class="field">
+      <input class="field__input" type="email" id="vendor-email" name="contact[email]" placeholder="Email Address" required>
+      <label class="field__label" for="vendor-email">Email Address <span aria-hidden="true">*</span></label>
+    </div>
+
+    <div class="field">
+      <input class="field__input" type="tel" id="vendor-phone" name="contact[Phone Number]" placeholder="Phone Number" required>
+      <label class="field__label" for="vendor-phone">Phone Number <span aria-hidden="true">*</span></label>
+    </div>
+
+    <div class="field">
+      <textarea rows="3" id="vendor-address" class="text-area field__input" name="contact[Business Address]" placeholder="Business Address" required></textarea>
+      <label class="field__label" for="vendor-address">Business Address <span aria-hidden="true">*</span></label>
+    </div>
+
+    <div class="field">
+      <input class="field__input" type="text" id="vendor-product-type" name="contact[Type of Products]" placeholder="Type of Products" required>
+      <label class="field__label" for="vendor-product-type">Type of Products <span aria-hidden="true">*</span></label>
+    </div>
+
+    <div class="field">
+      <input class="field__input" type="text" id="vendor-social" name="contact[Social Media / Website]" placeholder="Social Media / Website (optional)">
+      <label class="field__label" for="vendor-social">Social Media / Website (optional)</label>
+    </div>
+
+    <div class="field">
+      <label class="field__file-label" for="vendor-upload">
+        📎 Upload Product Photos / Menu (optional)
+        <input type="file" id="vendor-upload" name="contact[Product Photos]" accept="image/*,.pdf" multiple>
+      </label>
+    </div>
+  </div>
+
+  <div class="contact__button">
+    <button type="submit" class="button button--primary">Submit Application</button>
+  </div>
+{%- endform -%}

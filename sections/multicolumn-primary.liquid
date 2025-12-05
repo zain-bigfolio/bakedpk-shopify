@@ -130,13 +130,23 @@
                   <div class="rte {{ block.settings.text_size }}" style="--max-width: {{ block.settings.text_max_width }}rem;">{{ block.settings.text }}</div>
                 {%- endif -%}
                 {%- if block.settings.link_label != blank -%}
-                  <a class="button button--primary button--ele b-700 lt-0 button--full-width" {% if block.settings.link == blank %} role="link" aria-disabled="true" {% else %} href="{{ block.settings.link }}" {% endif %}>
-                    {{- block.settings.link_label | escape -}}
-										<span class="button-elements">
-											{% render 'icon-pack', icon: 'button-left' %}
-											{% render 'icon-pack', icon: 'button-right' %}
-										</span>
-                  </a>
+                  {%- if block.settings.enable_popup and block.settings.popup_form != blank -%}
+                    <a type="button" class="button button--primary button--ele b-700 lt-0 button--full-width" {% if block.settings.link == blank %} role="link" aria-disabled="true" {% else %} href="{{ block.settings.link }}" {% endif %} data-popup-trigger="{{ block.settings.popup_form }}">
+                      {{- block.settings.link_label | escape -}}
+												<span class="button-elements">
+													{% render 'icon-pack', icon: 'button-left' %}
+													{% render 'icon-pack', icon: 'button-right' %}
+												</span>
+                    </a>
+                  {%- else -%}
+                    <a class="button button--primary button--ele b-700 lt-0 button--full-width" {% if block.settings.link == blank %} role="link" aria-disabled="true" {% else %} href="{{ block.settings.link }}" {% endif %}>
+                      {{- block.settings.link_label | escape -}}
+												<span class="button-elements">
+													{% render 'icon-pack', icon: 'button-left' %}
+													{% render 'icon-pack', icon: 'button-right' %}
+												</span>
+                    </a>
+                  {%- endif -%}
                 {%- endif -%}
               </div>
             </div>
@@ -187,6 +197,8 @@
     </div>
   </div>
 </div>
+
+
 
 {% schema %}
 {
@@ -500,9 +512,38 @@
           "info": "t:sections.multicolumn.blocks.column.settings.link_label.info"
         },
         {
+          "type": "checkbox",
+          "id": "enable_popup",
+          "label": "Enable Popup Form",
+          "default": false,
+          "info": "When enabled, button will open a popup form instead of linking to a URL"
+        },
+        {
+          "type": "select",
+          "id": "popup_form",
+          "label": "Popup Form Type",
+          "options": [
+            {
+              "value": "vendor-signup",
+              "label": "Vendor Sign Up"
+            },
+            {
+              "value": "popup-kitchen",
+              "label": "Sign Up for PopUp Kitchen"
+            },
+            {
+              "value": "popup-baked",
+              "label": "PopUp at Baked"
+            }
+          ],
+          "default": "vendor-signup",
+          "info": "Select which form to open when button is clicked"
+        },
+        {
           "type": "url",
           "id": "link",
-          "label": "t:sections.multicolumn.blocks.column.settings.link.label"
+          "label": "t:sections.multicolumn.blocks.column.settings.link.label",
+          "info": "Only used when popup is disabled"
         }
       ]
     }

@@ -154,7 +154,7 @@
 
 @media screen and (min-width: 749px) {
   .faq__item-title {
-    font-size: calc(var(--font-heading-scale) * 3.2rem);
+    --font-size: calc(var(--font-heading-scale) * 3.2rem);
   }
 }
 

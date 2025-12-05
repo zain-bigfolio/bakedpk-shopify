@@ -1,0 +1,79 @@
+/* Join Us Forms Section */
+.join-us-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 4rem 0;
+}
+
+/* Tingle Modal Overrides */
+.tingle-modal-box {
+  max-width: 60rem;
+}
+
+.tingle-modal-box__content {
+  padding: 4rem;
+}
+
+/* Modal Form Styling */
+.modal-form-title {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.modal-contact-form .contact__fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.modal-contact-form .field-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.modal-contact-form .contact__button {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* File Upload Styling */
+.modal-contact-form .field__file-label {
+  display: block;
+  padding: 1rem;
+  border: 1px dashed rgb(var(--color-foreground));
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-contact-form .field__file-label:hover {
+  border-color: rgb(var(--color-button));
+  background-color: rgba(var(--color-button), 0.05);
+}
+
+.modal-contact-form input[type="file"] {
+  display: none;
+}
+
+.modal-contact-form .form-status {
+  margin-bottom: 2rem;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 749px) {
+  .modal-contact-form .field-group {
+    grid-template-columns: 1fr;
+  }
+
+  .tingle-modal-box__content {
+    padding: 2rem;
+  }
+}
+
+#baked-participation{height: 100%;}

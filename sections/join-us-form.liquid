@@ -1,0 +1,366 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+{{ 'join-us-forms.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js"></script>
+<script src="{{ 'join-us-forms.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+{%- endstyle -%}
+
+<join-us-forms class="section-{{ section.id }}-padding" style="display: none;">
+
+  {%- comment -%} ALL HTML TEMPLATES BELOW - NO HTML IN JAVASCRIPT {%- endcomment -%}
+
+  {%- comment -%} Vendor Sign Up Form Template {%- endcomment -%}
+  <template data-form="popup-vendor">
+    <div class="modal-form-title">
+      <h2 class="h2 b-900">Vendor Sign Up</h2>
+    </div>
+    {%- form 'contact', id: 'VendorSignUpForm', class: 'modal-contact-form isolate' -%}
+      <input type="hidden" name="contact[form_type]" value="Vendor Sign Up">
+      
+      {%- if form.posted_successfully? -%}
+        <div class="form__message form__message--success">
+          <h2 class="form-status caption-large text-body" role="status">
+            {{- 'icon-success.svg' | inline_asset_content -}}
+            Your form has been submitted successfully. We will get in touch with you via email or phone shortly.
+          </h2>
+        </div>
+      {%- elsif form.errors -%}
+        <div class="form__message">
+          <h2 class="form-status caption-large text-body" role="alert">
+            {{- 'icon-error.svg' | inline_asset_content -}}
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+        </div>
+      {%- endif -%}
+
+      <div class="contact__fields">
+        <div class="field-group">
+          <div class="field">
+            <input class="field__input" type="text" id="vendor-first-name" name="contact[First Name]" placeholder="First Name" required>
+            <label class="field__label" for="vendor-first-name">First Name <span aria-hidden="true">*</span></label>
+          </div>
+          <div class="field">
+            <input class="field__input" type="text" id="vendor-last-name" name="contact[Last Name]" placeholder="Last Name" required>
+            <label class="field__label" for="vendor-last-name">Last Name <span aria-hidden="true">*</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="text" id="vendor-business-name" name="contact[Business Name / Brand Name]" placeholder="Business Name / Brand Name" required>
+          <label class="field__label" for="vendor-business-name">Business Name / Brand Name <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="email" id="vendor-email" name="contact[email]" placeholder="Email Address" required>
+          <label class="field__label" for="vendor-email">Email Address <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="tel" id="vendor-phone" name="contact[Phone Number]" placeholder="Phone Number" required>
+          <label class="field__label" for="vendor-phone">Phone Number <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <textarea rows="3" id="vendor-address" class="text-area field__input" name="contact[Business Address]" placeholder="Business Address" required></textarea>
+          <label class="field__label" for="vendor-address">Business Address <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="text" id="vendor-product-type" name="contact[Type of Products]" placeholder="Type of Products" required>
+          <label class="field__label" for="vendor-product-type">Type of Products <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="text" id="vendor-social" name="contact[Social Media / Website]" placeholder="Social Media / Website (optional)">
+          <label class="field__label" for="vendor-social">Social Media / Website (optional)</label>
+        </div>
+      </div>
+
+      <div class="contact__button">
+        <button type="submit" class="button button--primary button--full-width">Submit Application</button>
+        <button type="button" class="button button--secondary tingle-modal-close button--full-width" >Close</button>
+      </div>
+    {%- endform -%}
+  </template>
+
+  {%- comment -%} PopUp Kitchen Form Template {%- endcomment -%}
+  <template data-form="popup-kitchen">
+    <div class="modal-form-title">
+      <h2 class="h2 b-900">Sign Up for PopUp Kitchen</h2>
+    </div>
+    {%- form 'contact', id: 'PopUpKitchenForm', class: 'modal-contact-form isolate' -%}
+      <input type="hidden" name="contact[form_type]" value="PopUp Kitchen">
+      
+      {%- if form.posted_successfully? -%}
+        <div class="form__message form__message--success">
+          <h2 class="form-status caption-large text-body" role="status">
+            {{- 'icon-success.svg' | inline_asset_content -}}
+            Your form has been submitted successfully. We will get in touch with you via email or phone shortly.
+          </h2>
+        </div>
+      {%- elsif form.errors -%}
+        <div class="form__message">
+          <h2 class="form-status caption-large text-body" role="alert">
+            {{- 'icon-error.svg' | inline_asset_content -}}
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+        </div>
+      {%- endif -%}
+
+      <div class="contact__fields">
+        <div class="field-group">
+          <div class="field">
+            <input class="field__input" type="text" id="kitchen-first-name" name="contact[First Name]" placeholder="First Name" required>
+            <label class="field__label" for="kitchen-first-name">First Name <span aria-hidden="true">*</span></label>
+          </div>
+          <div class="field">
+            <input class="field__input" type="text" id="kitchen-last-name" name="contact[Last Name]" placeholder="Last Name" required>
+            <label class="field__label" for="kitchen-last-name">Last Name <span aria-hidden="true">*</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="text" id="kitchen-business-name" name="contact[Business Name]" placeholder="Business Name (if applicable)">
+          <label class="field__label" for="kitchen-business-name">Business Name (if applicable)</label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="email" id="kitchen-email" name="contact[email]" placeholder="Email Address" required>
+          <label class="field__label" for="kitchen-email">Email Address <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="tel" id="kitchen-phone" name="contact[Phone Number]" placeholder="Phone Number" required>
+          <label class="field__label" for="kitchen-phone">Phone Number <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="text" id="kitchen-cuisine" name="contact[Type of Cuisine / Concept]" placeholder="Type of Cuisine / Concept" required>
+          <label class="field__label" for="kitchen-cuisine">Type of Cuisine / Concept <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="text" id="kitchen-dates" name="contact[Preferred Dates / Availability]" placeholder="Preferred Dates / Availability for PopUp" required>
+          <label class="field__label" for="kitchen-dates">Preferred Dates / Availability for PopUp <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="text" id="kitchen-people" name="contact[Number of People / Space Needed]" placeholder="Number of People / Space Needed" required>
+          <label class="field__label" for="kitchen-people">Number of People / Space Needed <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <textarea rows="4" id="kitchen-requirements" class="text-area field__input" name="contact[Special Requirements]" placeholder="Any special requirements"></textarea>
+          <label class="field__label" for="kitchen-requirements">Any special requirements</label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="text" id="kitchen-social" name="contact[Social Media / Website]" placeholder="Social Media / Website (optional)">
+          <label class="field__label" for="kitchen-social">Social Media / Website (optional)</label>
+        </div>
+      </div>
+
+      <div class="contact__button">
+        <button type="submit" class="button button--primary button--full-width">Submit Application</button>
+        <button type="button" class="button button--secondary tingle-modal-close button--full-width" >Close</button>
+      </div>
+    {%- endform -%}
+  </template>
+
+  {%- comment -%} PopUp at Baked Form Template {%- endcomment -%}
+  <template data-form="popup-baked">
+    <div class="modal-form-title">
+      <h2 class="h2 b-900">PopUp at Baked</h2>
+    </div>
+    {%- form 'contact', id: 'PopUpBakedForm', class: 'modal-contact-form isolate' -%}
+      <input type="hidden" name="contact[form_type]" value="PopUp at Baked">
+      
+      {%- if form.posted_successfully? -%}
+        <div class="form__message form__message--success">
+          <h2 class="form-status caption-large text-body" role="status">
+            {{- 'icon-success.svg' | inline_asset_content -}}
+            Your form has been submitted successfully. We will get in touch with you via email or phone shortly.
+          </h2>
+        </div>
+      {%- elsif form.errors -%}
+        <div class="form__message">
+          <h2 class="form-status caption-large text-body" role="alert">
+            {{- 'icon-error.svg' | inline_asset_content -}}
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+        </div>
+      {%- endif -%}
+
+      <div class="contact__fields">
+        <div class="field-group">
+          <div class="field">
+            <input class="field__input" type="text" id="baked-first-name" name="contact[First Name]" placeholder="First Name" required>
+            <label class="field__label" for="baked-first-name">First Name <span aria-hidden="true">*</span></label>
+          </div>
+          <div class="field">
+            <input class="field__input" type="text" id="baked-last-name" name="contact[Last Name]" placeholder="Last Name" required>
+            <label class="field__label" for="baked-last-name">Last Name <span aria-hidden="true">*</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="text" id="baked-business-name" name="contact[Business / Brand Name]" placeholder="Business / Brand Name" required>
+          <label class="field__label" for="baked-business-name">Business / Brand Name <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="email" id="baked-email" name="contact[email]" placeholder="Email Address" required>
+          <label class="field__label" for="baked-email">Email Address <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="tel" id="baked-phone" name="contact[Phone Number]" placeholder="Phone Number" required>
+          <label class="field__label" for="baked-phone">Phone Number <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <select class="field__input" id="baked-participation" name="contact[Type of Participation]" required>
+            <option value="">Select Type of Participation</option>
+            <option value="PopUp">PopUp</option>
+            <option value="Event">Event</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Tasting">Tasting</option>
+          </select>
+          <label class="field__label" for="baked-participation">Type of Participation <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="text" id="baked-dates" name="contact[Proposed Dates / Duration]" placeholder="Proposed Dates / Duration" required>
+          <label class="field__label" for="baked-dates">Proposed Dates / Duration <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <textarea rows="5" id="baked-description" class="text-area field__input" name="contact[Description of Concept / Event]" placeholder="Description of Concept / Event" required></textarea>
+          <label class="field__label" for="baked-description">Description of Concept / Event <span aria-hidden="true">*</span></label>
+        </div>
+
+        <div class="field">
+          <input class="field__input" type="text" id="baked-social" name="contact[Social Media / Website]" placeholder="Social Media / Website (optional)">
+          <label class="field__label" for="baked-social">Social Media / Website (optional)</label>
+        </div>
+
+        <div class="field">
+          <textarea rows="3" id="baked-requirements" class="text-area field__input" name="contact[Special Requirements]" placeholder="Any special requirements"></textarea>
+          <label class="field__label" for="baked-requirements">Any special requirements</label>
+        </div>
+      </div>
+
+      <div class="contact__button">
+        <button type="submit" class="button button--primary button--full-width">Submit Application</button>
+        <button type="button" class="button button--secondary tingle-modal-close button--full-width" >Close</button>
+      </div>
+    {%- endform -%}
+  </template>
+
+</join-us-forms>
+
+{% schema %}
+{
+  "name": "Join Us Forms",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join Our Community"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Choose the option that best fits your needs and join our vibrant community.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 27
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 27
+    }
+  ],
+  "presets": [
+    {
+      "name": "Join Us Forms"
+    }
+  ]
+}
+{% endschema %}

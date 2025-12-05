@@ -1773,7 +1773,7 @@ details[open] > .share-button__fallback {
   position: absolute;
   transition: top var(--duration-short) ease, font-size var(--duration-short) ease;
   color: rgba(var(--color-foreground), 0.75);
-  letter-spacing: 0.1rem;
+  letter-spacing: 0rem;
   line-height: 1.5;
 }
 
