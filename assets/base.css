@@ -298,7 +298,7 @@ h5,
 
 h1,
 .h1 {
-  --font-size: calc(var(--font-heading-scale) * 2.8rem);
+  --font-size: calc(var(--font-heading-scale) * 3.2rem);
   --letter-spacing: calc(var(--font-size) * (0 / 100));
   font-size: var(--font-size);
   line-height: calc(var(--font-size) * 1.1);

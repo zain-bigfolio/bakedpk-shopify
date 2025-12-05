@@ -27,10 +27,10 @@
             <stat-counter class="grid grid--3-col-desktop grid--1-col-tablet">
               {% for block in section.blocks  %}
               <div class="grid__item stats-item__content" {{ block.shopify_attributes }}>
-                <h3 class="stats-number" data-number="{{ block.settings.number }}" data-text="{{ block.settings.number_text }}">0{{ block.settings.number_text }}</h3>
+                <h3 class="stats-number h1" data-number="{{ block.settings.number }}" data-text="{{ block.settings.number_text }}">0{{ block.settings.number_text }}</h3>
                 <div class="stats-icon-text">
                   {% if block.settings.icon %}{{ block.settings.icon | image_url: width: 150 | image_tag: loading: 'lazy', width: block.settings.icon.width, height: block.settings.icon.height }}{% endif %}
-                  <p class="f-16 b-500">{{ block.settings.text }}</p>
+                  <p class="f-21 b-500">{{ block.settings.text }}</p>
                 </div>
               </div>
               {% endfor %}
