@@ -16,7 +16,7 @@
   {%- comment -%} ALL HTML TEMPLATES BELOW - NO HTML IN JAVASCRIPT {%- endcomment -%}
 
   {%- comment -%} Vendor Sign Up Form Template {%- endcomment -%}
-  <template data-form="popup-vendor">
+  <template data-form="vendor-signup">
     <div class="modal-form-title">
       <h2 class="h2 b-900">Vendor Sign Up</h2>
     </div>
@@ -40,20 +40,14 @@
       {%- endif -%}
 
       <div class="contact__fields">
-        <div class="field-group">
-          <div class="field">
-            <input class="field__input" type="text" id="vendor-first-name" name="contact[First Name]" placeholder="First Name" required>
-            <label class="field__label" for="vendor-first-name">First Name <span aria-hidden="true">*</span></label>
-          </div>
-          <div class="field">
-            <input class="field__input" type="text" id="vendor-last-name" name="contact[Last Name]" placeholder="Last Name" required>
-            <label class="field__label" for="vendor-last-name">Last Name <span aria-hidden="true">*</span></label>
-          </div>
-        </div>
-
         <div class="field">
-          <input class="field__input" type="text" id="vendor-business-name" name="contact[Business Name / Brand Name]" placeholder="Business Name / Brand Name" required>
-          <label class="field__label" for="vendor-business-name">Business Name / Brand Name <span aria-hidden="true">*</span></label>
+          <input class="field__input" type="text" id="vendor-first-name" name="contact[Vendor/Brand Name]" placeholder="Vendor/Brand Name" required>
+          <label class="field__label" for="vendor-first-name">Vendor/Brand Name <span aria-hidden="true">*</span></label>
+        </div>
+        
+        <div class="field">
+          <input class="field__input" type="tel" id="vendor-phone" name="contact[Phone Number]" placeholder="Phone Number" required>
+          <label class="field__label" for="vendor-phone">Phone Number <span aria-hidden="true">*</span></label>
         </div>
 
         <div class="field">
@@ -62,24 +56,26 @@
         </div>
 
         <div class="field">
-          <input class="field__input" type="tel" id="vendor-phone" name="contact[Phone Number]" placeholder="Phone Number" required>
-          <label class="field__label" for="vendor-phone">Phone Number <span aria-hidden="true">*</span></label>
+          <input class="field__input" type="text" id="vendor-social" name="contact[Social Media / Website]" placeholder="Social Media / Website" required>
+          <label class="field__label" for="vendor-social">Social Media / Website <span aria-hidden="true">*</span></label>
         </div>
 
         <div class="field">
-          <textarea rows="3" id="vendor-address" class="text-area field__input" name="contact[Business Address]" placeholder="Business Address" required></textarea>
-          <label class="field__label" for="vendor-address">Business Address <span aria-hidden="true">*</span></label>
+          <select class="field__input" id="vendor-category" name="contact[Vendor Category]" required>
+            <option value="Savoury">Savoury</option>
+            <option value="Desserts">Desserts</option>
+            <option value="Grocers">Grocers</option>
+            <option value="Other">Other</option>
+          </select>
+          <label class="field__label" for="vendor-category">Vendor Category <span aria-hidden="true">*</span></label>
         </div>
 
         <div class="field">
-          <input class="field__input" type="text" id="vendor-product-type" name="contact[Type of Products]" placeholder="Type of Products" required>
-          <label class="field__label" for="vendor-product-type">Type of Products <span aria-hidden="true">*</span></label>
+          <input class="field__input" type="text" id="vendor-location" name="contact[Office Address]" placeholder="Office Address" required>
+          <label class="field__label" for="vendor-location">Office Address (Location) <span aria-hidden="true">*</span></label>
         </div>
 
-        <div class="field">
-          <input class="field__input" type="text" id="vendor-social" name="contact[Social Media / Website]" placeholder="Social Media / Website (optional)">
-          <label class="field__label" for="vendor-social">Social Media / Website (optional)</label>
-        </div>
+        
       </div>
 
       <div class="contact__button">

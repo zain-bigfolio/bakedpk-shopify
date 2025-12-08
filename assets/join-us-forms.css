@@ -74,6 +74,23 @@
   .tingle-modal-box__content {
     padding: 2rem;
   }
+
+  .modal-contact-form .contact__button {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .tingle-modal-box {
+    min-height: 100%;
+  }
 }
 
 #baked-participation{height: 100%;}
+
+.tingle-modal {
+  background: rgba(0, 0, 0, .3) !important;
+}
+
+#vendor-category {
+  height: 100%;
+}

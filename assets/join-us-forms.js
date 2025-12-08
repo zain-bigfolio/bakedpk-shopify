@@ -13,16 +13,15 @@ if (!customElements.get('join-us-forms')) {
     }
 
     attachEventListeners() {
-      // Listen for clicks on any [data-popup-trigger] elements in the DOM
-      const triggers = document.querySelectorAll('[data-popup-trigger]');
-        console.log(triggers, "triggerstriggerstriggerstriggers");
-        
-      triggers.forEach((trigger) => {
-        trigger.addEventListener('click', (e) => {
+      // Use event delegation on document to catch all clicks on [data-popup-trigger] elements
+      document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('[data-popup-trigger]');
+        if (trigger) {
           e.preventDefault();
           const formType = trigger.getAttribute('data-popup-trigger');
+          console.log('Popup trigger clicked:', formType);
           this.openModal(formType);
-        });
+        }
       });
     }
 

@@ -11,6 +11,7 @@
   "sections": {
     "image_banner_primary_G6WVf7": {
       "type": "image-banner-primary",
+      "disabled": true,
       "name": "t:sections.image-banner.name_primary",
       "settings": {
         "enable_sticky": true,
@@ -26,6 +27,104 @@
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
+      }
+    },
+    "slideshow_tpE7fj": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_BFY3UR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/new_branch_mural_updated_1_1_4a4d72cc-a335-4332-afe7-4acb471593d1.png",
+            "mobile_image": "shopify://shop_images/Untitled_design_1_6d818fcd-61e0-4f7a-b57c-4edc04dfb639.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        },
+        "slide_VqMGwj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Shopify_Site_Web_3b6fe030-29da-4c8b-80bb-8b23dd36724a.png",
+            "mobile_image": "shopify://shop_images/IMG_6670_fa39a01a-ae7c-463e-9ea7-17fc0fe4aac2.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_GUigPc": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_6629_bcdb4ece-f300-42fd-a88d-912d6ee3df4d.png",
+            "mobile_image": "shopify://shop_images/IMG_6672_1_5e206188-c70c-4463-b302-6a65a8ed5d40.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_RWCGGP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_6631_ab7ccfef-63f1-4254-8a5d-838520ea3173.png",
+            "mobile_image": "shopify://shop_images/IMG_6671_18897304-416a-4852-9a88-ad346103f6ec.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "slide_BFY3UR",
+        "slide_VqMGwj",
+        "slide_GUigPc",
+        "slide_RWCGGP"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "ambient",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
     "marquee_text_b9BMYK": {
@@ -141,10 +240,10 @@
       ],
       "name": "Dual Product Slider",
       "settings": {
-        "title": "Ever growing community <strong>50652+</strong> croissants baked",
+        "title": "Ever growing community | <strong>50652+</strong>  croissants baked | Loved by 200,000+ People",
         "heading_size": "h1",
-        "typing_speed": 30,
-        "typing_delay": 100,
+        "typing_speed": 60,
+        "typing_delay": 900,
         "color_scheme": "",
         "columns_desktop": 3,
         "enable_desktop_slider": true,
@@ -374,33 +473,55 @@
         "padding_bottom_mobile": 36
       }
     },
-    "notice_board_6EQ8QK": {
+    "notice_board_QGfbeH": {
       "type": "notice-board",
       "blocks": {
-        "notice_AGLAkA": {
+        "notice_tpcRTV": {
           "type": "notice",
           "settings": {
             "icon": "shopify://shop_images/44.svg",
-            "heading": "upcoming brands",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ilo.</p>",
+            "heading": "PICKLED.",
+            "description": "<p>Get ready to have a pick-ilary experience this Thursday in DHA Phase 5, Lahore.</p>",
             "image": "shopify://shop_images/Rectangle_160_5.png",
             "rotation": 5
           }
         },
-        "notice_iCWXiw": {
+        "notice_gpDJep": {
           "type": "notice",
           "settings": {
             "icon": "shopify://shop_images/44.svg",
-            "heading": "happening atbaked: y-Block",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ilo.</p>",
-            "image": "shopify://shop_images/Rectangle_160_1_ac094e8a-bf15-4312-af2a-b0a2acbab0e9.png",
+            "heading": "Rina’s kitchenette",
+            "description": "<p>Rina’s Kitchenette is finally coming to Baked - Phase 6, this weekend!</p>",
+            "image": "shopify://shop_images/Rectangle_160_1.png",
+            "rotation": 5
+          }
+        },
+        "notice_n8C6kM": {
+          "type": "notice",
+          "settings": {
+            "icon": "shopify://shop_images/44.svg",
+            "heading": "Pantry - polo lounge",
+            "description": "<p>Get ready to have a pick-ilary experience this Thursday in DHA Phase 5, Lahore.</p>",
+            "image": "shopify://shop_images/Rectangle_160_6.png",
+            "rotation": 5
+          }
+        },
+        "notice_PRdwec": {
+          "type": "notice",
+          "settings": {
+            "icon": "shopify://shop_images/44.svg",
+            "heading": "Arcadian cafe",
+            "description": "<p>Arcadian Cafe is finally coming to Baked - Phase 6, this weekend!</p>",
+            "image": "shopify://shop_images/Rectangle_160_4_95cb2012-0334-44c4-8775-d4931a0e2c7c.png",
             "rotation": 5
           }
         }
       },
       "block_order": [
-        "notice_AGLAkA",
-        "notice_iCWXiw"
+        "notice_tpcRTV",
+        "notice_gpDJep",
+        "notice_n8C6kM",
+        "notice_PRdwec"
       ],
       "name": "Notice Board",
       "settings": {
@@ -410,11 +531,11 @@
         "title": "Upcoming PopUps",
         "heading_size": "h1",
         "subtitle": "@Popup Kitchen",
-        "padding_top": 28,
-        "padding_bottom": 20,
-        "padding_top_mobile": 45,
-        "padding_bottom_mobile": 45,
-        "padding_bottom_inner": 10
+        "padding_top": 48,
+        "padding_bottom": 32,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 32,
+        "padding_bottom_inner": 17
       }
     },
     "statistics_CykmQT": {
@@ -465,23 +586,23 @@
         "padding_bottom": 100
       }
     },
-    "image_with_text_slider_NzaWed": {
+    "image_with_text_slider_WAamKg": {
       "type": "image-with-text-slider",
       "blocks": {
-        "slide_JfYaTq": {
+        "slide_yeFmgM": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707480341_1.png",
-            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "image": "shopify://shop_images/Group_1321314529.png",
+            "mobile_image": "shopify://shop_images/Group_1321314522.png",
             "height": "adapt",
             "desktop_image_width": "medium",
             "layout": "text_first",
             "image_behavior": "none",
-            "caption": "2025.",
+            "caption": "2019.",
             "caption_size": "large",
             "heading": "<strong>Our Journey</strong>",
             "heading_size": "h0",
-            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text": "<p>Baked started with a simple belief: that great food deserves a great space– one where home chefs, small businesses, and artisan makers can shine. In 2019, that belief found its first address in Cantt, home to our very first branch. A little bigger than your typical bakery nook, Baked Cantt became our cozy headquarters, filled with warmth, wooden shelves, and the very first brands that trusted us with their magic.</p>",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
@@ -492,20 +613,20 @@
             "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
           }
         },
-        "slide_CkEfYK": {
+        "slide_pw9bDD": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707480341_1.png",
-            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "image": "shopify://shop_images/Group_1321314529_1_79e7f1f6-3d92-4e30-9886-187c2e110345.png",
+            "mobile_image": "shopify://shop_images/Group_1321314523.png",
             "height": "adapt",
             "desktop_image_width": "medium",
             "layout": "text_first",
             "image_behavior": "none",
-            "caption": "2025.",
+            "caption": "2020.",
             "caption_size": "large",
             "heading": "<strong>Our Journey</strong>",
             "heading_size": "h0",
-            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text": "<p>Encouraged by the love we received, we expanded to our second space in 2020: a tiny-but-mighty corner in DHA Phase 6. Curated, compact, and full of heart, it quickly became a neighborhood favorite for grab-and-go treats and quick dessert fixes.</p>",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
@@ -516,20 +637,20 @@
             "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
           }
         },
-        "slide_FUJCxT": {
+        "slide_Ei9rMh": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707480341_1.png",
-            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "image": "shopify://shop_images/Group_1321314529_2.png",
+            "mobile_image": "shopify://shop_images/Group_1321314524.png",
             "height": "adapt",
             "desktop_image_width": "medium",
             "layout": "text_first",
             "image_behavior": "none",
-            "caption": "2025.",
+            "caption": "2023.",
             "caption_size": "large",
             "heading": "<strong>Our Journey</strong>",
             "heading_size": "h0",
-            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text": "<p>In 2023, our journey brought us to our DHA Z Block branch– a charming, tucked away corner. It allowed us to reach a whole new community and proved that great flavour can create instant connections.</p>",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
@@ -540,11 +661,11 @@
             "color_scheme": "scheme-a31614a4-42a0-49b8-9759-1854fe89e25a"
           }
         },
-        "slide_JY6icd": {
+        "slide_HGqMBJ": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707480341_1.png",
-            "mobile_image": "shopify://shop_images/Group_1000008120.png",
+            "image": "shopify://shop_images/Group_1321314529_3.png",
+            "mobile_image": "shopify://shop_images/Group_1321314525.png",
             "height": "adapt",
             "desktop_image_width": "medium",
             "layout": "text_first",
@@ -553,7 +674,7 @@
             "caption_size": "large",
             "heading": "<strong>Our Journey</strong>",
             "heading_size": "h0",
-            "text": "<p><strong>Y Block:</strong> Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might look:</p><p>Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. </p><p>Body text for your whole article or post. We’ll put in some lorem ipsum to show how a filled-out page might do.</p>",
+            "text": "<p>Then came 2025, and with it, a whole new chapter: our Gulberg flagship store. Designed to be more than just a shop, Baked Gulberg is our most immersive space yet: open, inviting, and built for discovery. With larger displays, live kitchens, and a rotating cast of featured vendors, it’s a true hub for food lovers and local makers alike.</p>",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
@@ -566,10 +687,10 @@
         }
       },
       "block_order": [
-        "slide_JfYaTq",
-        "slide_CkEfYK",
-        "slide_FUJCxT",
-        "slide_JY6icd"
+        "slide_yeFmgM",
+        "slide_pw9bDD",
+        "slide_Ei9rMh",
+        "slide_HGqMBJ"
       ],
       "name": "Image with text slider",
       "settings": {
@@ -580,11 +701,11 @@
         "enable_desktop_slider": true,
         "padding_top_desktop": 36,
         "padding_bottom_desktop": 36,
-        "margin_top_desktop": 0,
+        "margin_top_desktop": 25,
         "margin_bottom_desktop": 0,
         "padding_top_mobile": 27,
         "padding_bottom_mobile": 27,
-        "margin_top_mobile": 0,
+        "margin_top_mobile": 62,
         "margin_bottom_mobile": 0
       }
     },
@@ -639,6 +760,7 @@
         },
         "article_pair_k8BYHx": {
           "type": "article_pair",
+          "disabled": true,
           "settings": {
             "image_1": "shopify://shop_images/image_3d75ab87-e80f-4578-b8a1-5f9e0ffb644c.png",
             "title_1": "Expanding the Baked Experience: in DHA Phase 5 Now!",
@@ -685,13 +807,14 @@
   },
   "order": [
     "image_banner_primary_G6WVf7",
+    "slideshow_tpE7fj",
     "marquee_text_b9BMYK",
     "dual_product_slider_cnCAVP",
     "multicolumn_logo_yTLbic",
     "featured_collection_prime_JqBFhD",
-    "notice_board_6EQ8QK",
+    "notice_board_QGfbeH",
     "statistics_CykmQT",
-    "image_with_text_slider_NzaWed",
+    "image_with_text_slider_WAamKg",
     "featured_blog_prime_zajya6"
   ]
 }

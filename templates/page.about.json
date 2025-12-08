@@ -66,7 +66,7 @@
             "caption_size": "large",
             "heading": "<strong>Our Journey</strong>",
             "heading_size": "h0",
-            "text": "<p>Baked started with a simple belief: that good food deserves a good space, one where home chefs, small businesses, and artisan makers could shine. In 2019, that belief took shape in Cantt, where we opened our very first branch. A little bigger than your average bakery nook, Cantt became our cozy headquarters filled with warmth, wooden shelves, and the very first brands that trusted us with their magic.</p>",
+            "text": "<p>Baked started with a simple belief: that great food deserves a great space– one where home chefs, small businesses, and artisan makers can shine. In 2019, that belief found its first address in Cantt, home to our very first branch. A little bigger than your typical bakery nook, Baked Cantt became our cozy headquarters, filled with warmth, wooden shelves, and the very first brands that trusted us with their magic.</p>",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
@@ -90,7 +90,7 @@
             "caption_size": "large",
             "heading": "<strong>Our Journey</strong>",
             "heading_size": "h0",
-            "text": "<p>Encouraged by the love we received, we expanded in 2020 to DHA Phase 6. This second space was tiny, but mighty, a curated corner. It became a neighborhood favorite, especially for grab-and-go sweet cravings and quick dessert fixes.</p>",
+            "text": "<p>Encouraged by the love we received, we expanded to our second space in 2020: a tiny-but-mighty corner in DHA Phase 6. Curated, compact, and full of heart, it quickly became a neighborhood favorite for grab-and-go treats and quick dessert fixes.</p>",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
@@ -114,7 +114,7 @@
             "caption_size": "large",
             "heading": "<strong>Our Journey</strong>",
             "heading_size": "h0",
-            "text": "<p>In 2023, we opened a small yet charming branch in DHA Z block Tucked away, but quickly adored. Though modest in size, it allowed us to reach a whole new community and proved that even the tiniest spaces can deliver bold, unforgettable flavour.</p>",
+            "text": "<p>In 2023, our journey brought us to our DHA Z Block branch– a charming, tucked away corner. It allowed us to reach a whole new community and proved that great flavour can create instant connections.</p>",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
@@ -138,7 +138,7 @@
             "caption_size": "large",
             "heading": "<strong>Our Journey</strong>",
             "heading_size": "h0",
-            "text": "<p>Then came 2025, and with it, a whole new chapter: our Gulberg flagship. Designed to be more than just a shop, Gulberg is our most immersive space yet: open, inviting, and built for discovery. With larger displays, live demos, and a rotating cast of featured vendors, it’s a true hub for food lovers and local makers alike.</p>",
+            "text": "<p>Then came 2025, and with it, a whole new chapter: our Gulberg flagship store. Designed to be more than just a shop, Baked Gulberg is our most immersive space yet: open, inviting, and built for discovery. With larger displays, live kitchens, and a rotating cast of featured vendors, it’s a true hub for food lovers and local makers alike.</p>",
             "text_style": "body",
             "button_label": "",
             "button_link": "",
@@ -264,33 +264,33 @@
         "team_member_xiWXAB": {
           "type": "team_member",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707480342.png",
-            "name": "Shehryar Munawar",
+            "image": "shopify://shop_images/make-empty-dp-iages-on-308-x-208.png",
+            "name": "Omer Nazir",
             "position": "Chief Executive Officer"
           }
         },
         "team_member_4N9MeE": {
           "type": "team_member",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707480343.png",
-            "name": "Ahmad Ali",
-            "position": "Chief Operating Officer"
+            "image": "shopify://shop_images/make-empty-dp-iages-on-308-x-208.png",
+            "name": "Hamza Nazir",
+            "position": "Chief Financial Officer"
           }
         },
         "team_member_t9yM3w": {
           "type": "team_member",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707480344.png",
-            "name": "Zakir Faiz",
-            "position": "Chief Financial Officer"
+            "image": "shopify://shop_images/make-empty-dp-iages-on-308-x-208.png",
+            "name": "Moiz Nazir",
+            "position": "Chief Operational Officer"
           }
         },
         "team_member_jqP77z": {
           "type": "team_member",
           "settings": {
-            "image": "shopify://shop_images/Frame_1707480345_127c7e10-f797-410a-bfcb-c51229830328.png",
+            "image": "shopify://shop_images/make-empty-dp-iages-on-308-x-208.png",
             "name": "Muhammad Junaid",
-            "position": "Project Analyst"
+            "position": "Digital Business Manager"
           }
         }
       },

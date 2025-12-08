@@ -53,7 +53,7 @@
     <div class="dual-slider-product-head center" data-aos="fade-up" data-aos-duration="800">
       {%- if section.settings.title != blank -%}
         <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} b-900">
-          <typing-effect data-text="{{ section.settings.title | escape }}" data-speed="{{ section.settings.typing_speed }}" data-delay="{{ section.settings.typing_delay }}">{{ section.settings.title }}</typing-effect>
+          <typing-effect data-text="{{ section.settings.title | strip_html }}" data-speed="{{ section.settings.typing_speed }}" data-delay="{{ section.settings.typing_delay }}">{{ section.settings.title  | strip_html | escape }}</typing-effect>
         </h2>
       {%- endif -%}
     </div>
