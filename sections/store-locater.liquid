@@ -13,7 +13,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} isolate gradient">
+<div class="color-{{ section.settings.color_scheme }} isolate gradient relative">
   <div class="section-{{ section.id }}-padding store-locater-section">
     <div class="page-width">
       <div class="store-locater-section-wrapper">
@@ -33,23 +33,23 @@
                   <div class="store-locater__icon">{% render 'icon-pack', icon: 'map' %}</div>
                   <div class="store-locater__details">
                     {%- if block.settings.store_name != blank -%}
-                      <h3 class="store-locater__name f-primary b-700 f-18">{{ block.settings.store_name }}</h3>
+                      <h3 class="store-locater__name f-primary b-700 f-20">{{ block.settings.store_name }}</h3>
                     {%- endif -%}
                     
                     {%- if block.settings.address != blank -%}
-                      <p class="store-locater__address b-500 f-16">{{ block.settings.address }}</p>
+                      <p class="store-locater__address b-500 f-18">{{ block.settings.address }}</p>
                     {%- endif -%}
                     
                     <div class="store-locater__meta">
                       {%- if block.settings.hours != blank -%}
-                        <div class="store-locater__hours b-500 f-14">
+                        <div class="store-locater__hours b-500 f-16">
                           {% render 'icon-pack', icon: 'clock' %}
                           <span>{{ block.settings.hours }}</span>
                         </div>
                       {%- endif -%}
                       
                       {%- if block.settings.phone != blank -%}
-                        <div class="store-locater__phone b-500 f-14">
+                        <div class="store-locater__phone b-500 f-16">
                           {% render 'icon-pack', icon: 'phone' %}
                           <span>{{ block.settings.phone }}</span>
                         </div>
@@ -57,7 +57,7 @@
                     </div>
                     
                     {%- if block.settings.map_url != blank -%}
-                      <a href="{{ block.settings.map_url }}" class="store-locater__button button button--primary" target="_blank" rel="noopener">
+                      <a href="{{ block.settings.map_url }}" class="store-locater__button button button--primary medium-hide small-hide" target="_blank" rel="noopener">
                         See Location
                         <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1L6.5 6L1.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                       </a>
@@ -83,6 +83,12 @@
                   {%- else -%}
                     {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
                   {%- endif -%}
+                  {%- if block.settings.map_url != blank -%}
+                    <a href="{{ block.settings.map_url }}" class="store-locater__button button button--primary large-up-hide" target="_blank" rel="noopener">
+                      See Location
+                      <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1L6.5 6L1.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                  {%- endif -%}
                 </div>
               </div>
             {% endfor %}
@@ -90,6 +96,29 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="float-images-list medium-hide small-hide">
+    {%- if section.settings.float_right_image != blank -%}
+      <div class="float-image-right medium-hide small-hide">
+        <div class="ratio media media--transparent" style="--ratio-percent: {{ 1 | divided_by: section.settings.float_right_image.aspect_ratio | times: 100 }}%;">
+          {{ section.settings.float_right_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: section.settings.float_right_image.alt }}
+        </div>
+      </div>
+    {%- endif -%}
+    {%- if section.settings.float_left_middle_image != blank -%}
+      <div class="float-image-left-middle medium-hide small-hide">
+        <div class="ratio media media--transparent" style="--ratio-percent: {{ 1 | divided_by: section.settings.float_left_middle_image.aspect_ratio | times: 100 }}%;">
+          {{ section.settings.float_left_middle_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: section.settings.float_left_middle_image.alt }}
+        </div>
+      </div>
+    {%- endif -%}
+    {%- if section.settings.float_right_bottom_image != blank -%}
+      <div class="float-image-right-bottom medium-hide small-hide">
+        <div class="ratio media media--transparent" style="--ratio-percent: {{ 1 | divided_by: section.settings.float_right_bottom_image.aspect_ratio | times: 100 }}%;">
+          {{ section.settings.float_right_bottom_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: section.settings.float_right_bottom_image.alt }}
+        </div>
+      </div>
+    {%- endif -%}
   </div>
 </div>
 
@@ -133,6 +162,28 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Float Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "float_right_image",
+      "label": "Float Right Image",
+      "info": "Image that floats on the right side"
+    },
+    {
+      "type": "image_picker",
+      "id": "float_left_middle_image",
+      "label": "Float Left Middle Image",
+      "info": "Image that floats on the left middle area"
+    },
+    {
+      "type": "image_picker",
+      "id": "float_right_bottom_image",
+      "label": "Float Right Bottom Image",
+      "info": "Image that floats on the right bottom area"
     },
     {
       "type": "header",

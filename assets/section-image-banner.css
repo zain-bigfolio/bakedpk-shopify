@@ -438,7 +438,11 @@
 }
 
 .banner__box .banner__heading + * {
-  margin-top: 1rem;
+  margin-top: 2rem;
+}
+
+.banner__box .banner__heading + .banner__text{
+  margin-top: 2rem;
 }
 
 .banner__buttons {
@@ -510,4 +514,3 @@
 
 .banner__media video{ object-fit: cover; pointer-events: all;}
 .banner__media-contains video{ object-fit: contain; }
-.banner__heading.inline-richtext.hxl{}
