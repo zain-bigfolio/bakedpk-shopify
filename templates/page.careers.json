@@ -1,7 +1,7 @@
 /*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
- * 
+ *
  * This file may be updated by the Shopify admin theme editor
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
@@ -34,7 +34,7 @@
             "text": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface.",
             "text_style": "body",
             "font_size": "f-16",
-            "max_width": 54
+            "max_width": 65
           }
         }
       },
@@ -44,6 +44,7 @@
       ],
       "name": "t:sections.image-banner.name_primary",
       "settings": {
+        "enable_sticky": false,
         "image_mobile": "shopify://shop_images/bakedpk-Join_us_banner_mobile_webp.webp",
         "image": "shopify://shop_images/bakedpk-Join_us_banner_desktop.webp",
         "image_overlay_opacity": 70,
@@ -57,10 +58,157 @@
         "mobile_content_alignment": "center",
         "show_text_below": false
       }
+    },
+    "multicolumn_wL4kR8": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_fNrMEf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Group_1321314531.svg",
+            "title": "<strong>Team work</strong>",
+            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wAHUVU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Group_1321314532.svg",
+            "title": "<strong>Learning Opportunity</strong>",
+            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cfVKKG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Group_1321314533.svg",
+            "title": "<strong>Upgrade Skills</strong>",
+            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_3YXnBk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Group_1321314534.svg",
+            "title": "<strong>Secured Future</strong>",
+            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_fNrMEf",
+        "column_wAHUVU",
+        "column_cfVKKG",
+        "column_3YXnBk"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "section_style": "standard",
+        "caption": "Benefits",
+        "float_image": "shopify://shop_images/Vector_1_4080afdb-e31a-4150-8a70-4cd85207e160.svg",
+        "title": "<strong>Why you Should Join Our Awesome Team</strong>",
+        "description": "We want to feel like home when you are working at <strong>Baked.pk</strong> & for that we have curated a great set of benefits for you. It all starts with the free lunch!",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "square",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 60,
+        "padding_bottom": 36
+      }
+    },
+    "career_openings_n4mUhb": {
+      "type": "career-openings",
+      "blocks": {
+        "job_opening_bXWRGY": {
+          "type": "job_opening",
+          "settings": {
+            "job_title": "Wordpress Developer",
+            "experience": "2 Years",
+            "deadline": "2021-05-08",
+            "application_link": "#",
+            "button_label": "APPLY NOW"
+          }
+        },
+        "job_opening_La37tF": {
+          "type": "job_opening",
+          "settings": {
+            "job_title": "Javascript Developer",
+            "experience": "1 Years",
+            "deadline": "2021-05-08",
+            "application_link": "#",
+            "button_label": "APPLY NOW"
+          }
+        },
+        "job_opening_E9pQaY": {
+          "type": "job_opening",
+          "settings": {
+            "job_title": "Apps Developer",
+            "experience": "3 Years",
+            "deadline": "2021-05-08",
+            "application_link": "#",
+            "button_label": "APPLY NOW"
+          }
+        },
+        "job_opening_wCQKEr": {
+          "type": "job_opening",
+          "settings": {
+            "job_title": "IOS Developer",
+            "experience": "2 Years",
+            "deadline": "",
+            "application_link": "#",
+            "button_label": "APPLY NOW"
+          }
+        },
+        "job_opening_TqJGid": {
+          "type": "job_opening",
+          "settings": {
+            "job_title": "Node JS Developer",
+            "experience": "3 Years",
+            "deadline": "",
+            "application_link": "#",
+            "button_label": "APPLY NOW"
+          }
+        }
+      },
+      "block_order": [
+        "job_opening_bXWRGY",
+        "job_opening_La37tF",
+        "job_opening_E9pQaY",
+        "job_opening_wCQKEr",
+        "job_opening_TqJGid"
+      ],
+      "name": "Career Openings",
+      "settings": {
+        "float_image": "shopify://shop_images/Vector_1_4080afdb-e31a-4150-8a70-4cd85207e160.svg",
+        "caption": "COME JOIN US",
+        "title": "Career Openings",
+        "heading_size": "h2-m",
+        "description": "<p>We're always looking for creative, talented self-starters to join the JMC family. Check out our open roles below and fill out an application.</p>",
+        "color_scheme": "",
+        "padding_top": 64,
+        "padding_bottom": 88
+      }
     }
   },
   "order": [
     "main",
     "image_banner_primary_gHbWQr",
+    "multicolumn_wL4kR8",
+    "career_openings_n4mUhb"
   ]
 }
