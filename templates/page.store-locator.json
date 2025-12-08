@@ -1,7 +1,7 @@
 /*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
- * 
+ *
  * This file may be updated by the Shopify admin theme editor
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
@@ -23,9 +23,9 @@
         "heading_pXXgNU": {
           "type": "heading",
           "settings": {
-            "heading": "Store Locator",
+            "heading": "<strong>Store Locator</strong>",
             "heading_size": "hxl",
-            "max_width": 35
+            "max_width": 55
           }
         },
         "text_p4MahB": {
@@ -37,13 +37,14 @@
             "max_width": 54
           }
         }
-      }, 
+      },
       "block_order": [
         "heading_pXXgNU",
         "text_p4MahB"
       ],
       "name": "t:sections.image-banner.name_primary",
       "settings": {
+        "enable_sticky": false,
         "image_mobile": "shopify://shop_images/bakedpk-Join_us_banner_mobile_webp.webp",
         "image": "shopify://shop_images/bakedpk-Join_us_banner_desktop.webp",
         "image_overlay_opacity": 70,
@@ -117,6 +118,9 @@
         "title": "",
         "heading_size": "h1",
         "color_scheme": "",
+        "float_right_image": "shopify://shop_images/Vector_1_4080afdb-e31a-4150-8a70-4cd85207e160.svg",
+        "float_left_middle_image": "shopify://shop_images/Vector_2.svg",
+        "float_right_bottom_image": "shopify://shop_images/Group_9adcf44a-1649-431f-b34f-590d86c9b4d8.svg",
         "padding_top": 40,
         "padding_bottom": 36
       }

@@ -350,3 +350,34 @@
   .multicolumn--prime .multicolumn-list .multicolumn-card__info h3{--font-size: calc(var(--font-heading-scale) * 2.6rem);}
   .multicolumn--prime .multicolumn-list .multicolumn-card__info .rte{--font-size: 1.6rem;margin-top: 1.3rem;}
 }
+
+
+@keyframes float-up-down {
+
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.multicolumn--standard .title-wrapper-with-link{flex-direction: column;align-items: flex-start;text-align: left;gap: 0;max-width: 48rem;}
+.multicolumn--standard .title-wrapper-with-link >p:first-child{margin-top: 0rem;margin-bottom: 0.5rem;}
+.multicolumn--standard .title-wrapper-with-link > .title{margin-top: 0rem;margin-bottom: 1.5rem;}
+.multicolumn--standard .title-wrapper-with-link > .title strong{font-weight: 700;}
+.multicolumn--standard .title-wrapper-with-link >p:last-child{margin: 0rem;max-width: 440px;font-weight: 400;}
+.multicolumn--standard .multicolumn-card__image-wrapper{max-width: 7.4rem;margin: 0rem;}
+.multicolumn--standard .multicolumn-card__info h3 {--font-size: calc(var(--font-heading-scale) * 1.8rem);}
+.multicolumn--standard .multicolumn-card__info h3 strong{font-weight: 700;}
+.multicolumn--standard .multicolumn-card__info .rte {font-weight: 300;font-size: 1.4rem;}
+.multicolumn--standard .multicolumn-card__info {padding-left: 0rem !important;}
+.multicolumn--standard .multicolumn-card__image-wrapper+.multicolumn-card__info{padding-top: 3rem;}
+.multicolumn--standard .page-width{--page-width: 1416px;}
+.multicolumn--standard .column-float-image{position: absolute;top: 50%;right: 2rem;transform: translateY(-50%);max-width: 3.6rem;width: 100%;height: fit-content;z-index: 1;pointer-events: none;animation: float-up-down 3s ease-in-out infinite;}
+.multicolumn--standard .multicolumn-list{--grid-mobile-vertical-spacing: 2rem;}
+
+@media screen and (min-width: 990px) {.multicolumn--standard .title-wrapper-with-link{margin-bottom: 5.7rem;}}
+@media screen and (max-width: 990px) {.multicolumn--standard .title-wrapper-with-link{margin-bottom: 3.6rem;}}

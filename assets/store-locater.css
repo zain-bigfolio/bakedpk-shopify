@@ -156,6 +156,7 @@
   justify-content: space-between;
   flex-direction: column;
   pointer-events: none;
+  z-index: -1;
 }
 
 .float-images-list>div {
@@ -186,3 +187,5 @@
   animation-delay: 1s;
   bottom: 33%;
 }
+
+.store-locater{background: rgb(var(--color-background));}

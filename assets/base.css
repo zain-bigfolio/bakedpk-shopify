@@ -304,7 +304,14 @@ h1,
   line-height: calc(var(--font-size) * 1.1);
   letter-spacing: var(--letter-spacing);
 }
-.h2-m,
+.h2-m{
+  --font-size: calc(var(--font-heading-scale) * 3.2rem);
+  font-size: var(--font-size);
+  --letter-spacing: calc(var(--font-size) * (0 / 100));
+  letter-spacing: var(--letter-spacing);
+  line-height: calc(var(--font-size) * 1.2);
+}
+
 h2,
 .h2 {
   --font-size: calc(var(--font-heading-scale) * 2.6rem);
@@ -358,7 +365,7 @@ h5,
   }
 
   .h2-m {
-    --font-size: calc(var(--font-heading-scale) * 2.8rem);
+    --font-size: calc(var(--font-heading-scale) * 3.6rem);
   }
 
   h3,

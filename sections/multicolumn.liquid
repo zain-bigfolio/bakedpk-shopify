@@ -23,7 +23,10 @@
   endif
 -%}
 
-<div class="multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
+<div class="multicolumn relative multicolumn--{{ section.settings.section_style }} color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
+  {%- if section.settings.float_image != blank -%}
+    <div class="column-float-image medium-hide small-hide"> <div class="ratio media media--transparent" style="--ratio-percent: {{ 1 | divided_by: section.settings.float_image.aspect_ratio | times: 100 }}%;">{{ section.settings.float_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: section.settings.float_image.alt }}</div> </div>
+  {%- endif -%}
   <div
     class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
@@ -32,9 +35,9 @@
   >
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.title }}
-        </h2>
+        {% if section.settings.caption != blank %}<p class="uppercase f-14">{{ section.settings.caption }}</p>{% endif %}
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">{{ section.settings.title }}</h2>
+        {% if section.settings.description != blank %}<p class="f-14">{{ section.settings.description }}</p>{% endif %}
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
             {{- section.settings.button_label | escape -}}
@@ -200,17 +203,55 @@
   },
   "settings": [
     {
+      "type": "select",
+      "id": "section_style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value": "cards",
+          "label": "Cards"
+        }
+      ],
+      "default": "standard",
+      "label": "Section style"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "caption",
+      "label": "Caption",
+      "info": "Small text above the heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "float_image",
+      "label": "Float Image",
+      "info": "Image floats"
+    },
+    {
       "type": "inline_richtext",
       "id": "title",
       "default": "t:sections.multicolumn.settings.title.default",
       "label": "t:sections.multicolumn.settings.title.label"
     },
     {
+      "type": "inline_richtext",
+      "id": "description",
+      "label": "Description",
+      "info": "Text below the heading"
+    },
+    {
       "type": "select",
       "id": "heading_size",
       "options": [
         {
-          "value": "h2",
+          "value": "h2-m",
           "label": "t:sections.all.heading_size.options__1.label"
         },
         {

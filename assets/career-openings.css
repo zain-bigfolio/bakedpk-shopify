@@ -1,0 +1,149 @@
+@keyframes float-up-down {
+
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.career-openings .page-width {
+  --page-width: 1416px;
+}
+
+.career-openings__caption {
+  margin: 0rem;
+}
+
+.career-openings__title {
+  margin: 0.5rem 0 0 0;
+}
+
+.career-openings__description {
+  margin-top: 1.9rem;
+  max-width: 53rem;
+  letter-spacing: calc(var(--font-size) * (-2 / 100));
+}
+
+.career-openings__list {
+  max-width: 1014px;
+  margin-top: 4.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.career-opening-card {
+  border: 1px solid rgba(230, 230, 230, 1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+  padding: 2.6rem;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+}
+
+.career-opening-card__title {
+  margin: 0rem;
+}
+
+.career-opening-card__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.career-opening-card__label {
+  font-size: 1.6rem;
+  color: rgba(30, 30, 30, 0.4);
+  font-weight: 600;
+}
+
+.career-opening-card__value {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.career-opening-card__button {
+  gap: 1rem;
+  font-size: 14px;
+}
+
+.career-opening-card__meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 990px) {
+  .career-opening-card {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .career-opening-card__content {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .career-opening-card__meta {
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .career-opening-card__title {
+    --font-size: 1.8rem;
+  }
+
+  .career-opening-card__label {
+    --font-size: 1.6rem;
+  }
+
+  .career-opening-card__meta>div:last-child {
+    /* margin: auto; */
+  }
+
+  .career-opening-card__meta {
+    margin-top: 2.4rem;
+    margin-bottom: 3.6rem;
+  }
+
+  .career-opening-card__button {
+    width: 100%;
+  }
+
+  .career-opening-card {
+    padding: 2.3rem;
+  }
+
+
+  .career-openings__list {
+    gap: 1.6rem;
+  }
+
+  .career-openings__list {
+    margin-top: 3rem;
+  }
+
+  .career-openings__description {
+    margin-top: 1.5rem;
+  }
+}
+
+.career-float-image {
+  max-width: 3.6rem;
+  position: absolute;
+  top: 5%;
+  left: 2rem;
+  width: 100%;
+  animation: float-up-down 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
